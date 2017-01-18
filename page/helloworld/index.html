@@ -7,70 +7,138 @@
     <meta name="author" content="Jim Jiang">
     <meta name="description" content="Lotlab Wiki Site">
     <title>
-                helloworld - LotlabWiki            </title>
-    <link href="/assets/bootstrap.min.css" rel="stylesheet"/>
+                你好，世界 - LotlabWiki            </title>
+    <link href="/assets/mui.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/style.css" rel="stylesheet"/>
+    <link href="/assets/octicons/font/octicons.min.css" rel="stylesheet" />
     <script src="/assets/highlight.min.js"></script>
+    <script src="/assets/mui.min.js"></script>
+    <script src="/assets/jquery-3.1.1.min.js"></script>
+    
     <base target="_blank">
 </head>
 <body>
-<div class="container">
-    <div class="page-header">
-                <h1><a href="/" class="logo-text" target="_self">LotlabWiki</a>&nbsp;
-                        <small>/ helloworld</small>
-                    </h1>
-            </div>
-<div class="row">
-<!-- two columns -->
-<div class="col-lg-3 col-md-3">
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">About</h3>
+<header id="header">
+    <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+
+                                            <span class="appbar-brand mui--hidden-xs">config['wiki'].title</span>
+                                        <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
+            <span class="appbar-brand mui--hidden-xs">你好，世界</span>
+            <a href="/" class="mui--text-title mui--visible-xs-inline-block" target="_self">LotlabWiki</a>
+        </div>
     </div>
-    <div class="panel-body">
-        <p>This is a simple Aboutme widget.</p>
-        <p>Author: <b>Jim Jiang</b></p>
-    </div>
+</header><div id="sidedrawer" class="mui--no-user-select">
+<div id="sidedrawer-brand" class="mui--appbar-line-height">
+<span class="mui--text-title">LotlabWiki</span>
 </div>
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Navigation</h3>
-    </div>
-    <div class="panel-body">
-        <h6><a href="/" target="_self">Homepage</a></h6>
-                <h5>Uncategoried</h5>
-        <ul class="list-unstyled">
-                        <li>
-                <a href="/page/helloworld/" target="_self">
-                                        helloworld                                    </a>
-            </li>
-                    </ul>
-                        <a href="/changelog/">Changelog</a>
-            </div>
+<div class="mui-divider"></div>
+<ul>
+<li>
+    <strong>About</strong>
+    <ul>
+        <li>xxx</li>
+    </ul>
+</li>
+</ul>
+<div class="mui-divider"></div>
+<ul>
+<li>
+    <strong>导航</strong>
+    <ul>
+                <li>
+            <strong>未分类</strong>
+            <ul>
+                                <li>
+                    <a href="/page/helloworld/" target="_self">
+                                                你好，世界                                            </a>
+                </li>
+                            </ul>
+        </li>
+                
+                <li>
+            <a href="/changelog/">修改日志</a>
+        </li>
+            </ul>
+</li>
+
+</ul>
 </div>
-</div>
-<div class="col-lg-9 col-md-9 col-sm-12">
-<div class="index-content">
+<div id="content-wrapper">
+<!-- Main content goes here -->
+<div class="mui--appbar-height"></div>
+<div class="mui-container-fluid">
+<br>
+<h1>你好，世界</h1>
 <div class="row">
-<span class="label label-primary pull-right">Uncategoried</span>
+<span class="label label-primary pull-right">未分类</span>
 </div>
 <div class="row">
-<p>Content of the page, <strong>markdown</strong> enabled.</p>
-<p><em>Last Update: Wed Jan 18 2017 14:14:05 GMT+0800 (中国标准时间)</em>  <a href="/raw\helloworld.md">Source File</a></p>
+<p>这是这个静态站点的第一篇文章</p>
+<p><em>Last Update: Wed Jan 18 2017 14:54:00 GMT+0800 (中国标准时间)</em>  <a href="/raw\helloworld.md">Source File</a></p>
 </div>
 <div class="row">
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="footer">
+<footer class="footer">
+  <div class="mui-container-fluid">
     <div class="footer-text">
         <p>
             LotlabWiki using <a href="https://github.com/phoenixlzx/MinoriWiki" target="_blank">MinoriWiki</a>
         </p>
     </div>
-</div>
-<script>hljs.initHighlightingOnLoad();</script>
+  </div>
+</footer>
+
+<script>
+hljs.initHighlightingOnLoad();
+jQuery(function($) {
+    var $bodyEl = $('body'),
+        $sidedrawerEl = $('#sidedrawer');
+
+
+    function showSidedrawer() {
+        // show overlay
+        var options = {
+            onclose: function() {
+                $sidedrawerEl
+                    .removeClass('active')
+                    .appendTo(document.body);
+            }
+        };
+
+        var $overlayEl = $(mui.overlay('on', options));
+
+        // show element
+        $sidedrawerEl.appendTo($overlayEl);
+        setTimeout(function() {
+            $sidedrawerEl.addClass('active');
+        }, 20);
+    }
+
+
+    function hideSidedrawer() {
+        $bodyEl.toggleClass('hide-sidedrawer');
+    }
+
+
+    $('.js-show-sidedrawer').on('click', showSidedrawer);
+    $('.js-hide-sidedrawer').on('click', hideSidedrawer);
+  
+    var $titleEls = $('strong', $sidedrawerEl);
+
+    $titleEls
+        .next()
+        .hide();
+
+    $titleEls.on('click', function() {
+        $(this).next().slideToggle(200);
+    });
+});
+</script>
+
 </body>
 </html>

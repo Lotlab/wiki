@@ -1,5 +1,6 @@
-title: helloworld
-category: Uncategoried
+title: 你好，世界
+category: 未分类
 time: 1484720045253
+
 ---
-Content of the page, **markdown** enabled.
+这是这个静态站点的第一篇文章
