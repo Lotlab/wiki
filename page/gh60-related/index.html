@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jim Jiang">
+    <meta name="description" content="Lotlab Wiki Site">
+    <title>
+                GH60相关 - LotlabWiki            </title>
+    <link href="/assets/mui.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/style.css" rel="stylesheet"/>
+    <link href="/assets/octicons/font/octicons.min.css" rel="stylesheet" />
+    <script src="/assets/highlight.min.js"></script>
+    <script src="/assets/mui.min.js"></script>
+    <script src="/assets/jquery-3.1.1.min.js"></script>
+    
+    <base target="_blank">
+</head>
+<body>
+<header id="header">
+    <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+
+                                            <span class="appbar-brand mui--hidden-xs">LotlabWiki</span>
+                                <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
+                <span class="appbar-brand mui--hidden-xs">GH60相关</span>
+                <a href="/" class="mui--text-title appbar-brand mui--visible-xs-inline-block" target="_self">LotlabWiki</a>
+                    </div>
+    </div>
+</header><div id="sidedrawer" class="mui--no-user-select">
+<div id="sidedrawer-brand" class="mui--appbar-line-height">
+<span class="mui--text-title">LotlabWiki</span>
+</div>
+<div class="mui-divider"></div>
+<ul>
+<li>
+    <strong>其他</strong>
+    <ul>
+        <li><a href="https://github.com/Lotlab/wiki">Github</a></li>
+        <li><a href="/page/terms">协议</a></li>
+        <li><a href="/page/contribute">贡献</a></li>
+    </ul>
+</li>
+</ul>
+<div class="mui-divider"></div>
+<ul>
+<li>
+    <strong>教程</strong>
+    <ul>
+                <li>
+            <a href="/page/gh60-related/" target="_self">
+                                GH60相关                            </a>
+        </li>
+            </ul>
+</li>
+<li>
+    <strong>未分类</strong>
+    <ul>
+                <li>
+            <a href="/page/helloworld/" target="_self">
+                                你好，世界                            </a>
+        </li>
+            </ul>
+</li>
+<li>
+    <strong>站务</strong>
+    <ul>
+                <li>
+            <a href="/page/terms/" target="_self">
+                                协议                            </a>
+        </li>
+            </ul>
+</li>
+
+<li>
+    <strong>
+        <a href="/changelog/">修改日志</a>
+    </strong>
+</li>
+</ul>
+</div>
+<div id="content-wrapper">
+<!-- Main content goes here -->
+<div class="mui--appbar-height"></div>
+<div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+<br>
+<h1>GH60相关</h1>
+<div class="row">
+<span class="label label-primary mui--pull-right">教程</span>
+</div>
+<div class="row">
+<h2><a href="#组装" name="组装" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;组装</h2>
+<p><strong>焊接时应该遵循先低后高原则！</strong></p>
+<ol>
+<li><p>焊接</p>
+<ol>
+<li>焊接芯片，将芯片圆圈口对着线路板上的圆圈标志，焊接。</li>
+<li>焊接 USB 接口，先焊接周围的固定焊盘，再焊接引脚</li>
+<li>焊接晶振（仅限 B 版，L 版应该先做第 4 步）</li>
+<li>焊接周围器件 C1-C8、R1-R3、R5、K1</li>
+<li>焊接晶振（仅限 L 版，B 版应该先做第 3 步）</li>
+</ol></li>
+<li><p>测试</p>
+<p>插上电脑进行测试。</p>
+<ul>
+<li>如果能够成功识别到键盘，接下来可以去刷固件，参见下面的<a href="#刷固件">刷固件</a>章节。</li>
+<li>如果无法成功识别到键盘，参见<a href="#常见问题">常见问题</a>进行问题排查。</li>
+</ul></li>
+<li><p>继续焊接</p>
+<p>固件刷完后，焊接所有的二极管，注意方向。二极管箭头应该和线路板上的标志一致。</p></li>
+<li><p>再次测试</p>
+<p>插上电脑进行测试，使用<a href="https://www.baidu.com/s?wd=keyboardtestutility&amp;ie=UTF-8">keyboardtestutility</a>进行测试。用镊子短路两个轴之间的点，观察是否所有按键都有反应。需要注意的是，最下排倒数第三颗键默认是 Fn 键，测试的时候不会有任何反应。</p>
+<ul>
+<li>如果全部正常，进行下一步</li>
+<li>如果不正常，参见<a href="#常见问题">常见问题</a>。</li>
+</ul></li>
+<li><p>准备总装</p>
+<p><strong>L 版如果要使用内置灯控务必先短路正面的 J2-J4！</strong></p>
+<p>接下来是装轴，注意要先装定位板再装轴。装好轴之后测试，全部正常就可以加灯了。</p></li>
+<li><p>灯光相关</p>
+<ul>
+<li>L 版焊接上剩下的电阻，短路 J1 和 J6，焊接上 Q1 和 R65</li>
+<li>B 版焊接上灯阻</li>
+</ul>
+<p>插上电脑，按 Fn+V 打开灯，将发光二极管装上，观察是否能亮，如果可以亮就可以焊接了。</p></li>
+</ol>
+<h2><a href="#刷固件" name="刷固件" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;刷固件</h2>
+<ol>
+<li>下载<a href="https://github.com/kairyu/tkg-toolkit/archive/master.zip">tkg-toolkit</a>，解压到你喜欢的地方。</li>
+<li>插上键盘，打开<code>tkg-toolkit\windows\setup.bat</code>，依次选择
+<ol>
+<li><code>1(GH60 RevA/B/C) 然后回车</code></li>
+<li><code>y</code> 然后回车</li>
+<li><code>1</code> 回车</li>
+<li><code>1</code> 回车</li>
+<li>按任意键保存退出</li>
+</ol></li>
+<li>打开<code>tkg-toolkit\windows\reflash.bat</code>，输入<code>y</code>后，按下键盘背面的 RESET 键。这时候就开始刷新固件了。</li>
+</ol>
+<p>如果固件刷新不成功，参见 [[GH60 相关 #常见问题]]。</p>
+<h2><a href="#常见问题" name="常见问题" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;常见问题</h2>
+<p>请跟随下列指示进行选择。</p>
+<ol>
+<li><p>键盘插到电脑上是否正常识别？</p>
+<ul>
+<li>是 -&gt; 2</li>
+<li>否 -&gt; 3</li>
+</ul></li>
+<li><p>是否已经刷好固件？</p>
+<ul>
+<li>是 -&gt; 4</li>
+<li>否 -&gt; 5</li>
+</ul></li>
+<li><p>电脑有什么提示？</p>
+<ul>
+<li>无法识别的 USB 设备 -&gt; 6</li>
+<li>一个 USB 设备超过其集线器端口的电源限制 -&gt; 7</li>
+<li>什么反应都没有 -&gt; 8</li>
+</ul></li>
+<li><p>键盘哪里有问题？</p>
+<ul>
+<li>按键 -&gt; 9</li>
+<li>灯光 -&gt; 10</li>
+</ul></li>
+<li><p>固件刷新中遇到问题了吗？</p>
+<ul>
+<li>按下 RESET 后没有反应 -&gt; 13</li>
+<li>我还没刷固件 -&gt; 14</li>
+</ul></li>
+<li><p>解决方案</p>
+<ul>
+<li>检查 USB 口是否焊接到位</li>
+<li>检查主控周围原件是否焊接错误</li>
+<li>换个 USB 口或数据线试试</li>
+</ul></li>
+<li><p>解决方案</p>
+<ul>
+<li>检查 USB 口是否引脚粘连</li>
+<li>检查主控是否引脚粘连</li>
+<li>检查原件是否引脚粘连</li>
+</ul></li>
+<li><p>解决方案</p>
+<ul>
+<li>检查 USB 口和原件是否焊接到位</li>
+<li>检查晶振是否被焊坏了</li>
+<li>检查芯片是否焊接方向错误</li>
+</ul></li>
+<li><p>键盘的问题是？</p>
+<ul>
+<li>一个或多个按键无法识别 -&gt;11</li>
+<li>两个或多个按键同时按下 -&gt;12</li>
+</ul></li>
+<li><p>灯光的问题是？</p>
+<ul>
+<li>全部灯不亮 -&gt;15</li>
+<li>某个灯不亮 -&gt;16</li>
+<li>开启灯光键盘就不工作 -&gt;17</li>
+</ul></li>
+<li><p>按键</p>
+<ul>
+<li>单个无法识别 -&gt;18</li>
+<li>一排无法识别 -&gt;19</li>
+</ul></li>
+<li><p>按键</p>
+<ul>
+<li>单两个同时按下 -&gt;18</li>
+<li>两行或者两列中的某两个键都同时按下 -&gt;19</li>
+</ul></li>
+<li><p>打开<code>tkg-toolkit\windows\tool\zadig-2.1.2.exe</code>, 选上<code>Options-List All Device</code>，按下 RESET 键后，将 Atm32U4DFU 的驱动更换为 libusbk 或者其他的驱动，然后再次尝试刷新；或者换一台电脑试试。</p></li>
+<li><p>快去刷固件</p></li>
+<li><p>解决方案</p>
+<ul>
+<li>检查灯阻是否安装到位</li>
+<li>是否按 Fn+V 打开了灯光</li>
+<li>L 版是否短路了 J1-J4 和 J6，是否安装了 R65 和 Q1。</li>
+</ul>
+<p>建议可以先装 CapsLock 灯测试，默认设置下，Fn+V 打开灯光的同时也会打开这个灯。</p></li>
+<li><p>解决方案</p>
+<ul>
+<li>检查灯阻是否安装到位</li>
+<li>检查二极管是否装反</li>
+<li>检查二极管是否烧坏</li>
+</ul></li>
+<li><p>检查二极管是否短路。</p></li>
+<li><p>这不科学！不可能！你一定是搞错了！</p></li>
+<li><p>检查主控引脚是否粘连</p></li>
+</ol>
+<p><em>Last Update: Thu Jan 19 2017 10:07:41 GMT+0800 (中国标准时间)</em>  <a href="/raw\gh60-related.md">Source File</a></p>
+</div>
+<div class="row">
+</div>
+</div>
+</div>
+<footer id="footer">
+    <div class="mui-container-fluid">
+        LotlabWiki using <a href="https://github.com/phoenixlzx/MinoriWiki" target="_blank">MinoriWiki</a>
+    </div>
+</footer>
+
+<script>
+hljs.initHighlightingOnLoad();
+jQuery(function($) {
+    var $bodyEl = $('body'),
+        $sidedrawerEl = $('#sidedrawer');
+
+
+    function showSidedrawer() {
+        // show overlay
+        var options = {
+            onclose: function() {
+                $sidedrawerEl
+                    .removeClass('active')
+                    .appendTo(document.body);
+            }
+        };
+
+        var $overlayEl = $(mui.overlay('on', options));
+
+        // show element
+        $sidedrawerEl.appendTo($overlayEl);
+        setTimeout(function() {
+            $sidedrawerEl.addClass('active');
+        }, 20);
+    }
+
+
+    function hideSidedrawer() {
+        $bodyEl.toggleClass('hide-sidedrawer');
+    }
+
+
+    $('.js-show-sidedrawer').on('click', showSidedrawer);
+    $('.js-hide-sidedrawer').on('click', hideSidedrawer);
+  
+    var $titleEls = $('strong', $sidedrawerEl);
+
+    $titleEls
+        .next()
+        .hide();
+
+    $titleEls.on('click', function() {
+        $(this).next().slideToggle(200);
+    });
+});
+</script>
+
+</body>
+</html>
