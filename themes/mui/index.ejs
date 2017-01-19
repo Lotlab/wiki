@@ -1,0 +1,50 @@
+<%- include _header %>
+<div id="sidedrawer" class="mui--no-user-select">
+    <div id="sidedrawer-brand" class="mui--appbar-line-height">
+        <span class="mui--text-title"><%= config['wiki'].title %></span>
+    </div>
+    <div class="mui-divider"></div>
+    <ul>
+        <%- include _sidebar %>
+    </ul> 
+</div>
+<div id="content-wrapper">
+  <!-- Main content goes here -->
+  <div class="mui--appbar-height"></div>
+    <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+      <br>
+      <h1><%= config['wiki'].title %></h1>
+      <p>欢迎来到 Lotlab Wiki！</p>
+      
+      <h2>文章列表</h2>
+      <% categories.forEach(function(category) { %>
+        <div class="row">
+            <div class="col-md-12">
+                <h3><%= category.name %></h3>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+                <ul class="list-unstyled">
+                    <% category.pages.forEach(function(p) { %>
+                    <li>
+                        <a href="<%= config['base'].path %><%= config['dir'].page %><%= p.link %>/" target="_self">
+                            <% if (p.link.lastIndexOf('/') !== 0) { %>
+                            <% var prelink = p.link.split('/')[1] %>
+                            <%= prelink %> / <%= p.title %>
+                            <% } else { %>
+                            <%= p.title %>
+                            <% } %>
+                        </a>
+                    </li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+      <% }) %>
+      <h2>变更记录</h2>
+      <ul>
+        <li>2017-01-18 完全静态化，迁移至 Github Pages.</li>
+        <li>2015-11-07 替换庞大的 MediaWiki 为 DokuWiki </li>
+      </ul>
+    </div>
+</div>
+<%- include _footer %>

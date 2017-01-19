@@ -1,0 +1,29 @@
+<%- include _header %>
+<div id="sidedrawer" class="mui--no-user-select">
+    <div id="sidedrawer-brand" class="mui--appbar-line-height">
+        <span class="mui--text-title"><%= config['wiki'].title %></span>
+    </div>
+    <div class="mui-divider"></div>
+    <ul>
+        <%- include _side_index %>
+        <%- include _sidebar %>
+    </ul> 
+</div>
+<div id="content-wrapper">
+    <!-- Main content goes here -->
+    <div class="mui--appbar-height"></div>
+    <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+        <br>
+        <h1><%= page.title %></h1>
+        <div class="row">
+            <span class="label label-primary mui--pull-right"><%= page.category %></span>
+        </div>
+        <div class="row">
+            <%- page.content %>
+        </div>
+        <div class="row">
+            <%- include _disqus_comment.ejs %>
+        </div>
+    </div>
+</div>
+<%- include _footer %>

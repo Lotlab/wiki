@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="<%= config['wiki'].author %>">
+    <meta name="description" content="<%= config['wiki'].description %>">
+    <title>
+        <% if (page && page.title) { %>
+        <%= page.title %> - <%= config['wiki'].title %>
+        <% } else { %>
+        <%= config['wiki'].title %> - <%= config['wiki'].tagline %>
+        <% } %>
+    </title>
+    <link href="<%= config['base'].path %>assets/mui.min.css" rel="stylesheet" type="text/css" />
+    <link href="<%= config['base'].path %>assets/style.css" rel="stylesheet"/>
+    <link href="<%= config['base'].path %>assets/octicons/font/octicons.min.css" rel="stylesheet" />
+    <script src="<%= config['base'].path %>assets/highlight.min.js"></script>
+    <script src="<%= config['base'].path %>assets/mui.min.js"></script>
+    <script src="<%= config['base'].path %>assets/jquery-3.1.1.min.js"></script>
+    
+    <base target="_blank">
+</head>
+<body>
+<header id="header">
+    <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+
+            <% if (page && page.title) { %>
+                <% if (page.link.lastIndexOf('/') !== 0) { %>
+                <% var prelink = page.link.split('/')[1] %>
+                <span class="appbar-brand mui--hidden-xs"><%= prelink %></span>
+                <% } else { %>
+                <span class="appbar-brand mui--hidden-xs"><%= config['wiki'].title %></span>
+                <% } %>
+                <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
+                <span class="appbar-brand mui--hidden-xs"><%= page.title %></span>
+                <a href="<%= config['base'].path %>" class="mui--text-title appbar-brand mui--visible-xs-inline-block" target="_self"><%= config['wiki'].title %></a>
+            <% } else { %>
+            <span class="mui--text-title appbar-brand" target="_self"><%= config['wiki'].title %></span>
+            <% } %>
+        </div>
+    </div>
+</header>

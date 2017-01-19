@@ -1,0 +1,27 @@
+<% categories.forEach(function(category) { %>
+<li>
+    <strong><%= category.name %></strong>
+    <ul>
+        <% category.pages.forEach(function(p) { %>
+        <li>
+            <a href="<%= config['base'].path %><%= config['dir'].page %><%= p.link %>/" target="_self">
+                <% if (p.link.lastIndexOf('/') !== 0) { %>
+                <% var prelink = p.link.split('/')[1] %>
+                <%= prelink %> / <%= p.title %>
+                <% } else { %>
+                <%= p.title %>
+                <% } %>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+</li>
+<% }) %>
+
+<% if (config['wiki'].log) { %>
+<li>
+    <strong>
+        <a href="<%= config['base'].path %>changelog/">修改日志</a>
+    </strong>
+</li>
+<% } %>

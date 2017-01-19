@@ -1,0 +1,62 @@
+# MinoriWiki Configuration
+# ========================
+# https://github.com/phoenixlzx/MinoriWiki
+
+# Wiki
+wiki:
+  title: LotlabWiki
+  tagline: Yet another static wiki generator
+  description: Lotlab Wiki Site
+  author: Jim Jiang
+  email: jim(at)lotlab.org
+  language: zh-CN
+  theme: mui
+  favicon: true    # put your favicon.ico into MinoriWiki site configuration root directory
+  log: true    # enable commit logs (will be displayed in public)
+  logmax: 20    # maximum log amount to be displayed (to avoid very large webpage), default to 20.
+
+# Base
+base:
+  uri: http://wiki.lotlab.org    # domain and protocol of your site, not containing any path and the final slash '/'
+  path: /    # change this if you want your site to be in a sub-directory
+
+# Directory
+dir:
+  source: notes    # notes source code
+  static: static    # static files will be copied to <site root path>/static, to help you link any static file in articles
+  site: wiki    # generated site files which are ready to be deployed
+  raw: raw    # raw (source) note file in website directory
+  page: page    # pages will write under this directory, e.g., /page/some-title, leave plank will write all pages under root
+
+# Custom
+custom:
+  time: YYYY-MM-DD HH:mm:ss
+  disqus:     # your disqus short link, leave blank to disable comment
+  category: 未分类    # default category when creating new page
+  markdown:
+    html: true    # Enable HTML tags in source
+    xhtmlOut: true    # Use '/' to close single tags (<br />)
+    breaks: false    # Convert '\n' in paragraphs into <br> NOTE: some editors may trim tailing spaces so you may need this.
+    langPrefix: 'language-'    # CSS language prefix for fenced blocks
+    linkify: false    # Autoconvert URL-like text to links
+    typographer: false    # Enable some language-neutral replacement + quotes beautification
+    sup_sub: true    # superscripts and subscripts
+    abbr: true    # abbreviations
+    footnote: true    # footnote
+    ins: false    # EXPERIMENTAL ++inseted text++
+    mark: false    # EXPERIMENTAL ==marked text==
+  mathjax: false    # enable MathJax TeX support, you need markdown.html set to true (allow html) to work
+  autospacing: true    # use `pangunode` library to add space between CJK and Western characters automatically
+  editor: Typora    # auto open your note after command
+
+# Deployment
+deploy:
+  repo: https://github.com/Lotlab/wiki.git
+  branch: gh-pages
+  cname: test.lotlab.org    # if you want to deploy site on github you probably want this
+  s3:
+    enabled: false
+    bucket: your-bucket-name
+    region: us-west-1
+    accessKeyId: yourapikey
+    accessKeySecret: yourapisecret
