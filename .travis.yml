@@ -7,6 +7,8 @@ branches:
 
 before_install:
 - git submodule update
+- git config --global user.name "Build Bot"
+- git config --global user.email jim@lotlab.org
 
 install:
 - npm install minori -g
