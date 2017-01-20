@@ -51,7 +51,7 @@ custom:
 
 # Deployment
 deploy:
-  repo: https://github.com/Lotlab/wiki.git
+  repo: git@github.com:Lotlab/wiki.git
   branch: gh-pages
   cname: test.lotlab.org    # if you want to deploy site on github you probably want this
   s3:
