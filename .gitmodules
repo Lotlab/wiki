@@ -4,5 +4,5 @@
 	branch = notes
 [submodule "wiki"]
 	path = wiki
-	url = git@github.com:Lotlab/wiki.git
+	url = https://github.com/Lotlab/wiki
 	branch = gh-pages
