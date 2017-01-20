@@ -6,7 +6,11 @@ branches:
   - master
 before_install:
 - openssl aes-256-cbc -K $encrypted_c6144e367c04_key -iv $encrypted_c6144e367c04_iv
-  -in ssh_key.enc -out ssh_key -d
+  -in ssh_key.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp ./ssh_config ~/.ssh/config
 - git submodule update
 - git config --global user.name "Build Bot"
 - git config --global user.email jim@lotlab.org
