@@ -249,6 +249,16 @@ small {
     font-size: 85%;
 }
 
+blockquote {
+    margin: 0.8em 0;
+    border-left: 4px solid #dddddd;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+
 .label {
     display: inline;
     padding: .2em .6em .3em;
