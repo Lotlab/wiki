@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jim Jiang">
+    <meta name="description" content="Lotlab Wiki Site">
+    <title>
+                BLE4100套件使用说明 - LotlabWiki            </title>
+    <link href="/assets/mui.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/style.css" rel="stylesheet"/>
+    <link href="/assets/octicons/font/octicons.min.css" rel="stylesheet" />
+    <script src="/assets/highlight.min.js"></script>
+    <script src="/assets/mui.min.js"></script>
+    <script src="/assets/jquery-3.1.1.min.js"></script>
+    
+    <base target="_blank">
+</head>
+<body>
+<header id="header">
+    <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+
+                                            <span class="appbar-brand mui--hidden-xs">LotlabWiki</span>
+                                <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
+                <span class="appbar-brand mui--hidden-xs">BLE4100套件使用说明</span>
+                <a href="/" class="mui--text-title appbar-brand mui--visible-xs-inline-block" target="_self">LotlabWiki</a>
+                    </div>
+    </div>
+</header><div id="sidedrawer" class="mui--no-user-select">
+<div id="sidedrawer-brand" class="mui--appbar-line-height">
+<span class="mui--text-title">LotlabWiki</span>
+</div>
+<div class="mui-divider"></div>
+<ul>
+<li>
+    <strong>教程</strong>
+    <ul>
+                <li>
+            <a href="/page/ble4100/" target="_self">
+                                BLE4100套件使用说明                            </a>
+        </li>
+            </ul>
+</li>
+<li>
+    <strong>站务</strong>
+    <ul>
+                <li>
+            <a href="/page/contribute/" target="_self">
+                                贡献指南                            </a>
+        </li>
+                <li>
+            <a href="/page/terms/" target="_self">
+                                协议                            </a>
+        </li>
+            </ul>
+</li>
+<li>
+    <strong>教程</strong>
+    <ul>
+                <li>
+            <a href="/page/gh60-related/" target="_self">
+                                GH60相关                            </a>
+        </li>
+                <li>
+            <a href="/page/kms-activation/" target="_self">
+                                KMS激活                            </a>
+        </li>
+            </ul>
+</li>
+<li>
+    <strong>未分类</strong>
+    <ul>
+                <li>
+            <a href="/page/helloworld/" target="_self">
+                                你好，世界                            </a>
+        </li>
+            </ul>
+</li>
+
+<li>
+    <strong>
+        <a href="/changelog/">修改日志</a>
+    </strong>
+</li>
+<li>
+    <strong>其他</strong>
+    <ul>
+        <li><a href="https://github.com/Lotlab/wiki">Github</a></li>
+        <li><a href="/page/terms" target="_self">网站协议</a></li>
+        <li><a href="/page/contribute" target="_self">贡献内容</a></li>
+        <li><a href="http://doku.lotlab.org">旧版链接</a></li>
+    </ul>
+</li>
+</ul>
+</div>
+<div id="content-wrapper">
+<!-- Main content goes here -->
+<div class="mui--appbar-height"></div>
+<div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+<br>
+<h1>BLE4100套件使用说明</h1>
+<div class="row">
+<span class="label label-primary mui--pull-right">教程</span>
+</div>
+<div class="row">
+<h1><a href="#使用手册" name="使用手册" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;使用手册</h1>
+<h2><a href="#快速入门" name="快速入门" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;快速入门</h2>
+<ol>
+<li>取出线路板并安装到键盘上</li>
+<li>安装上电池和充电接口</li>
+<li>NumLock 灯亮起，使用手机连接名称为 “BLE4100” 或者是 “Nordic_Keyboard” 的蓝牙设备</li>
+<li>尽情享用吧！</li>
+</ol>
+<h2><a href="#按键说明" name="按键说明" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;按键说明</h2>
+<p>默认情况下，按键与原键盘相同。</p>
+<ul>
+<li>使用 Fn + Pause Break 键可以使键盘休眠</li>
+<li>休眠状态下按下 Esc 键可以唤醒键盘</li>
+<li>唤醒键盘时按住 Fn 键可以进入 DFU 模式</li>
+</ul>
+<h2><a href="#电量显示" name="电量显示" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;电量显示</h2>
+<p>在部分安卓手机上，蓝牙图标旁会有键盘电量指示。</p>
+<p>如果没有指示，你可以下载 BatON<sup class="footnote-ref"><a href="#fn1" id="fnref1" target="_self">[1]</a></sup>这个应用来查看电量。电量信息仅供参考。</p>
+<h2><a href="#升级固件" name="升级固件" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;升级固件</h2>
+<p>你可能需要升级固件来获得新功能或者修复已有的 BUG，升级包可以在页面最下方的固件发布处找到。</p>
+<blockquote>
+<p><strong>刷入不正确的固件可能会使得你的键盘损坏！</strong></p>
+<p>请在升级前确认升级包是由可信的人员提供的。</p>
+<p>升级包可能包含程序 (Application)、蓝牙栈(Soft Device) 和引导程序(Boot Loader)，刷入错误的蓝牙栈和引导程序将会使 DFU 功能完全不可用。在这种情况下，您必须使用 SWD 接口烧录正确的蓝牙栈、引导程序和程序，才能使键盘恢复正常工作。</p>
+<p>如果您刷入了错误的程序 (Application) 无法进入 DFU 模式，您可以将电池卸下，按住 Fn 键再接上电池强制进入 DFU 模式。</p>
+</blockquote>
+<ol>
+<li>使用手机下载并打开 nRF Connect<sup class="footnote-ref"><a href="#fn2" id="fnref2" target="_self">[2]</a></sup> 程序</li>
+<li>按下 Fn+PauseBreak 休眠键盘，然后按下 Fn+Esc 唤醒键盘进入 DFU 模式</li>
+<li>点击 nRF Connect 右上角的 Scan 扫描蓝牙设备，这时应该会找到一个叫做 DfuTarg 的蓝牙设备</li>
+<li>点击 CONNCET 按钮，等待连接成功</li>
+<li>点击右上角的 DFU 按钮，选择第一个 Distribution packet(ZIP)，然后选择升级包</li>
+<li>静静的等待升级完毕即可</li>
+</ol>
+<h1><a href="#安装手册" name="安装手册" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;安装手册</h1>
+<h2><a href="#焊接教程" name="焊接教程" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;焊接教程</h2>
+<table>
+<thead>
+<tr><th>类型</th><th>丝印</th><th>值</th><th>索引</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td>模块</td><td>nRF51822-02</td><td>-</td><td>U1</td><td></td></tr>
+<tr><td>芯片</td><td>57BA</td><td>TP4057</td><td>U2</td><td>焊盘上的白色小圆点在 57BA 字样左边</td></tr>
+<tr><td>芯片</td><td>4A2D</td><td>RT9193-33GB</td><td>U3</td><td></td></tr>
+<tr><td>LED</td><td>-</td><td>蓝色</td><td>D1</td><td>充满指示灯</td></tr>
+<tr><td>LED</td><td>-</td><td>红色</td><td>D2</td><td>充电指示灯</td></tr>
+<tr><td>电阻</td><td>102</td><td>1k</td><td>R1</td><td></td></tr>
+<tr><td>电阻</td><td>152</td><td>1.5k</td><td>R2</td><td></td></tr>
+<tr><td>电阻</td><td>104</td><td>100k</td><td>R5</td><td></td></tr>
+<tr><td>电阻</td><td>225</td><td>2.2M</td><td>R4</td><td></td></tr>
+<tr><td>电阻</td><td>106</td><td>10M</td><td>R3</td><td></td></tr>
+<tr><td>电容</td><td>-</td><td>22nF</td><td>C5</td><td></td></tr>
+<tr><td>电容</td><td>-</td><td>1uF</td><td>C1-C3</td><td></td></tr>
+<tr><td>电容</td><td>-</td><td>22uF</td><td>C4</td><td></td></tr>
+<tr><td>排阻</td><td>152</td><td>1.5K</td><td>RP1</td><td></td></tr>
+</tbody>
+</table>
+<p>取出线路板和原件包，对照上面的 BOM 表进行焊接即可。</p>
+<h2><a href="#安装教程" name="安装教程" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;安装教程</h2>
+<ol>
+<li>卸下键盘后面的螺丝，取下上面板</li>
+<li>将键盘线路板从下面翻转 180 度，取出塑料片和铜箔（如果有），拆下主控板的螺丝</li>
+<li>用电烙铁拆下原来的主控板，并焊上新的主控板。原有的地线（蓝色粗线）可以拆下不接。</li>
+<li>将电池焊接到 BATT 接口处。这时，NumLock 灯会亮起，并能搜索到蓝牙键盘。</li>
+<li>自己设计充电接口并焊接到 POWER 接口处。</li>
+<li>将新的主控板安装到原来的位置，将塑料片放回去（但不要放铜箔），盖上上面板，拧好螺丝。</li>
+<li>安装完成！</li>
+</ol>
+<h1><a href="#高级应用" name="高级应用" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;高级应用</h1>
+<h2><a href="#修改/编译程序" name="修改/编译程序" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;修改 / 编译程序</h2>
+<p>我相信你肯定有基本知识来修改程序，我就不说那么多了。</p>
+<ul>
+<li>main.c 70 行修改蓝牙名称</li>
+<li>keymap.h 修改按键配列（是的，可以自定义！）
+<ul>
+<li>FN15 是休眠按键</li>
+<li>唤醒按键要修改 wakeup_button_row_index</li>
+</ul></li>
+<li>使用 Keil uVision 5 来编译程序</li>
+</ul>
+<p>使用 nrfutil<sup class="footnote-ref"><a href="#fn3" id="fnref3" target="_self">[3]</a></sup>生成升级包（0.5.2 版本）</p>
+<pre><code class="language-bash">nrfutil dfu genpkg --application nrf51422_xxac_s110.hex upgrade.zip
+</code></pre>
+<h1><a href="#固件发布" name="固件发布" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;固件发布</h1>
+<h3><a href="#1.0.0" name="1.0.0" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;1.0.0</h3>
+<ul>
+<li>发布日期：2017 年 2 月 21 日</li>
+<li>下载连接：https://xxxxxxxx</li>
+<li>变更日志：
+<ul>
+<li>第一个版本</li>
+<li>支持 DFU 升级</li>
+</ul></li>
+</ul>
+<p><em>Last Update: Tue Feb 21 2017 11:23:13 GMT+0800 (中国标准时间)</em>  <a href="/raw\ble4100.md">Source File</a></p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1"  class="footnote-item"><p><a href="http://www.coolapk.com/apk/com.limi.baton">蓝牙设备电量 1.2.50</a> 仅限安卓端。 <a href="#fnref1" class="footnote-backref" target="_self">↩</a></p>
+</li>
+<li id="fn2"  class="footnote-item"><p>可以到 <a href="http://www.nordicsemi.com/eng/Products/Nordic-mobile-Apps/nRF-Connect-for-mobile-previously-called-nRF-Master-Control-Panel">官方下载页面</a> 或者应用商店下载。支持 IOS 和安卓端。 <a href="#fnref2" class="footnote-backref" target="_self">↩</a></p>
+</li>
+<li id="fn3"  class="footnote-item"><p>在 Github 下载 <a href="https://github.com/NordicSemiconductor/pc-nrfutil/releases/tag/v0.5.2">nrfutil</a>, 需要安装 Python2.7 <a href="#fnref3" class="footnote-backref" target="_self">↩</a></p>
+</li>
+</ol>
+</section>
+</div>
+<div class="row">
+</div>
+</div>
+</div>
+<footer id="footer">
+    <div class="mui-container-fluid">
+        LotlabWiki 正在使用 <a href="https://github.com/phoenixlzx/MinoriWiki" target="_blank">MinoriWiki</a>
+    </div>
+</footer>
+
+<script>
+hljs.initHighlightingOnLoad();
+jQuery(function($) {
+    var $bodyEl = $('body'),
+        $sidedrawerEl = $('#sidedrawer');
+
+
+    function showSidedrawer() {
+        // show overlay
+        var options = {
+            onclose: function() {
+                $sidedrawerEl
+                    .removeClass('active')
+                    .appendTo(document.body);
+            }
+        };
+
+        var $overlayEl = $(mui.overlay('on', options));
+
+        // show element
+        $sidedrawerEl.appendTo($overlayEl);
+        setTimeout(function() {
+            $sidedrawerEl.addClass('active');
+        }, 20);
+    }
+
+
+    function hideSidedrawer() {
+        $bodyEl.toggleClass('hide-sidedrawer');
+    }
+
+
+    $('.js-show-sidedrawer').on('click', showSidedrawer);
+    $('.js-hide-sidedrawer').on('click', hideSidedrawer);
+  
+    var $titleEls = $('strong', $sidedrawerEl);
+
+    $titleEls
+        .next()
+        .hide();
+
+    $titleEls.on('click', function() {
+        $(this).next().slideToggle(200);
+    });
+});
+</script>
+
+</body>
+</html>
