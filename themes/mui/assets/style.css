@@ -124,6 +124,11 @@ buttons {
     font-size: 20px;
 }
 
+.octicon-chevron-right{
+    font-size: 20px;
+    margin-left: 0.5em;
+}
+
 
 /**
  * Footer CSS

@@ -5,5 +5,8 @@
         <li><a href="/page/terms" target="_self">网站协议</a></li>
         <li><a href="/page/contribute" target="_self">贡献内容</a></li>
         <li><a href="http://doku.lotlab.org">旧版链接</a></li>
+        <% if (config['wiki'].log) { %>
+        <li><a href="<%= config['base'].path %>changelog/">修改日志</a></li>
+        <% } %>
     </ul>
 </li>
