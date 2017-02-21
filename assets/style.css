@@ -201,28 +201,7 @@ img {
 }
 
 .row > h1 {
-    font-size: 36px;
     border-bottom: 1px solid #eee;
-}
-
-.row > h2 {
-    font-size: 30px;
-}
-
-.row > h3 {
-    font-size: 26px;
-}
-
-.row > h4 {
-    font-size: 22px;
-}
-
-.row > h5 {
-    font-size: 18px;
-}
-
-.row > h6 {
-    font-size: 16px;
 }
 
 a.anchor {

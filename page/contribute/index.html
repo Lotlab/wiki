@@ -24,7 +24,7 @@
             <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
             <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
 
-                                            <span class="appbar-brand mui--hidden-xs">LotlabWiki</span>
+                            <span class="appbar-brand mui--hidden-xs">站务</span>
                                 <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
                 <span class="appbar-brand mui--hidden-xs">贡献指南</span>
                 <a href="/" class="mui--text-title appbar-brand mui--visible-xs-inline-block" target="_self">LotlabWiki</a>
@@ -59,6 +59,15 @@
             </ul>
 </li>
 <li>
+    <strong>未分类</strong>
+    <ul>
+                <li>
+            <a href="/page/helloworld/" target="_self">
+                                你好，世界                            </a>
+        </li>
+            </ul>
+</li>
+<li>
     <strong>教程</strong>
     <ul>
                 <li>
@@ -68,15 +77,6 @@
                 <li>
             <a href="/page/kms-activation/" target="_self">
                                 KMS激活                            </a>
-        </li>
-            </ul>
-</li>
-<li>
-    <strong>未分类</strong>
-    <ul>
-                <li>
-            <a href="/page/helloworld/" target="_self">
-                                你好，世界                            </a>
         </li>
             </ul>
 </li>
@@ -175,6 +175,9 @@ jQuery(function($) {
     $titleEls.on('click', function() {
         $(this).next().slideToggle(200);
     });
+    
+    //add mui style
+    $("table").addClass("mui-table mui-table--bordered");
 });
 </script>
 
