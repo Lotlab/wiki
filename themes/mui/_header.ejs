@@ -30,11 +30,11 @@
             <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
 
             <% if (page && page.title) { %>
+                <span class="appbar-brand mui--hidden-xs"><%= page.category %></span>
                 <% if (page.link.lastIndexOf('/') !== 0) { %>
-                <% var prelink = page.link.split('/')[1] %>
-                <span class="appbar-brand mui--hidden-xs"><%= prelink %></span>
-                <% } else { %>
-                <span class="appbar-brand mui--hidden-xs"><%= config['wiki'].title %></span>
+                    <% var prelink = page.link.split('/')[1] %>
+                     <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
+                    <span class="appbar-brand mui--hidden-xs"><%= prelink %></span>
                 <% } %>
                 <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
                 <span class="appbar-brand mui--hidden-xs"><%= page.title %></span>
