@@ -12,8 +12,8 @@ before_install:
 - ssh-add ~/.ssh/id_rsa
 - cp ./ssh_config ~/.ssh/config
 - git submodule update
-- git config --global user.name "Build Bot"
-- git config --global user.email jim@lotlab.org
+- git config --global user.name "Jiangming1399"
+- git config --global user.email "jim@lotlab.org"
 install:
 - npm install minori -g
 script:
