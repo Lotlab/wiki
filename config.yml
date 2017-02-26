@@ -5,7 +5,7 @@
 # Wiki
 wiki:
   title: LotlabWiki
-  tagline: Yet another static wiki generator
+  tagline: Yet another static wiki
   description: Lotlab Wiki Site
   author: Jim Jiang
   email: jim(at)lotlab.org
@@ -53,7 +53,7 @@ custom:
 deploy:
   repo: git@github.com:Lotlab/wiki.git
   branch: gh-pages
-  cname: test.lotlab.org    # if you want to deploy site on github you probably want this
+  cname: wiki.lotlab.org    # if you want to deploy site on github you probably want this
   s3:
     enabled: false
     bucket: your-bucket-name
