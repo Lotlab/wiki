@@ -7,7 +7,7 @@
     <meta name="author" content="Jim Jiang">
     <meta name="description" content="Lotlab Wiki Site">
     <title>
-                KMS激活 - LotlabWiki            </title>
+                BLE4100套件使用说明/高级 - LotlabWiki            </title>
     <link href="/assets/mui.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/style.css" rel="stylesheet"/>
     <link href="/assets/octicons/font/octicons.min.css" rel="stylesheet" />
@@ -25,8 +25,10 @@
             <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
 
                             <span class="appbar-brand mui--hidden-xs">教程</span>
+                                                         <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
+                    <span class="appbar-brand mui--hidden-xs">advanced</span>
                                 <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
-                <span class="appbar-brand mui--hidden-xs">KMS激活</span>
+                <span class="appbar-brand mui--hidden-xs">BLE4100套件使用说明/高级</span>
                 <span class="mui--text-title appbar-brand mui--visible-xs-inline-block">LotlabWiki</span>
                     </div>
     </div>
@@ -96,30 +98,44 @@
 <div class="mui--appbar-height"></div>
 <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
 <br>
-<h1>KMS激活</h1>
+<h1>BLE4100套件使用说明/高级</h1>
 <div class="row">
 <span class="label label-primary mui--pull-right">教程</span>
 </div>
 <div class="row">
-<p>###KMS 服务软件
-<a href="https://github.com/Wind4/vlmcsd">vlmcsd - Github.com</a></p>
-<p>### 测试地址
-<a href="http://mcs.lotlab.org">mcs.lotlab.org</a><br />
-请勿滥用</p>
-<p>###Windows 激活命令</p>
-<pre><code>CD &quot;%SystemRoot%\SYSTEM32&quot;
-CSCRIPT /NOLOGO SLMGR.VBS /SKMS mcs.lotlab.org
-CSCRIPT /NOLOGO SLMGR.VBS /ATO
-CSCRIPT /NOLOGO SLMGR.VBS /XPR
-</code></pre>
-<p>###Office/Project/Visio 2013(2010 换下安装路径) 激活命令</p>
-<pre><code>32位：CD &quot;%ProgramFiles(x86)%\MICROSOFT OFFICE\OFFICE15&quot;
-64位：CD &quot;%ProgramFiles%\MICROSOFT OFFICE\OFFICE15&quot;
-CSCRIPT OSPP.VBS /SETHST:mcs.lotlab.org
-CSCRIPT OSPP.VBS /ACT
-CSCRIPT OSPP.VBS /DSTATUS
-</code></pre>
-<p><em>Last Update: Tue Feb 21 2017 13:08:14 GMT+0800 (中国标准时间)</em>  <a href="/raw%5Ckms-activation.md">Source File</a></p>
+<h1><a href="#源代码" name="源代码" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;源代码</h1>
+<p>访问<a href="https://github.com/Lotlab/nrf51822-keyboard">Github 上的项目主页</a>以获取源代码。</p>
+<p>源代码以<a href="http://www.gnu.org/licenses/gpl-3.0.html">GPL v3</a>许可证授权，请在 GPLv3 的限制下使用本源代码。</p>
+<blockquote>
+<p>根据 GPL v3 协议规定，你在发布修改过的固件的同时，<strong>必须同时以原有的许可条款发布修改后的源代码</strong>，并且<strong>不能添加任何附加条款</strong>。如果你不能以原有的许可条款发布修改后的源代码，那么你将不能发布修改后的固件。</p>
+</blockquote>
+<h1><a href="#KeyMap" name="KeyMap" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;KeyMap</h1>
+<table>
+<thead>
+<tr><th></th><th>LINE1</th><th>LINE2</th><th>LINE3</th><th>LINE4</th><th>LINE5</th><th>LINE6</th><th>LINE7</th><th>LINE8</th></tr>
+</thead>
+<tbody>
+<tr><td>H1L</td><td>Esc</td><td>F1</td><td>F2</td><td>F3</td><td>F4</td><td>F5</td><td>F6</td><td>F7</td></tr>
+<tr><td>H2L</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+<tr><td>H3L</td><td>Tab</td><td>Q</td><td>W</td><td>E</td><td>R</td><td>T</td><td>Y</td><td>U</td></tr>
+<tr><td>H4L</td><td>CapsLock</td><td>A</td><td>S</td><td>D</td><td>F</td><td>G</td><td>H</td><td>J</td></tr>
+<tr><td>H5L</td><td>`</td><td>Z</td><td>X</td><td>C</td><td>V</td><td>B</td><td>N</td><td>M</td></tr>
+<tr><td>H1R</td><td>Right</td><td>Pause</td><td>PtrSc</td><td>NumLock</td><td>ScrollLock</td><td>F10</td><td>F9</td><td>F8</td></tr>
+<tr><td>H2R</td><td>Down</td><td>Home</td><td></td><td>Backspace</td><td>=</td><td>-</td><td>0</td><td>9</td></tr>
+<tr><td>H3R</td><td>Up</td><td>PageUp</td><td></td><td>]</td><td>[</td><td>P</td><td>O</td><td>I</td></tr>
+<tr><td>H4R</td><td>Left</td><td>PageDown</td><td>Enter</td><td>\</td><td>&quot;</td><td>;</td><td>L</td><td>K</td></tr>
+<tr><td>H5R</td><td>Space</td><td>End</td><td></td><td>Ins</td><td>Del</td><td>?</td><td>&gt;</td><td>&lt;</td></tr>
+<tr><td>SPEC1</td><td>Lalt</td><td></td><td></td><td></td><td></td><td>Rshift</td><td></td><td></td></tr>
+<tr><td>SPEC2</td><td>Lshift</td><td></td><td></td><td></td><td></td><td>Ralt</td><td></td><td></td></tr>
+<tr><td>SPEC3</td><td>Ctrl</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>SPEC4</td><td>Fn</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+<h1><a href="#丝印" name="丝印" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;丝印</h1>
+<p><img src="/raw/BLE4100/silk.png" alt="丝印层" /></p>
+<h1><a href="#线路图" name="线路图" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;线路图</h1>
+<p><a href="/raw/BLE4100/ble4100-nrf.pdf">ble4100-nrf.pdf</a></p>
+<p><em>Last Update: Sun Feb 26 2017 09:44:06 GMT+0800 (中国标准时间)</em>  <a href="/raw%5CBLE4100%5Cadvanced.md">Source File</a></p>
 </div>
 <div class="row">
 </div>
