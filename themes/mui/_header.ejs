@@ -23,7 +23,7 @@
     <base target="_blank">
 </head>
 <body>
-<header id="header">
+<header id="header" class="mui--z2">
     <div class="mui-appbar mui--appbar-line-height">
         <div class="mui-container-fluid">
             <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
@@ -45,3 +45,15 @@
         </div>
     </div>
 </header>
+<div id="sidedrawer" class="mui--no-user-select">
+    <div id="sidedrawer-brand" class="mui--appbar-line-height">
+        <a href="<%= config['base'].path %>" class="mui--text-title" target="_self"><%= config['wiki'].title %></a>
+    </div>
+    <div class="mui-divider"></div>
+    <ul>
+        <% if (page && page.title) { %>
+        <%- include _side_index %>
+        <% } %>
+        <%- include _sidebar %>
+    </ul> 
+</div>

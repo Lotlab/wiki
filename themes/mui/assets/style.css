@@ -107,15 +107,21 @@ buttons {
  * Header CSS
  */
 .sidedrawer-toggle {
-  color: #fff;
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 20px;
-  margin-right: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 31px;
+    margin-right: 18px;
+    border-radius: 50%;
+    width: 31px;
+    text-align: center;
+    display: inline-block;
+    height: 31px;
 }
 
 .sidedrawer-toggle:hover {
   color: #fff;
+  background-color:rgba(0,0,0,.27);
   text-decoration: none;
 }
 
@@ -128,6 +134,8 @@ buttons {
     font-size: 20px;
     margin-left: 0.5em;
 }
+
+
 
 
 /**
@@ -162,6 +170,11 @@ buttons {
  */
 #sidedrawer-brand {
   padding-left: 20px;
+}
+
+#sidedrawer-brand .mui--text-title
+{
+    color: rgba(0,0,0,0.6);
 }
 
 #sidedrawer ul {
@@ -247,6 +260,16 @@ code {
 
 small {
     font-size: 85%;
+}
+
+blockquote {
+    margin: 0.8em 0;
+    border-left: 4px solid #dddddd;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
 }
 
 .label {
