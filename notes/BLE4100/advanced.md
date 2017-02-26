@@ -32,8 +32,8 @@ time: 1488070953783
 
 # 丝印
 
-![丝印层](silk.png)
+![丝印层](/raw/BLE4100/silk.png)
 
 # 线路图
 
-[ble4100-nrf.pdf](ble4100-nrf.pdf)
+[ble4100-nrf.pdf](/raw/BLE4100/ble4100-nrf.pdf)
