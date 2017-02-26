@@ -32,9 +32,9 @@
             <% if (page && page.title) { %>
                 <span class="appbar-brand mui--hidden-xs"><%= page.category %></span>
                 <% if (page.link.lastIndexOf('/') !== 0) { %>
-                    <% var prelink = page.link.split('/')[1] %>
+                    <% var prelink = page.link.replace('\\','').split('/')[0] %>
                      <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
-                    <span class="appbar-brand mui--hidden-xs"><%= prelink %></span>
+                    <a href="../" class="appbar-brand mui--hidden-xs"><%= prelink %></a>
                 <% } %>
                 <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
                 <span class="appbar-brand mui--hidden-xs"><%= page.title %></span>
