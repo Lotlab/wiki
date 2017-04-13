@@ -116,6 +116,7 @@
 <li>使用 Fn + Pause Break 键可以使键盘休眠</li>
 <li>休眠状态下按下 Esc 键可以唤醒键盘</li>
 <li>唤醒键盘时按住 Fn 键可以进入 DFU 模式</li>
+<li>唤醒键盘时按住 2 键可以清除蓝牙配对信息</li>
 </ul>
 <h2><a href="#电量显示" name="电量显示" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;电量显示</h2>
 <p>在部分安卓手机上，蓝牙图标旁会有键盘电量指示。</p>
@@ -136,6 +137,7 @@
 <li>点击右上角的 DFU 按钮，选择第一个 Distribution packet(ZIP)，然后选择升级包</li>
 <li>静静的等待升级完毕即可</li>
 </ol>
+<p>刷新完成后可能要手工在手机或电脑上取消配对并重新配对才可继续使用</p>
 <h1><a href="#安装手册" name="安装手册" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;安装手册</h1>
 <h2><a href="#焊接教程" name="焊接教程" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;焊接教程</h2>
 <table>
@@ -171,23 +173,16 @@
 <li>将新的主控板安装到原来的位置，将塑料片放回去（但不要放铜箔），盖上上面板，拧好螺丝。</li>
 <li>安装完成！</li>
 </ol>
-<h1><a href="#高级应用" name="高级应用" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;高级应用</h1>
-<p>你可以查看<a href="advanced">高级</a>章节的内容来获取更多有用的信息</p>
-<h2><a href="#修改/编译程序" name="修改/编译程序" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;修改 / 编译程序</h2>
-<p>我相信你肯定有基本知识来修改程序，我就不说那么多了。</p>
-<ul>
-<li>main.c 70 行修改蓝牙名称</li>
-<li>keymap.h 修改按键配列（是的，可以自定义！）
-<ul>
-<li>FN15 是休眠按键</li>
-<li>唤醒按键要修改 wakeup_button_row_index</li>
-</ul></li>
-<li>使用 Keil uVision 5 来编译程序</li>
-</ul>
-<p>使用 nrfutil<sup class="footnote-ref"><a href="#fn3" id="fnref3" target="_self">[3]</a></sup>生成升级包（0.5.2 版本）</p>
-<pre><code class="language-bash">nrfutil dfu genpkg --application nrf51422_xxac_s110.hex upgrade.zip
-</code></pre>
 <h1><a href="#固件发布" name="固件发布" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;固件发布</h1>
+<h3><a href="#1.0.3" name="1.0.3" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;1.0.3</h3>
+<ul>
+<li>发布日期：2017 年 4 月 13 日</li>
+<li>下载连接：https://eyun.baidu.com/s/3hsMH7Ha</li>
+<li>变更日志：
+<ul>
+<li>修正 Windows 下断开后重新连接键盘不可用的问题</li>
+</ul></li>
+</ul>
 <h3><a href="#1.0.2" name="1.0.2" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;1.0.2</h3>
 <ul>
 <li>发布日期：2017 年 3 月 20 日</li>
@@ -219,7 +214,23 @@
 <li>支持 DFU 升级</li>
 </ul></li>
 </ul>
-<p><em>Last Update: Tue Mar 28 2017 12:05:26 GMT+0800 (中国标准时间)</em>  <a href="/raw%5Cble4100.md">Source File</a></p>
+<h1><a href="#高级应用" name="高级应用" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;高级应用</h1>
+<p>你可以查看<a href="advanced">高级</a>章节的内容来获取更多有用的信息</p>
+<h2><a href="#修改/编译程序" name="修改/编译程序" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;修改 / 编译程序</h2>
+<p>我相信你肯定有基本知识来修改程序，我就不说那么多了。</p>
+<ul>
+<li>main.c 70 行修改蓝牙名称</li>
+<li>keymap.h 修改按键配列（是的，可以自定义！）
+<ul>
+<li>FN15 是休眠按键</li>
+<li>唤醒按键要修改 wakeup_button_row_index</li>
+</ul></li>
+<li>使用 Keil uVision 5 来编译程序</li>
+</ul>
+<p>使用 nrfutil<sup class="footnote-ref"><a href="#fn3" id="fnref3" target="_self">[3]</a></sup>生成升级包（0.5.2 版本）</p>
+<pre><code class="language-bash">nrfutil dfu genpkg --application nrf51422_xxac_s110.hex upgrade.zip
+</code></pre>
+<p><em>Last Update: Thu Apr 13 2017 18:38:17 GMT+0800 (中国标准时间)</em>  <a href="/raw%5Cble4100.md">Source File</a></p>
 <hr class="footnotes-sep" />
 <section class="footnotes">
 <ol class="footnotes-list">
