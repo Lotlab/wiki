@@ -19,7 +19,13 @@
     <script src="<%= config['base'].path %>assets/highlight.min.js"></script>
     <script src="<%= config['base'].path %>assets/mui.min.js"></script>
     <script src="<%= config['base'].path %>assets/jquery-3.1.1.min.js"></script>
-    
+<% if (page && page.title && config['custom'].disqus) { %>
+    <style>
+        #yun-tie-sdk-wrap {
+            background-color: transparent !important;
+        }
+    </style>
+<% } %>
     <base target="_blank">
 </head>
 <body>
