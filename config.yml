@@ -31,7 +31,7 @@ dir:
 # Custom
 custom:
   time: YYYY-MM-DD HH:mm:ss
-  disqus:     # your disqus short link, leave blank to disable comment
+  disqus: enable     # your disqus short link, leave blank to disable comment
   category: 未分类    # default category when creating new page
   markdown:
     html: true    # Enable HTML tags in source
