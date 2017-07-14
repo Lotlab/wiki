@@ -42,6 +42,19 @@
     <div class="mui-divider"></div>
     <ul>
                 <li>
+    <strong>站务</strong>
+    <ul>
+                <li>
+            <a href="/page/contribute/" target="_self">
+                                贡献指南                            </a>
+        </li>
+                <li>
+            <a href="/page/terms/" target="_self">
+                                协议                            </a>
+        </li>
+            </ul>
+</li>
+<li>
     <strong>教程</strong>
     <ul>
                 <li>
@@ -59,19 +72,6 @@
                 <li>
             <a href="/page\ble4100/advanced/" target="_self">
                                                 ble4100 / BLE4100高级资源                            </a>
-        </li>
-            </ul>
-</li>
-<li>
-    <strong>站务</strong>
-    <ul>
-                <li>
-            <a href="/page/contribute/" target="_self">
-                                贡献指南                            </a>
-        </li>
-                <li>
-            <a href="/page/terms/" target="_self">
-                                协议                            </a>
         </li>
             </ul>
 </li>
@@ -267,17 +267,19 @@
 </section>
 </div>
 <div class="row">
-<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<div id="comment-wrapper" class="cloud-tie-wrapper"></div>
+<link rel="stylesheet" href="/assets/comment.css">
+<script src="/assets/gitment.browser.js"></script>
 <script>
-var cloudTieConfig = {
-  url: document.location.href, 
-  sourceId: "",
-  productKey: "0148287ad3b6468ea53f7b3714849edb",
-  target: "cloud-tie-wrapper"
-};
-var yunManualLoad = true;
-Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+var gitment = new Gitment({
+  owner: 'Lotlab',
+  repo: 'comment',
+  oauth: {
+    client_id: 'b5d748dbd52a7d8b1b27',
+    client_secret: '86046f9aec3849f3444081ccfd57cb790908a1c5',
+  },
+})
+gitment.render('comment-wrapper')
 </script>
 </div>
 </div>
