@@ -42,19 +42,6 @@
     <div class="mui-divider"></div>
     <ul>
                 <li>
-    <strong>站务</strong>
-    <ul>
-                <li>
-            <a href="/page/contribute/" target="_self">
-                                贡献指南                            </a>
-        </li>
-                <li>
-            <a href="/page/terms/" target="_self">
-                                协议                            </a>
-        </li>
-            </ul>
-</li>
-<li>
     <strong>教程</strong>
     <ul>
                 <li>
@@ -72,6 +59,19 @@
                 <li>
             <a href="/page\ble4100/advanced/" target="_self">
                                                 ble4100 / BLE4100高级资源                            </a>
+        </li>
+            </ul>
+</li>
+<li>
+    <strong>站务</strong>
+    <ul>
+                <li>
+            <a href="/page/contribute/" target="_self">
+                                贡献指南                            </a>
+        </li>
+                <li>
+            <a href="/page/terms/" target="_self">
+                                协议                            </a>
         </li>
             </ul>
 </li>
@@ -131,7 +131,8 @@ CSCRIPT OSPP.VBS /DSTATUS
 <script src="/assets/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  owner: 'Lotlab',
+  id: '', // 可选。默认为 location.href
+  owner: 'jiangming1399',
   repo: 'comment',
   oauth: {
     client_id: 'b5d748dbd52a7d8b1b27',
