@@ -21,7 +21,7 @@ LCD2USB可以连接电脑作为状态显示器使用。
 
 连上电脑后，电脑会提示发现了一个新设备“LCD2USB Interface”。下载[zadig](http://zadig.akeo.ie/downloads/zadig.exe)并打开，点击“Options”，勾上“List All Devices”选项，然后在下面的下拉框中选择设备“LCD2USB Interface”。将Driver右边的框由“WinUSB”改为“libusb-win32”，点击“Replace Driver”，驱动即安装完成。
 
-![](lcd2usb/zadig.png)
+![](../raw/lcd2usb/zadig.png)
 
 ### 使用 AIDA64 作为显示控制器
 
@@ -35,7 +35,7 @@ LCD Smartie是一个专门用于LCD显示的工具。你可以下载[官方版�
 
 运行LCDSmartie，点击左下角的Setup，在“Display Settings”里面点击“Plugins”，将“Display Plugin”改为“LCD2USB.dll”（或“lcd2usbv0.dll”）；然后选择“Screen”，将“LCD Size”改为“16x2”。点击OK后关闭软件再重新打开，即可看到屏幕上正常显示了。
 
-![](lcd2usb/01.png)
+![](../raw/lcd2usb/01.png)
 
 ## 时钟模式
 

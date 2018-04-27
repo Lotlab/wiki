@@ -121,14 +121,14 @@
 <p>LCD2USB 可以连接电脑作为状态显示器使用。</p>
 <h3><a href="#安装驱动" name="安装驱动" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;安装驱动</h3>
 <p>连上电脑后，电脑会提示发现了一个新设备 “LCD2USB Interface”。下载<a href="http://zadig.akeo.ie/downloads/zadig.exe">zadig</a>并打开，点击 “Options”，勾上“List All Devices” 选项，然后在下面的下拉框中选择设备 “LCD2USB Interface”。将 Driver 右边的框由“WinUSB” 改为“libusb-win32”，点击“Replace Driver”，驱动即安装完成。</p>
-<p><img src="lcd2usb/zadig.png" alt="" /></p>
+<p><img src="../raw/lcd2usb/zadig.png" alt="" /></p>
 <h3><a href="#使用_AIDA64_作为显示控制器" name="使用_AIDA64_作为显示控制器" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;使用 AIDA64 作为显示控制器</h3>
 <p>AIDA64 是一款系统信息查看工具，它支持将系统信息输出至 LCD2USB 设备。如果你不想使用 AIDA64，可以看下面的章节。</p>
 <p>打开 AIDA64，选择 “文件 - 设置”，在左边展开 “硬件监视工具”，选择 &quot;LCD&quot;。在右边的面板中点击 “LCD2USB”，勾上 “启用 LCD2USB LCD 支持”，将 LCD 类型改为 16x2。接着，你可以在左边的 &quot;LCD 选项&quot; 中更改你要显示的内容。</p>
 <h3><a href="#使用_LCD_Smartie_作为显示控制器" name="使用_LCD_Smartie_作为显示控制器" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;使用 LCD Smartie 作为显示控制器</h3>
 <p>LCD Smartie 是一个专门用于 LCD 显示的工具。你可以下载<a href="https://sourceforge.net/projects/lcdsmartie/files/lcdsmartie/5.4.2.92%252B%252B/LCD_Smartie_v5.4.2.92%252B%252B.zip/download">官方版本</a>亦或者是去下载汉化版本。下载完成后解压，检查 &quot;displays&quot; 文件夹里面是否含有 &quot;lcd2usb.dll&quot;。如果没有，请下载<a href="https://github.com/harbaum/LCD2USB/raw/master/contrib/LCD2USB.dll">LCD2USB.dll</a>并放入 displays 文件夹。</p>
 <p>运行 LCDSmartie，点击左下角的 Setup，在 “Display Settings” 里面点击 “Plugins”，将“Display Plugin” 改为 “LCD2USB.dll”（或“lcd2usbv0.dll”）；然后选择“Screen”，将“LCD Size” 改为“16x2”。点击 OK 后关闭软件再重新打开，即可看到屏幕上正常显示了。</p>
-<p><img src="lcd2usb/01.png" alt="" /></p>
+<p><img src="../raw/lcd2usb/01.png" alt="" /></p>
 <h2><a href="#时钟模式" name="时钟模式" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;时钟模式</h2>
 <p>若不使用 LCD2USB 的软件控制，则默认时钟模式。</p>
 <h3><a href="#时间显示页面" name="时间显示页面" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;时间显示页面</h3>
@@ -161,7 +161,7 @@
 <p>将屏幕模块与控制模块（底板）小心的分开，更换底板上的后备电池。</p>
 </blockquote></li>
 </ul>
-<p><em>Last Update: 2018-04-27 19:16:56</em> <a href="/raw%5Clcd2usb.md">Source File</a></p>
+<p><em>Last Update: 2018-04-27 19:21:40</em> <a href="/raw%5Clcd2usb.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="comment-wrapper" class="cloud-tie-wrapper"></div>
