@@ -48,6 +48,7 @@ custom:
   mathjax: false    # enable MathJax TeX support, you need markdown.html set to true (allow html) to work
   autospacing: true    # use `pangunode` library to add space between CJK and Western characters automatically
   editor: Typora    # auto open your note after command
+  lastupdate: "%n%%n%_最后更新于: %mtime%_ [查看源代码](%sourcepath%)%n%"
 
 # Deployment
 deploy:
@@ -60,3 +61,7 @@ deploy:
     region: us-west-1
     accessKeyId: yourapikey
     accessKeySecret: yourapisecret
+  pushcommand:
+    enabled: false
+    command: /usr/bin/firebase deploy
+
