@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jim Jiang">
+    <meta name="description" content="Lotlab Wiki Site">
+    <title>
+                Lot60-BLE 键盘使用说明 - LotlabWiki            </title>
+    <link href="/assets/mui.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/style.css" rel="stylesheet"/>
+    <link href="/assets/octicons/font/octicons.min.css" rel="stylesheet" />
+    <script src="/assets/highlight.min.js"></script>
+    <script src="/assets/mui.min.js"></script>
+    <script src="/assets/jquery-3.1.1.min.js"></script>
+    <style>
+        #yun-tie-sdk-wrap {
+            background-color: transparent !important;
+        }
+    </style>
+    <base target="_blank">
+</head>
+<body>
+<header id="header" class="mui--z2">
+    <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+
+                            <span class="appbar-brand mui--hidden-xs">教程</span>
+                                <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
+                <span class="appbar-brand mui--hidden-xs">Lot60-BLE 键盘使用说明</span>
+                <span class="mui--text-title appbar-brand mui--visible-xs-inline-block">LotlabWiki</span>
+                    </div>
+    </div>
+</header>
+<div id="sidedrawer" class="mui--no-user-select">
+    <div id="sidedrawer-brand" class="mui--appbar-line-height">
+        <a href="/" class="mui--text-title" target="_self">LotlabWiki</a>
+    </div>
+    <div class="mui-divider"></div>
+    <ul>
+                <li>
+    <strong>教程</strong>
+    <ul>
+                <li>
+            <a href="/page/ble4100/" target="_self">
+                                BLE4100套件使用说明                            </a>
+        </li>
+                <li>
+            <a href="/page/gh60-related/" target="_self">
+                                GH60相关                            </a>
+        </li>
+                <li>
+            <a href="/page/kms-activation/" target="_self">
+                                KMS激活                            </a>
+        </li>
+                <li>
+            <a href="/page/lot60-ble/" target="_self">
+                                Lot60-BLE 键盘使用说明                            </a>
+        </li>
+                <li>
+            <a href="/page/lcd2usb/" target="_self">
+                                LCD2USB使用说明                            </a>
+        </li>
+                <li>
+            <a href="/page\ble4100/advanced/" target="_self">
+                                                ble4100 / BLE4100高级资源                            </a>
+        </li>
+            </ul>
+</li>
+<li>
+    <strong>站务</strong>
+    <ul>
+                <li>
+            <a href="/page/contribute/" target="_self">
+                                贡献指南                            </a>
+        </li>
+                <li>
+            <a href="/page/terms/" target="_self">
+                                协议                            </a>
+        </li>
+            </ul>
+</li>
+<li>
+    <strong>未分类</strong>
+    <ul>
+                <li>
+            <a href="/page/helloworld/" target="_self">
+                                你好，世界                            </a>
+        </li>
+            </ul>
+</li>
+                <li>
+    <strong>其他</strong>
+    <ul>
+        <li><a href="https://github.com/Lotlab/wiki">Github</a></li>
+        <li><a href="/page/terms" target="_self">网站协议</a></li>
+        <li><a href="/page/contribute" target="_self">贡献内容</a></li>
+                <li><a href="/changelog/">修改日志</a></li>
+            </ul>
+</li>
+    </ul> 
+</div><div id="content-wrapper">
+<!-- Main content goes here -->
+<div class="mui--appbar-height"></div>
+<div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+<br>
+<h1>Lot60-BLE 键盘使用说明</h1>
+<div class="row">
+<span class="label label-primary mui--pull-right">教程</span>
+</div>
+<div class="row">
+<h1><a href="#概述" name="概述" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;概述</h1>
+<p>Lot60-BLE 是一款低功耗蓝牙双模键盘。其固件底层使用了 TMK 作为键盘功能核心，并实现了 95% 的 TMK 功能<sup class="footnote-ref"><a href="#fn1" id="fnref1" target="_self">[1]</a></sup>。其采用了与 GH60 完全一致的按键阵列，使其配列文件与 GH60 几乎完全兼容。</p>
+<h2><a href="#LED_一览" name="LED_一览" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;LED 一览</h2>
+<p>Lot60-BLE 包含了 1 个 CapsLock LED，和一个 RGB LED 状态指示灯（或 3 个单色 LED 状态指示灯）。</p>
+<p>RGB 状态指示灯位于 Esc 按键处，使用贴片的 LED 灯，故需要使用 RGB 轴。</p>
+<p>如果不想使用 RGB 轴，可以放弃这个 LED 灯，转而使用位于按键 1, 2, 3 处的 LED 指示灯。</p>
+<h1><a href="#使用手册" name="使用手册" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;使用手册</h1>
+<h2><a href="#快速入门" name="快速入门" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;快速入门</h2>
+<ol>
+<li>（如果购买的是散件）按照线路板上的标识，将两个芯片焊接到线路板上，并焊接 USB 口。</li>
+<li>使用 USB 线连接到你的电脑。如果电脑能够成功的识别到名为 “Lot60-BLE” 的设备，说明 USB 芯片工作正常。这时用镊子尝试短路任意一个按键，观察是否有按键输入。若有按键输入，则说明整块键盘工作正常。</li>
+<li>如果你想使用 3 个状态指示灯而不是一个 RGB 状态指示灯，那么请拆除正面的 RGB 指示灯。</li>
+<li>组装你的键盘。注意要先装定位板，再装轴哦~</li>
+<li>将电池连接到键盘背面的电池接口。注意正负极不要装反，否则可能会导致键盘烧毁。</li>
+<li>好了，你的 Lot60-BLE 键盘已经组装完成了。插上 USB 尝试一下吧！</li>
+</ol>
+<h2><a href="#默认配列" name="默认配列" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;默认配列</h2>
+<p><img src="/raw/lot60-ble/keymap.png" alt="默认配列图" /></p>
+<h2><a href="#操作说明" name="操作说明" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;操作说明</h2>
+<h3><a href="#开机" name="开机" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;开机</h3>
+<p>同时按下 Space(空格)+E 大约 1 秒，直到 LED 指示灯亮起即可开机。</p>
+<p>插入 USB 的同时键盘会自动开机。</p>
+<h3><a href="#蓝牙连接设备" name="蓝牙连接设备" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;蓝牙连接设备</h3>
+<p>在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。你会见到一个叫做<code>BLE60-Rev.E_XXXXXX</code>或<code>Lot60-BLE_XXXXXX</code>的设备，使用设备连接，并按设备提示在键盘上输入配对码即可。</p>
+<h3><a href="#USB_连接设备" name="USB_连接设备" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;USB 连接设备</h3>
+<p>直接将 USB 线缆插入到键盘的 USB 接口，键盘即自动切换至 USB 模式。这时候就可以使用 USB 模式输入了。</p>
+<h3><a href="#USB/蓝牙状态切换" name="USB/蓝牙状态切换" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;USB / 蓝牙状态切换</h3>
+<p>在默认配列下，按下 Fn0+Tab，即可在 USB 和蓝牙两种模式下切换。</p>
+<h3><a href="#省电模式" name="省电模式" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;省电模式</h3>
+<p>在没有接入 USB 电源的情况下，键盘处于省电模式。</p>
+<p>在省电模式下，所有的指示灯仅在变化后亮起 5 秒，然后熄灭。键盘在无操作 15 秒后转入慢速扫描模式，无操作 600 秒后自动睡眠。</p>
+<p>自动睡眠后，按下键盘的任意按键即可再次唤醒。</p>
+<h3><a href="#电量显示" name="电量显示" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;电量显示</h3>
+<p>在新版本的 iOS、安卓和 Windows 上，应该能够正确的显示蓝牙设备的电量百分比。</p>
+<p>由于测量方式可能有误差，电量百分比可能无法达到 100% 或者低至 0%，这是正常现象。电量百分比仅供参考。</p>
+<p>对于安卓手机，如果没有正确的显示电量，可以尝试下载 BatON 软件来获取蓝牙设备电量。</p>
+<h3><a href="#RGB_颜色说明" name="RGB_颜色说明" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;RGB 颜色说明</h3>
+<p>注意显示的颜色可能和实际颜色有略微色差</p>
+<ul>
+<li><span style="color: #FFFFFF">■</span>白色：无连接</li>
+<li><span style="color: #66CCFF">■</span>天依蓝：蓝牙已连接</li>
+<li><span style="color: #0099FF">■</span>天蓝色：USB 已连接</li>
+<li><span style="color: #FF8000">■</span>橙色：充电中</li>
+<li><span style="color: #00FF00">■</span>绿色：充电完毕</li>
+<li><span style="color: #FFFF00">■</span>黄色：输入配对密码</li>
+<li><span style="color: #FF0080">■</span>紫红色：配对密码输入完毕</li>
+<li><span style="color: #FF00FF">■</span>紫色：休眠</li>
+</ul>
+<h3><a href="#手动休眠" name="手动休眠" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;手动休眠</h3>
+<p>在默认配列下，按下 Fn0+CapsLock，即可让键盘进入休眠状态。</p>
+<p>手动休眠后，需要手工按下 Space+U 才能再次唤醒。</p>
+<h3><a href="#删除绑定" name="删除绑定" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;删除绑定</h3>
+<p>若想要连接到其他的蓝牙设备，或蓝牙连接不正常，则可尝试删除绑定。</p>
+<p>先手动休眠键盘，然后在开机时按下 Space+E 即可删除绑定。（即在休眠后，按下 Space+U+E 开机）</p>
+<h3><a href="#全键无冲（NKRO）" name="全键无冲（NKRO）" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;全键无冲（NKRO）</h3>
+<p>此键盘支持 NKRO（全键无冲）模式，但默认不启用全键无冲。全键无冲仅在 USB 模式下才可使用。</p>
+<p>在键盘开机时按下 Space+N（即在休眠后，按下 Space+U+N 开机），即可切换全键无冲的状态。</p>
+<h3><a href="#其他功能键（BootMagic）" name="其他功能键（BootMagic）" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;其他功能键（BootMagic）</h3>
+<p>以下是所有的开机时功能键的列表，你可以在开机时同时按下 Space + 下面的键来实现对应的功能。</p>
+<p>需要注意的是，下面的按键全部都指的是当前配列的第 0 层按键。如果你更改了配列，那么这些按键的位置可能会发生变化。</p>
+<ul>
+<li>E: 擦除蓝牙绑定</li>
+<li>Esc：跳过 Bootmagic</li>
+<li>Backspace：重置 eeconfig</li>
+<li>B: 进入 Bootloader</li>
+<li>D：切换 Debug 模式
+<ul>
+<li>X：切换阵列 Debug 模式</li>
+<li>K：切换键盘 Debug 模式</li>
+<li>M：切换鼠标 Debug 模式</li>
+</ul></li>
+<li>LCtrl：交换 capslock 和左 ctrl</li>
+<li>CapsLock: 将 capslock 用作 ctrl</li>
+<li>LAlt：交换 LAlt 和 LGUI</li>
+<li>RAlt: 交换 RAlt 和 RGUI</li>
+<li>LGUI：禁用 GUI 按钮</li>
+<li>`(1 左边那个, Grave): 交换 Esc 和 Grave</li>
+<li>: 交换 \ 和 Backspace</li>
+<li>N：切换 NKRO 状态</li>
+<li>0~7：设置默认层为对应数字的层</li>
+</ul>
+<h3><a href="#刷配列" name="刷配列" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;刷配列</h3>
+<p>在这里，我假设你已经熟悉如何使用 <a href="https://www.keyboard-layout-editor.com/">Keyboard layout editor</a> 和 <a href="https://tools.lotlab.org/tkg/">TMK Keymap Generator</a> 来创建适用于键盘的配列了。</p>
+<p>因这个键盘含有额外的两项功能键（即切换设备和睡眠），故通常的 TKG 无法满足要求。请使用上面给出的链接中的 TKG，里面包含了这块自定义键盘的额外两颗功能按键。</p>
+<p>在 TKG 中配置好配列并下载后，将键盘使用 USB 连接到电脑。打开 <a href="https://github.com/Lotlab/nrf52-keyboard/releases">配列下载工具 (KeymapDownloader.exe)</a> ，选择你的键盘和配列，点击下载，即可将新的配列下载到键盘中。</p>
+<h3><a href="#固件更新" name="固件更新" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;固件更新</h3>
+<p>你可能需要升级固件来获得新功能或者修复已有的 BUG，升级包可以在页面最下方的固件发布处找到。</p>
+<blockquote>
+<p><strong>刷入不正确的固件可能会使得你的键盘损坏！</strong></p>
+<p>请在升级前确认升级包是由可信的人员提供的。</p>
+<p>升级包可能包含程序 (Application)、蓝牙栈(Soft Device) 和引导程序(Boot Loader)，刷入错误的蓝牙栈和引导程序将会使 DFU 功能完全不可用。在这种情况下，您必须使用 SWD 接口烧录正确的蓝牙栈、引导程序和程序，才能使键盘恢复正常工作。</p>
+<p>如果您刷入了错误的程序 (Application) 无法进入 DFU 模式，您可以将电池卸下，按住 Fn 键再接上电池强制进入 DFU 模式。</p>
+</blockquote>
+<ol>
+<li>使用手机下载并打开 nRF Connect<sup class="footnote-ref"><a href="#fn2" id="fnref2" target="_self">[2]</a></sup> 程序</li>
+<li>点击 nRF Connect 右上角的 Scan 扫描蓝牙设备，这时候应该能够见到你的蓝牙键盘</li>
+<li>点击 CONNCET 按钮，等待连接成功</li>
+<li>点击右上角的 DFU 按钮，选择第一个 Distribution packet(ZIP)，然后选择升级包</li>
+<li>静静的等待升级完毕即可</li>
+</ol>
+<p>如果在点击 DFU 后出现问题，无法继续刷新。可以尝试以下步骤</p>
+<ol>
+<li>休眠键盘</li>
+<li>在开机时按下 Space+B，强制进入 DFU 模式。</li>
+<li>点击 nRF Connect 右上角的 Scan 扫描蓝牙设备，这时应该会找到一个叫做 DfuTarg 的蓝牙设备</li>
+<li>按照上面的 4-6 步再做一遍。</li>
+</ol>
+<p>刷新完成后可能要手工在手机或电脑上取消配对并重新配对才可继续使用</p>
+<h1><a href="#常见问题" name="常见问题" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;常见问题</h1>
+<h2><a href="#Q&A" name="Q&A" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Q&amp;A</h2>
+<h2><a href="#故障排除" name="故障排除" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;故障排除</h2>
+<h3><a href="#我的键盘无法开机了" name="我的键盘无法开机了" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;我的键盘无法开机了</h3>
+<p>尝试使用 USB 接入电脑，看看是否能够正常工作？如果可以的话，可能是电池没电了，需要充电。</p>
+<h3><a href="#按键部分（全部）混乱了" name="按键部分（全部）混乱了" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;按键部分（全部）混乱了</h3>
+<p>可能是你刷入了错误的配列，尝试使用配列更新工具重新更新试试？</p>
+<p>亦或者是你选择了不正确的默认层。先休眠键盘（如果没法休眠，那就放着等 600 秒，或者拔电池），然后按 Space+BackSpace 重置默认层的设定。</p>
+<h3><a href="#Windows_下出现“驱动程序错误”" name="Windows_下出现“驱动程序错误”" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Windows 下出现 “驱动程序错误”</h3>
+<p>请在设备管理器中删除这个设备，取消绑定，重启电脑，并在键盘上删除绑定，然后重新连接试试。</p>
+<h3><a href="#有时候出现卡键的问题" name="有时候出现卡键的问题" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;有时候出现卡键的问题</h3>
+<p>这是蓝牙信号不好的原因。请尝试将键盘放到蓝牙主机旁边，并远离 2.4G 路由器和金属表面。尽量不要使用金属外壳，否则信号很可能会变得很差。</p>
+<p><em>最后更新于: 2019-08-30 13:16:19</em> <a href="/raw%5Clot60-ble.md">查看源代码</a></p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1"  class="footnote-item"><p>没用实现的 TMK 功能包括：Command Key(固件空间不够), 鼠标键 (EP 不够)，以及 LED 灯效 (这个键盘没灯) <a href="#fnref1" class="footnote-backref" target="_self">↩</a></p>
+</li>
+<li id="fn2"  class="footnote-item"><p>可以到 <a href="http://www.nordicsemi.com/eng/Products/Nordic-mobile-Apps/nRF-Connect-for-mobile-previously-called-nRF-Master-Control-Panel">官方下载页面</a> 或者应用商店下载。支持 IOS 和安卓端。 <a href="#fnref2" class="footnote-backref" target="_self">↩</a></p>
+</li>
+</ol>
+</section>
+</div>
+<div class="row">
+<div id="comment-wrapper" class="cloud-tie-wrapper"></div>
+<link rel="stylesheet" href="/assets/comment.css">
+<script src="/assets/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'Lot60-BLE 键盘使用说明',
+  owner: 'jiangming1399',
+  repo: 'comment',
+  oauth: {
+    client_id: 'b5d748dbd52a7d8b1b27',
+    client_secret: '86046f9aec3849f3444081ccfd57cb790908a1c5',
+  },
+})
+gitment.render('comment-wrapper')
+</script>
+</div>
+</div>
+</div>
+<footer id="footer">
+    <div class="mui-container-fluid">
+        LotlabWiki 正在使用 <a href="https://github.com/phoenixlzx/MinoriWiki" target="_blank">MinoriWiki</a>
+    </div>
+</footer>
+
+<script>
+hljs.initHighlightingOnLoad();
+jQuery(function($) {
+    var $bodyEl = $('body'),
+        $sidedrawerEl = $('#sidedrawer');
+
+
+    function showSidedrawer() {
+        // show overlay
+        var options = {
+            onclose: function() {
+                $sidedrawerEl
+                    .removeClass('active')
+                    .appendTo(document.body);
+            }
+        };
+
+        var $overlayEl = $(mui.overlay('on', options));
+
+        // show element
+        $sidedrawerEl.appendTo($overlayEl);
+        setTimeout(function() {
+            $sidedrawerEl.addClass('active');
+        }, 20);
+    }
+
+
+    function hideSidedrawer() {
+        $bodyEl.toggleClass('hide-sidedrawer');
+    }
+
+
+    $('.js-show-sidedrawer').on('click', showSidedrawer);
+    $('.js-hide-sidedrawer').on('click', hideSidedrawer);
+  
+    var $titleEls = $('strong', $sidedrawerEl);
+
+    $titleEls
+        .next()
+        .hide();
+
+    $titleEls.on('click', function() {
+        $(this).next().slideToggle(200);
+    });
+    
+    //add mui style
+    $("table").addClass("mui-table mui-table--bordered");
+});
+</script>
+
+</body>
+</html>
