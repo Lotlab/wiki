@@ -57,12 +57,12 @@
                                 KMS激活                            </a>
         </li>
                 <li>
-            <a href="/page/lot60-ble/" target="_self">
-                                Lot60-BLE 键盘使用说明                            </a>
-        </li>
-                <li>
             <a href="/page/lcd2usb/" target="_self">
                                 LCD2USB使用说明                            </a>
+        </li>
+                <li>
+            <a href="/page/lot60-ble/" target="_self">
+                                Lot60-BLE 键盘使用说明                            </a>
         </li>
                 <li>
             <a href="/page\ble4100/advanced/" target="_self">
@@ -113,7 +113,7 @@
 </div>
 <div class="row">
 <h1><a href="#概述" name="概述" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;概述</h1>
-<p>Lot60-BLE 是一款低功耗蓝牙双模键盘。其固件底层使用了 TMK 作为键盘功能核心，并实现了 95% 的 TMK 功能<sup class="footnote-ref"><a href="#fn1" id="fnref1" target="_self">[1]</a></sup>。其采用了与 GH60 完全一致的按键阵列，使其配列文件与 GH60 几乎完全兼容。</p>
+<p>Lot60-BLE 是一款低功耗蓝牙双模键盘。其固件底层使用了 TMK 作为键盘功能核心，几乎完全实现了 TMK 功能<sup class="footnote-ref"><a href="#fn1" id="fnref1" target="_self">[1]</a></sup>。其采用了与 GH60 完全一致的按键阵列，使其配列文件与 GH60 几乎完全兼容<sup class="footnote-ref"><a href="#fn2" id="fnref2" target="_self">[2]</a></sup>。</p>
 <h2><a href="#LED_一览" name="LED_一览" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;LED 一览</h2>
 <p>Lot60-BLE 包含了 1 个 CapsLock LED，和一个 RGB LED 状态指示灯（或 3 个单色 LED 状态指示灯）。</p>
 <p>RGB 状态指示灯位于 Esc 按键处，使用贴片的 LED 灯，故需要使用 RGB 轴。</p>
@@ -132,7 +132,7 @@
 <p><img src="/raw/lot60-ble/keymap.png" alt="默认配列图" /></p>
 <h2><a href="#操作说明" name="操作说明" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;操作说明</h2>
 <h3><a href="#开机" name="开机" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;开机</h3>
-<p>同时按下 Space(空格)+E 大约 1 秒，直到 LED 指示灯亮起即可开机。</p>
+<p>同时按下<code>Space(空格)+E</code>，直到 LED 指示灯亮起即可开机。</p>
 <p>插入 USB 的同时键盘会自动开机。</p>
 <h3><a href="#蓝牙连接设备" name="蓝牙连接设备" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;蓝牙连接设备</h3>
 <p>在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。你会见到一个叫做<code>BLE60-Rev.E_XXXXXX</code>或<code>Lot60-BLE_XXXXXX</code>的设备，使用设备连接，并按设备提示在键盘上输入配对码即可。</p>
@@ -143,6 +143,7 @@
 <h3><a href="#省电模式" name="省电模式" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;省电模式</h3>
 <p>在没有接入 USB 电源的情况下，键盘处于省电模式。</p>
 <p>在省电模式下，所有的指示灯仅在变化后亮起 5 秒，然后熄灭。键盘在无操作 15 秒后转入慢速扫描模式，无操作 600 秒后自动睡眠。</p>
+<p>慢速扫描模式下，按键检测将可能略有延迟。在慢速扫描模式下按任意按键即可恢复到快速扫描模式。</p>
 <p>自动睡眠后，按下键盘的任意按键即可再次唤醒。</p>
 <h3><a href="#电量显示" name="电量显示" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;电量显示</h3>
 <p>在新版本的 iOS、安卓和 Windows 上，应该能够正确的显示蓝牙设备的电量百分比。</p>
@@ -162,13 +163,13 @@
 </ul>
 <h3><a href="#手动休眠" name="手动休眠" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;手动休眠</h3>
 <p>在默认配列下，按下 Fn0+CapsLock，即可让键盘进入休眠状态。</p>
-<p>手动休眠后，需要手工按下 Space+U 才能再次唤醒。</p>
+<p>手动休眠后，需要手工按下<code>Space+U</code>才能再次唤醒。</p>
 <h3><a href="#删除绑定" name="删除绑定" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;删除绑定</h3>
 <p>若想要连接到其他的蓝牙设备，或蓝牙连接不正常，则可尝试删除绑定。</p>
-<p>先手动休眠键盘，然后在开机时按下 Space+E 即可删除绑定。（即在休眠后，按下 Space+U+E 开机）</p>
+<p>先手动休眠键盘，然后在开机时按下<code>Space+E</code>即可删除绑定。（即在休眠后，按下 Space+U+E 开机）</p>
 <h3><a href="#全键无冲（NKRO）" name="全键无冲（NKRO）" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;全键无冲（NKRO）</h3>
 <p>此键盘支持 NKRO（全键无冲）模式，但默认不启用全键无冲。全键无冲仅在 USB 模式下才可使用。</p>
-<p>在键盘开机时按下 Space+N（即在休眠后，按下 Space+U+N 开机），即可切换全键无冲的状态。</p>
+<p>在键盘开机时按下<code>Space+N</code>（即在休眠后，按下 Space+U+N 开机），即可切换全键无冲的状态。</p>
 <h3><a href="#其他功能键（BootMagic）" name="其他功能键（BootMagic）" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;其他功能键（BootMagic）</h3>
 <p>以下是所有的开机时功能键的列表，你可以在开机时同时按下 Space + 下面的键来实现对应的功能。</p>
 <p>需要注意的是，下面的按键全部都指的是当前配列的第 0 层按键。如果你更改了配列，那么这些按键的位置可能会发生变化。</p>
@@ -193,10 +194,10 @@
 <li>N：切换 NKRO 状态</li>
 <li>0~7：设置默认层为对应数字的层</li>
 </ul>
-<h3><a href="#刷配列" name="刷配列" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;刷配列</h3>
+<h3><a href="#更改配列" name="更改配列" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;更改配列</h3>
 <p>在这里，我假设你已经熟悉如何使用 <a href="https://www.keyboard-layout-editor.com/">Keyboard layout editor</a> 和 <a href="https://tools.lotlab.org/tkg/">TMK Keymap Generator</a> 来创建适用于键盘的配列了。</p>
 <p>因这个键盘含有额外的两项功能键（即切换设备和睡眠），故通常的 TKG 无法满足要求。请使用上面给出的链接中的 TKG，里面包含了这块自定义键盘的额外两颗功能按键。</p>
-<p>在 TKG 中配置好配列并下载后，将键盘使用 USB 连接到电脑。打开 <a href="https://github.com/Lotlab/nrf52-keyboard/releases">配列下载工具 (KeymapDownloader.exe)</a> ，选择你的键盘和配列，点击下载，即可将新的配列下载到键盘中。</p>
+<p>在 TKG 中配置好配列并点击下载配列，将配列的 eep 文件下载后，将键盘使用 USB 连接到电脑。打开 <a href="https://github.com/Lotlab/nrf52-keyboard/releases">配列下载工具 (KeymapDownloader.exe)</a> ，选择你的键盘和配列，点击下载，即可将新的配列下载到键盘中。</p>
 <h3><a href="#固件更新" name="固件更新" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;固件更新</h3>
 <p>你可能需要升级固件来获得新功能或者修复已有的 BUG，升级包可以在页面最下方的固件发布处找到。</p>
 <blockquote>
@@ -206,7 +207,7 @@
 <p>如果您刷入了错误的程序 (Application) 无法进入 DFU 模式，您可以将电池卸下，按住 Fn 键再接上电池强制进入 DFU 模式。</p>
 </blockquote>
 <ol>
-<li>使用手机下载并打开 nRF Connect<sup class="footnote-ref"><a href="#fn2" id="fnref2" target="_self">[2]</a></sup> 程序</li>
+<li>使用手机下载并打开 nRF Connect<sup class="footnote-ref"><a href="#fn3" id="fnref3" target="_self">[3]</a></sup> 程序</li>
 <li>点击 nRF Connect 右上角的 Scan 扫描蓝牙设备，这时候应该能够见到你的蓝牙键盘</li>
 <li>点击 CONNCET 按钮，等待连接成功</li>
 <li>点击右上角的 DFU 按钮，选择第一个 Distribution packet(ZIP)，然后选择升级包</li>
@@ -215,30 +216,67 @@
 <p>如果在点击 DFU 后出现问题，无法继续刷新。可以尝试以下步骤</p>
 <ol>
 <li>休眠键盘</li>
-<li>在开机时按下 Space+B，强制进入 DFU 模式。</li>
+<li>在开机时按下<code>Space+B</code>，强制进入 DFU 模式。</li>
 <li>点击 nRF Connect 右上角的 Scan 扫描蓝牙设备，这时应该会找到一个叫做 DfuTarg 的蓝牙设备</li>
 <li>按照上面的 4-6 步再做一遍。</li>
 </ol>
 <p>刷新完成后可能要手工在手机或电脑上取消配对并重新配对才可继续使用</p>
 <h1><a href="#常见问题" name="常见问题" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;常见问题</h1>
 <h2><a href="#Q&A" name="Q&A" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Q&amp;A</h2>
+<h3><a href="#键盘的功耗与电池容量的选择" name="键盘的功耗与电池容量的选择" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;键盘的功耗与电池容量的选择</h3>
+<p>此键盘的典型工作功耗为 0.4ma<sup class="footnote-ref"><a href="#fn4" id="fnref4" target="_self">[4]</a></sup>，电池容量与使用时长的关系可以按照以下算法来估计：</p>
+<blockquote>
+<p>t(天) = C(容量, mah) * 2 / n (每日使用时长, h)</p>
+<p>例如，使用 500mah 的电池，每日使用 10 小时的话，键盘约能使用 100 天。</p>
+</blockquote>
+<h3><a href="#信号改善的方法" name="信号改善的方法" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;信号改善的方法</h3>
+<p>蓝牙的信号可能受到多方面因素的影响。你可以尝试以下方法来改善蓝牙信号：</p>
+<ul>
+<li>使用非金属外壳、非金属定位板与非金属桌面</li>
+<li>将键盘和主机尽可能的靠近</li>
+<li>适当降低 2.4GHZ 的 WiFi 的发射功率</li>
+<li>减少空间内其他 WiFi 和蓝牙设备的存在</li>
+<li>不要触摸蓝牙模块的天线位置</li>
+</ul>
+<h3><a href="#是否支持多媒体键" name="是否支持多媒体键" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;是否支持多媒体键</h3>
+<p>支持。</p>
+<p>系统键（关机、休眠、重启）因使用较少未能测试，若无法使用请联系我。</p>
+<h3><a href="#如何判断我的设备是否支持蓝牙4.0" name="如何判断我的设备是否支持蓝牙4.0" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;如何判断我的设备是否支持蓝牙 4.0</h3>
+<p>若您在使用手机。如果您的手机使用的是 Android5.0 及以上系统，或 iOS 7 及以上系统，或 Windows Mobile 10 系统，则应当支持蓝牙 4.0。</p>
+<p>若您在您的计算机上使用 Windows。请查看您的设备管理器，寻找 “蓝牙 LE” 相关字样的设备。建议使用最新版 Windows 以增加蓝牙使用体验。</p>
+<p>MacOS 尚未测试，理论上应该支持。</p>
 <h2><a href="#故障排除" name="故障排除" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;故障排除</h2>
+<h3><a href="#通用故障排除指南" name="通用故障排除指南" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;通用故障排除指南</h3>
+<p>如果你的键盘遇到了无法正常工作的问题，请按下列步骤进行：</p>
+<ol>
+<li>将键盘关机并重新开机。如果遇到了蓝牙方面的问题，则在开机时按下<code>Space+E</code>解除绑定。</li>
+<li>将键盘使用 USB 连接到电脑，观察电脑的新增硬件状态和键盘的工作状态指示灯。若电脑提示发现新硬件，并且指示灯提示工作于 USB 状态的话，则说明主控硬件没有出现问题。</li>
+<li>如果遇到了按键不正常的情况，请将键盘关机。重新开机时，按下<code>Space+BackSpace</code>重置 EEPROM 的设定。</li>
+</ol>
 <h3><a href="#我的键盘无法开机了" name="我的键盘无法开机了" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;我的键盘无法开机了</h3>
 <p>尝试使用 USB 接入电脑，看看是否能够正常工作？如果可以的话，可能是电池没电了，需要充电。</p>
 <h3><a href="#按键部分（全部）混乱了" name="按键部分（全部）混乱了" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;按键部分（全部）混乱了</h3>
 <p>可能是你刷入了错误的配列，尝试使用配列更新工具重新更新试试？</p>
-<p>亦或者是你选择了不正确的默认层。先休眠键盘（如果没法休眠，那就放着等 600 秒，或者拔电池），然后按 Space+BackSpace 重置默认层的设定。</p>
+<p>亦或者是你选择了不正确的默认层。先休眠键盘（如果没法休眠，那就放着等 600 秒，或者拔电池），然后按 <code>Space+BackSpace</code> 重置默认层的设定。</p>
+<h3><a href="#更新配列后无法正常保存配列" name="更新配列后无法正常保存配列" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;更新配列后无法正常保存配列</h3>
+<p>重启后再次更新即可。</p>
+<h3><a href="#更新配列后所有按键失效" name="更新配列后所有按键失效" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;更新配列后所有按键失效</h3>
+<p>使用配列下载工具将自定义配列清空，使用内置的配列试试。</p>
 <h3><a href="#Windows_下出现“驱动程序错误”" name="Windows_下出现“驱动程序错误”" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Windows 下出现 “驱动程序错误”</h3>
 <p>请在设备管理器中删除这个设备，取消绑定，重启电脑，并在键盘上删除绑定，然后重新连接试试。</p>
 <h3><a href="#有时候出现卡键的问题" name="有时候出现卡键的问题" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;有时候出现卡键的问题</h3>
-<p>这是蓝牙信号不好的原因。请尝试将键盘放到蓝牙主机旁边，并远离 2.4G 路由器和金属表面。尽量不要使用金属外壳，否则信号很可能会变得很差。</p>
-<p><em>最后更新于: 2019-08-30 13:16:19</em> <a href="/raw%5Clot60-ble.md">查看源代码</a></p>
+<p>这是蓝牙信号不好的原因。请查看上面的蓝牙信号的改善方法来改善蓝牙信号。</p>
+<p><em>最后更新于: 2019-09-01 22:59:59</em> <a href="/raw%5Clot60-ble.md">查看源代码</a></p>
 <hr class="footnotes-sep" />
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1"  class="footnote-item"><p>没用实现的 TMK 功能包括：Command Key(固件空间不够), 鼠标键 (EP 不够)，以及 LED 灯效 (这个键盘没灯) <a href="#fnref1" class="footnote-backref" target="_self">↩</a></p>
+<li id="fn1"  class="footnote-item"><p>没用实现的 TMK 功能包括：Command Key(固件空间不够), 鼠标键 (EndPoint 不够)，以及 LED 灯效 (这个键盘没灯) <a href="#fnref1" class="footnote-backref" target="_self">↩</a></p>
 </li>
-<li id="fn2"  class="footnote-item"><p>可以到 <a href="http://www.nordicsemi.com/eng/Products/Nordic-mobile-Apps/nRF-Connect-for-mobile-previously-called-nRF-Master-Control-Panel">官方下载页面</a> 或者应用商店下载。支持 IOS 和安卓端。 <a href="#fnref2" class="footnote-backref" target="_self">↩</a></p>
+<li id="fn2"  class="footnote-item"><p>几乎完全兼容：两者格式是一致的，但存在部分 Fn 功能的差异。若直接使用 tmk 的 eep 文件，则会造成休眠和设备切换两颗功能键不可用。 <a href="#fnref2" class="footnote-backref" target="_self">↩</a></p>
+</li>
+<li id="fn3"  class="footnote-item"><p>可以到 <a href="http://www.nordicsemi.com/eng/Products/Nordic-mobile-Apps/nRF-Connect-for-mobile-previously-called-nRF-Master-Control-Panel">官方下载页面</a> 或者应用商店搜索下载。支持 IOS 和安卓端。 <a href="#fnref3" class="footnote-backref" target="_self">↩</a></p>
+</li>
+<li id="fn4"  class="footnote-item"><p>典型功耗为 0.4ma: 使用万用表，在蓝牙连接且无任何灯光的情况下测得。蓝牙搜索和灯光的启用会增加额外的耗电量，不同的无线环境下也有可能造成功耗的增加。此功耗不代表所有工况下的工作电流，仅供参考。 <a href="#fnref4" class="footnote-backref" target="_self">↩</a></p>
 </li>
 </ol>
 </section>
