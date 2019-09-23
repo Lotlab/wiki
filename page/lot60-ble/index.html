@@ -135,7 +135,7 @@
 <p>同时按下<code>Space(空格)+E</code>，直到 LED 指示灯亮起即可开机。</p>
 <p>插入 USB 的同时键盘会自动开机。</p>
 <h3><a href="#蓝牙连接设备" name="蓝牙连接设备" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;蓝牙连接设备</h3>
-<p>在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。你会见到一个叫做<code>BLE60-Rev.E_XXXXXX</code>或<code>Lot60-BLE_XXXXXX</code>的设备，使用设备连接，并按设备提示在键盘上输入配对码即可。</p>
+<p>在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。你会见到一个叫做<code>BLE60-Rev.E_XXXXXX</code>或<code>Lot60.E_XXXXXX</code>的设备，使用设备连接，并按设备提示在键盘上输入配对码即可。</p>
 <h3><a href="#USB_连接设备" name="USB_连接设备" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;USB 连接设备</h3>
 <p>直接将 USB 线缆插入到键盘的 USB 接口，键盘即自动切换至 USB 模式。这时候就可以使用 USB 模式输入了。</p>
 <h3><a href="#USB/蓝牙状态切换" name="USB/蓝牙状态切换" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;USB / 蓝牙状态切换</h3>
@@ -153,7 +153,7 @@
 <p>注意显示的颜色可能和实际颜色有略微色差</p>
 <ul>
 <li><span style="color: #FFFFFF">■</span>白色：无连接</li>
-<li><span style="color: #66CCFF">■</span>天依蓝：蓝牙已连接</li>
+<li><span style="color: #99FFFF">■</span>青色：蓝牙已连接</li>
 <li><span style="color: #0099FF">■</span>天蓝色：USB 已连接</li>
 <li><span style="color: #FF8000">■</span>橙色：充电中</li>
 <li><span style="color: #00FF00">■</span>绿色：充电完毕</li>
@@ -195,7 +195,7 @@
 <li>0~7：设置默认层为对应数字的层</li>
 </ul>
 <h3><a href="#更改配列" name="更改配列" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;更改配列</h3>
-<p>在这里，我假设你已经熟悉如何使用 <a href="https://www.keyboard-layout-editor.com/">Keyboard layout editor</a> 和 <a href="https://tools.lotlab.org/tkg/">TMK Keymap Generator</a> 来创建适用于键盘的配列了。</p>
+<p>在这里，我假设你已经熟悉如何使用 <a href="https://www.keyboard-layout-editor.com/">Keyboard layout editor(KLE)</a> 和 <a href="https://tools.lotlab.org/tkg/">TMK Keymap Generator(TKG)</a> 来创建适用于键盘的配列了。如果你从未使用过这两者，建议参考百度上面的 GH60 配列的相关教程作为参考。</p>
 <p>因这个键盘含有额外的两项功能键（即切换设备和睡眠），故通常的 TKG 无法满足要求。请使用上面给出的链接中的 TKG，里面包含了这块自定义键盘的额外两颗功能按键。</p>
 <p>在 TKG 中配置好配列并点击下载配列，将配列的 eep 文件下载后，将键盘使用 USB 连接到电脑。打开 <a href="https://github.com/Lotlab/nrf52-keyboard/releases">配列下载工具 (KeymapDownloader.exe)</a> ，选择你的键盘和配列，点击下载，即可将新的配列下载到键盘中。</p>
 <h3><a href="#固件更新" name="固件更新" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;固件更新</h3>
@@ -299,7 +299,7 @@
 <ul>
 <li>百度云下载</li>
 </ul>
-<p><em>最后更新于: 2019-09-11 21:23:32</em> <a href="/raw%5Clot60-ble.md">查看源代码</a></p>
+<p><em>最后更新于: 2019-09-23 13:17:45</em> <a href="/raw%5Clot60-ble.md">查看源代码</a></p>
 <hr class="footnotes-sep" />
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -321,20 +321,16 @@
 </section>
 </div>
 <div class="row">
-<div id="comment-wrapper" class="cloud-tie-wrapper"></div>
-<link rel="stylesheet" href="/assets/comment.css">
-<script src="/assets/gitment.browser.js"></script>
+<div id="vcomments" class="cloud-tie-wrapper"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <script>
-var gitment = new Gitment({
-  id: 'Lot60-BLE 键盘使用说明',
-  owner: 'jiangming1399',
-  repo: 'comment',
-  oauth: {
-    client_id: 'b5d748dbd52a7d8b1b27',
-    client_secret: '86046f9aec3849f3444081ccfd57cb790908a1c5',
-  },
+new Valine({
+	el: '#vcomments',
+	appId: 'LxTBCCGY8s9s0U2QVIaudxk1-MdYXbMMI',
+	appKey: 'PdPA1xgzmFdUQqugmfzYamF9',
+	placeholder: '说些什么吧',
+	visitor: true
 })
-gitment.render('comment-wrapper')
 </script>
 </div>
 </div>

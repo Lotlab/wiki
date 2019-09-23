@@ -167,20 +167,16 @@
 <p><em>最后更新于: 2018-04-27 19:28:42</em> <a href="/raw%5Clcd2usb.md">查看源代码</a></p>
 </div>
 <div class="row">
-<div id="comment-wrapper" class="cloud-tie-wrapper"></div>
-<link rel="stylesheet" href="/assets/comment.css">
-<script src="/assets/gitment.browser.js"></script>
+<div id="vcomments" class="cloud-tie-wrapper"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <script>
-var gitment = new Gitment({
-  id: 'LCD2USB使用说明',
-  owner: 'jiangming1399',
-  repo: 'comment',
-  oauth: {
-    client_id: 'b5d748dbd52a7d8b1b27',
-    client_secret: '86046f9aec3849f3444081ccfd57cb790908a1c5',
-  },
+new Valine({
+	el: '#vcomments',
+	appId: 'LxTBCCGY8s9s0U2QVIaudxk1-MdYXbMMI',
+	appKey: 'PdPA1xgzmFdUQqugmfzYamF9',
+	placeholder: '说些什么吧',
+	visitor: true
 })
-gitment.render('comment-wrapper')
 </script>
 </div>
 </div>
