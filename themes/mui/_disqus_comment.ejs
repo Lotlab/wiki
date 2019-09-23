@@ -1,17 +1,13 @@
 <% if (config['custom'].disqus) { %>
-<div id="comment-wrapper" class="cloud-tie-wrapper"></div>
-<link rel="stylesheet" href="<%= config['base'].path %>assets/comment.css">
-<script src="<%= config['base'].path %>assets/gitment.browser.js"></script>
+<div id="vcomments" class="cloud-tie-wrapper"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <script>
-var gitment = new Gitment({
-  id: '<%= page.title %>',
-  owner: 'jiangming1399',
-  repo: 'comment',
-  oauth: {
-    client_id: 'b5d748dbd52a7d8b1b27',
-    client_secret: '86046f9aec3849f3444081ccfd57cb790908a1c5',
-  },
+new Valine({
+	el: '#vcomments',
+	appId: 'LxTBCCGY8s9s0U2QVIaudxk1-MdYXbMMI',
+	appKey: 'PdPA1xgzmFdUQqugmfzYamF9',
+	placeholder: '说些什么吧',
+	visitor: true
 })
-gitment.render('comment-wrapper')
 </script>
 <% } %>
