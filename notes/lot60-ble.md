@@ -38,7 +38,7 @@ RGB 状态指示灯位于Esc按键处，使用贴片的LED灯，故需要使用R
 
 ### 蓝牙连接设备
 
-在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。你会见到一个叫做`BLE60-Rev.E_XXXXXX`或`Lot60-BLE_XXXXXX`的设备，使用设备连接，并按设备提示在键盘上输入配对码即可。
+在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。你会见到一个叫做`BLE60-Rev.E_XXXXXX`或`Lot60.E_XXXXXX`的设备，使用设备连接，并按设备提示在键盘上输入配对码即可。
 
 ### USB 连接设备
 
@@ -71,7 +71,7 @@ RGB 状态指示灯位于Esc按键处，使用贴片的LED灯，故需要使用R
 注意显示的颜色可能和实际颜色有略微色差
 
 - <span style="color: #FFFFFF">■</span>白色：无连接
-- <span style="color: #66CCFF">■</span>天依蓝：蓝牙已连接
+- <span style="color: #99FFFF">■</span>青色：蓝牙已连接
 - <span style="color: #0099FF">■</span>天蓝色：USB已连接
 - <span style="color: #FF8000">■</span>橙色：充电中
 - <span style="color: #00FF00">■</span>绿色：充电完毕
@@ -123,7 +123,7 @@ RGB 状态指示灯位于Esc按键处，使用贴片的LED灯，故需要使用R
 
 ### 更改配列
 
-在这里，我假设你已经熟悉如何使用 [Keyboard layout editor](https://www.keyboard-layout-editor.com/) 和 [TMK Keymap Generator](https://tools.lotlab.org/tkg/) 来创建适用于键盘的配列了。
+在这里，我假设你已经熟悉如何使用 [Keyboard layout editor(KLE)](https://www.keyboard-layout-editor.com/) 和 [TMK Keymap Generator(TKG)](https://tools.lotlab.org/tkg/) 来创建适用于键盘的配列了。如果你从未使用过这两者，建议参考百度上面的GH60配列的相关教程作为参考。
 
 因这个键盘含有额外的两项功能键（即切换设备和睡眠），故通常的TKG无法满足要求。请使用上面给出的链接中的TKG，里面包含了这块自定义键盘的额外两颗功能按键。
 
@@ -272,12 +272,10 @@ MacOS尚未测试，理论上应该支持。
 
 
 
-
 [^1]: 没用实现的TMK功能包括：Command Key(固件空间不够), 鼠标键(EndPoint不够)，以及LED灯效(这个键盘没灯)
 [^2]: 可以到 [官方下载页面](http://www.nordicsemi.com/eng/Products/Nordic-mobile-Apps/nRF-Connect-for-mobile-previously-called-nRF-Master-Control-Panel) 或者应用商店搜索下载。支持IOS和安卓端。
 [^3]: 几乎完全兼容：两者格式是一致的，但存在部分Fn功能的差异。若直接使用tmk的eep文件，则会造成休眠和设备切换两颗功能键不可用。
 [^4]: 典型功耗为0.4ma: 使用万用表，在蓝牙连接且无任何灯光的情况下测得。蓝牙搜索和灯光的启用会增加额外的耗电量，不同的无线环境下也有可能造成功耗的增加。此功耗不代表所有工况下的工作电流，仅供参考。
-
 [^5]: 可以使用[官方的固件更新工具](http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html)。若你在使用Linux，则可以使用三方的[WCHISP](https://github.com/rgwan/librech551)来更新。
 [^6]: 部分批次可能使用的是CH554，若无法识别设备，则可尝试更改为CH554进行烧录。
 [^7]: K1按钮位于键盘背面的下方偏右位置，即在下方左ALT键的背面附近。若没有焊接此按钮，也可以使用镊子或其他导电的东西短接K1的上下两个脚，用来模拟按钮按下。
