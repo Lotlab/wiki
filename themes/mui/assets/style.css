@@ -142,7 +142,7 @@ buttons {
  * Footer CSS
  */
 #footer {
-  background-color: #0288D1;
+  background-color: #2196F3;
   color: #fff;
 }
 
@@ -203,6 +203,10 @@ buttons {
   padding: 6px 0px;
 }
 
+
+/**
+ * Main 
+ */
 html {
     position: relative;
     min-height: 100%;
@@ -287,6 +291,24 @@ blockquote blockquote {
 
 .label-primary {
     background-color: #2196f3
+}
+
+.space-bottom {
+	height: 2.5rem;
+}
+
+.category {
+	font-size: 65%
+}
+
+.page-title {
+	margin-bottom: 20px;
+}
+
+.last-update {
+	color: #999999;
+	font-size: 85%;
+	margin-top: 20px;
 }
 
 

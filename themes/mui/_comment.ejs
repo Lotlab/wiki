@@ -1,11 +1,11 @@
-<% if (config['custom'].disqus) { %>
+<% if (config['custom'].valine) { %>
 <div id="vcomments" class="cloud-tie-wrapper"></div>
 <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <script>
 new Valine({
 	el: '#vcomments',
-	appId: 'LxTBCCGY8s9s0U2QVIaudxk1-MdYXbMMI',
-	appKey: 'PdPA1xgzmFdUQqugmfzYamF9',
+	appId: '<%= config['custom'].valine.appid %>',
+	appKey: '<%= config['custom'].valine.appkey %>',
 	placeholder: '说些什么吧',
 	visitor: true
 })

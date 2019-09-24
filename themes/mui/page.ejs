@@ -4,16 +4,21 @@
     <div class="mui--appbar-height"></div>
     <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
         <br>
-        <h1><%= page.title %></h1>
-        <div class="row">
-            <span class="label label-primary mui--pull-right"><%= page.category %></span>
-        </div>
+        <h1 class="page-title">
+			<%= page.title %>
+			<div class="category mui--pull-right">
+				<span class="label label-primary"><%= page.category %></span>
+			</div>
+		</h1>
         <div class="row">
             <%- page.content %>
         </div>
-        <div class="row">
-            <%- include _disqus_comment.ejs %>
-        </div>
+		<div class="space-bottom"></div>
     </div>
+	<div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+        <div class="row mui-panel">
+            <%- include _comment.ejs %>
+        </div>
+	</div>
 </div>
 <%- include _footer %>
