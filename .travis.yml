@@ -15,5 +15,4 @@ script:
 - cd wiki
 - git add -A
 - git commit -m "autogen update on `date`"
-- git remote set-url origin "https://$github_token@github.com/Lotlab/wiki.git"
-- git push --set-upstream origin gh-pages
+- git push -f "https://$github_token@github.com/Lotlab/wiki.git" gh-pages:gh-pages
