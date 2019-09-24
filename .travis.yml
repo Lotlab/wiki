@@ -11,6 +11,9 @@ before_install:
 install:
 - npm install minori -g
 script:
+- cd wiki
+- git checkout gh-pages
+- cd ../
 - minori d
 - cd wiki
 - git add -A
