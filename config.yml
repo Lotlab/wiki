@@ -32,6 +32,9 @@ dir:
 custom:
   time: YYYY-MM-DD HH:mm:ss
   disqus: enable     # your disqus short link, leave blank to disable comment
+  valine:
+    appkey: PdPA1xgzmFdUQqugmfzYamF9
+    appid: LxTBCCGY8s9s0U2QVIaudxk1-MdYXbMMI
   category: 未分类    # default category when creating new page
   markdown:
     html: true    # Enable HTML tags in source
@@ -48,7 +51,7 @@ custom:
   mathjax: false    # enable MathJax TeX support, you need markdown.html set to true (allow html) to work
   autospacing: true    # use `pangunode` library to add space between CJK and Western characters automatically
   editor: Typora    # auto open your note after command
-  lastupdate: "%n%%n%_最后更新于: %mtime%_ [查看源代码](%sourcepath%)%n%"
+  lastupdate: "%n%%n%<div class='last-update'>此页面最后更新于: %mtime%</div>%n%"
 
 # Deployment
 deploy:
