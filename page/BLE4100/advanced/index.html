@@ -7,7 +7,7 @@
     <meta name="author" content="Jim Jiang">
     <meta name="description" content="Lotlab Wiki Site">
     <title>
-                贡献指南 - LotlabWiki            </title>
+                BLE4100高级资源 - LotlabWiki            </title>
     <link href="/assets/mui.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/style.css" rel="stylesheet"/>
     <link href="/assets/octicons/font/octicons.min.css" rel="stylesheet" />
@@ -23,9 +23,11 @@
             <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
             <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
 
-                            <span class="appbar-brand mui--hidden-xs">站务</span>
+                            <span class="appbar-brand mui--hidden-xs">教程</span>
+                                                         <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
+                    <a href="../" class="appbar-brand mui--hidden-xs"></a>
                                 <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
-                <span class="appbar-brand mui--hidden-xs">贡献指南</span>
+                <span class="appbar-brand mui--hidden-xs">BLE4100高级资源</span>
                 <span class="mui--text-title appbar-brand mui--visible-xs-inline-block">LotlabWiki</span>
                     </div>
     </div>
@@ -103,19 +105,43 @@
 <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
 <br>
 <h1 class="page-title">
-贡献指南<div class="category mui--pull-right">
-<span class="label label-primary">站务</span>
+BLE4100高级资源<div class="category mui--pull-right">
+<span class="label label-primary">教程</span>
 </div>
 </h1>
 <div class="row">
-<p>如果你想对本博客进行贡献，那么你需要一点点的 Github 使用经验，以及一个顺手的 Markdown 编辑器</p>
-<h2><a href="#步骤" name="步骤" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;步骤</h2>
-<ol>
-<li>将这个 Wiki 仓库 Fork 一份到自己的 Github 账户中</li>
-<li>Clone 你的仓库到本地进行修改，提交并上传后发起一个 Pull Request</li>
-<li>我会对 PR 的内容进行检查。如果没有问题，我会 Merge 这个 PR</li>
-<li>此时，修改就完成了</li>
-</ol>
+<h1><a href="#源代码" name="源代码" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;源代码</h1>
+<p>访问<a href="https://github.com/Lotlab/nrf51822-keyboard">Github 上的项目主页</a>以获取源代码。</p>
+<p>源代码以<a href="http://www.gnu.org/licenses/gpl-3.0.html">GPL v3</a>许可证授权，请在 GPLv3 的限制下使用本源代码。</p>
+<blockquote>
+<p>根据 GPL v3 协议规定，你在发布修改过的固件的同时，<strong>必须同时以原有的许可条款发布修改后的源代码</strong>，并且<strong>不能添加任何附加条款</strong>。如果你不能以原有的许可条款发布修改后的源代码，那么你将不能发布修改后的固件。</p>
+</blockquote>
+<h1><a href="#KeyMap" name="KeyMap" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;KeyMap</h1>
+<table>
+<thead>
+<tr><th></th><th>LINE1</th><th>LINE2</th><th>LINE3</th><th>LINE4</th><th>LINE5</th><th>LINE6</th><th>LINE7</th><th>LINE8</th></tr>
+</thead>
+<tbody>
+<tr><td>H1L</td><td>Esc</td><td>F1</td><td>F2</td><td>F3</td><td>F4</td><td>F5</td><td>F6</td><td>F7</td></tr>
+<tr><td>H2L</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+<tr><td>H3L</td><td>Tab</td><td>Q</td><td>W</td><td>E</td><td>R</td><td>T</td><td>Y</td><td>U</td></tr>
+<tr><td>H4L</td><td>CapsLock</td><td>A</td><td>S</td><td>D</td><td>F</td><td>G</td><td>H</td><td>J</td></tr>
+<tr><td>H5L</td><td>`</td><td>Z</td><td>X</td><td>C</td><td>V</td><td>B</td><td>N</td><td>M</td></tr>
+<tr><td>H1R</td><td>Right</td><td>Pause</td><td>PtrSc</td><td>NumLock</td><td>ScrollLock</td><td>F10</td><td>F9</td><td>F8</td></tr>
+<tr><td>H2R</td><td>Down</td><td>Home</td><td></td><td>Backspace</td><td>=</td><td>-</td><td>0</td><td>9</td></tr>
+<tr><td>H3R</td><td>Up</td><td>PageUp</td><td></td><td>]</td><td>[</td><td>P</td><td>O</td><td>I</td></tr>
+<tr><td>H4R</td><td>Left</td><td>PageDown</td><td>Enter</td><td>\</td><td>&quot;</td><td>;</td><td>L</td><td>K</td></tr>
+<tr><td>H5R</td><td>Space</td><td>End</td><td></td><td>Ins</td><td>Del</td><td>?</td><td>&gt;</td><td>&lt;</td></tr>
+<tr><td>SPEC1</td><td>Lalt</td><td></td><td></td><td></td><td></td><td>Rshift</td><td></td><td></td></tr>
+<tr><td>SPEC2</td><td>Lshift</td><td></td><td></td><td></td><td></td><td>Ralt</td><td></td><td></td></tr>
+<tr><td>SPEC3</td><td>Ctrl</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>SPEC4</td><td>Fn</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+<h1><a href="#丝印" name="丝印" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;丝印</h1>
+<p><img src="/raw/BLE4100/silk.png" alt="丝印层" /></p>
+<h1><a href="#线路图" name="线路图" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;线路图</h1>
+<p><a href="/raw/BLE4100/ble4100-nrf.pdf">ble4100-nrf.pdf</a></p>
 <div class='last-update'>此页面最后更新于: 2019-09-24 13:23:13</div>
 </div>
 <div class="space-bottom"></div>
