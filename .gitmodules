@@ -6,3 +6,7 @@
 	path = wiki
 	url = https://github.com/Lotlab/wiki
 	branch = gh-pages
+[submodule "themes/minori-mui"]
+	path = themes/minori-mui
+	url = https://github.com/Lotlab/minori-wiki-mui-theme
+	branch = master

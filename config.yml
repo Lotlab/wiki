@@ -4,20 +4,20 @@
 
 # Wiki
 wiki:
-  title: LotlabWiki
+  title: Lotlab Wiki
   tagline: Yet another static wiki
   description: Lotlab Wiki Site
   author: Jim Jiang
   email: jim(at)lotlab.org
   language: zh-CN
-  theme: mui
+  theme: minori-mui
   favicon: true    # put your favicon.ico into MinoriWiki site configuration root directory
   log: true    # enable commit logs (will be displayed in public)
   logmax: 20    # maximum log amount to be displayed (to avoid very large webpage), default to 20.
 
 # Base
 base:
-  uri: http://wiki.lotlab.org    # domain and protocol of your site, not containing any path and the final slash '/'
+  uri: https://wiki.lotlab.org    # domain and protocol of your site, not containing any path and the final slash '/'
   path: /    # change this if you want your site to be in a sub-directory
 
 # Directory
@@ -31,10 +31,6 @@ dir:
 # Custom
 custom:
   time: YYYY-MM-DD HH:mm:ss
-  disqus: enable     # your disqus short link, leave blank to disable comment
-  valine:
-    appkey: PdPA1xgzmFdUQqugmfzYamF9
-    appid: LxTBCCGY8s9s0U2QVIaudxk1-MdYXbMMI
   category: 未分类    # default category when creating new page
   markdown:
     html: true    # Enable HTML tags in source
@@ -52,6 +48,31 @@ custom:
   autospacing: true    # use `pangunode` library to add space between CJK and Western characters automatically
   editor: Typora    # auto open your note after command
   lastupdate: "%n%%n%<div class='last-update'>此页面最后更新于: %mtime%</div>%n%"
+
+theme:
+  valine:
+    appkey: PdPA1xgzmFdUQqugmfzYamF9
+    appid: LxTBCCGY8s9s0U2QVIaudxk1-MdYXbMMI
+    placeholder: 写下你的评论吧
+    visitor: true
+  greeting: 欢迎来到 Lotlab Wiki
+  index_content: <h2>变更记录</h2><ul><li>2017-01-18 完全静态化，迁移至 Github Pages.</li><li>2015-11-07 替换庞大的 MediaWiki 为 DokuWiki </li></ul>
+  side_links: 
+    - others:
+      name: "其他链接"
+      links: 
+        - github: 
+          name: Github
+          link: https://github.com/Lotlab/wiki
+        - term:
+          name: 网站协议
+          link: /page/terms
+        - contribute:
+          name: 贡献内容
+          link: /page/contribute
+        - changelog:
+          name: 更新日志
+          link: /changelog
 
 # Deployment
 deploy:
