@@ -14,11 +14,6 @@
     <script src="/assets/highlight.min.js"></script>
     <script src="/assets/mui.min.js"></script>
     <script src="/assets/jquery-3.1.1.min.js"></script>
-    <style>
-        #yun-tie-sdk-wrap {
-            background-color: transparent !important;
-        }
-    </style>
     <base target="_blank">
 </head>
 <body>
@@ -107,10 +102,11 @@
 <div class="mui--appbar-height"></div>
 <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
 <br>
-<h1>BLE4100套件使用说明</h1>
-<div class="row">
-<span class="label label-primary mui--pull-right">教程</span>
+<h1 class="page-title">
+BLE4100套件使用说明<div class="category mui--pull-right">
+<span class="label label-primary">教程</span>
 </div>
+</h1>
 <div class="row">
 <h1><a href="#使用手册" name="使用手册" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;使用手册</h1>
 <h2><a href="#快速入门" name="快速入门" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;快速入门</h2>
@@ -260,7 +256,7 @@
 <p>使用 nrfutil<sup class="footnote-ref"><a href="#fn3" id="fnref3" target="_self">[3]</a></sup>生成升级包（0.5.2 版本）</p>
 <pre><code class="language-bash">nrfutil dfu genpkg --application nrf51422_xxac_s110.hex upgrade.zip
 </code></pre>
-<p><em>最后更新于: 2017-05-28 17:59:37</em> <a href="/raw%5Cble4100.md">查看源代码</a></p>
+<div class='last-update'>此页面最后更新于: 2017-05-28 17:59:37</div>
 <hr class="footnotes-sep" />
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -273,7 +269,10 @@
 </ol>
 </section>
 </div>
-<div class="row">
+<div class="space-bottom"></div>
+</div>
+<div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+<div class="row mui-panel">
 <div id="vcomments" class="cloud-tie-wrapper"></div>
 <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <script>

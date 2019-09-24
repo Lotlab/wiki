@@ -14,11 +14,6 @@
     <script src="/assets/highlight.min.js"></script>
     <script src="/assets/mui.min.js"></script>
     <script src="/assets/jquery-3.1.1.min.js"></script>
-    <style>
-        #yun-tie-sdk-wrap {
-            background-color: transparent !important;
-        }
-    </style>
     <base target="_blank">
 </head>
 <body>
@@ -107,15 +102,19 @@
 <div class="mui--appbar-height"></div>
 <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
 <br>
-<h1>你好，世界</h1>
-<div class="row">
-<span class="label label-primary mui--pull-right">未分类</span>
+<h1 class="page-title">
+你好，世界<div class="category mui--pull-right">
+<span class="label label-primary">未分类</span>
 </div>
+</h1>
 <div class="row">
 <p>这是这个静态站点的第一篇文章</p>
-<p><em>最后更新于: 2017-02-21 13:10:27</em> <a href="/raw%5Chelloworld.md">查看源代码</a></p>
+<div class='last-update'>此页面最后更新于: 2017-02-21 13:10:27</div>
 </div>
-<div class="row">
+<div class="space-bottom"></div>
+</div>
+<div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+<div class="row mui-panel">
 <div id="vcomments" class="cloud-tie-wrapper"></div>
 <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <script>
