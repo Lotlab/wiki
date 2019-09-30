@@ -128,7 +128,7 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <p><img src="/raw/lot60-ble/keymap.png" alt="默认配列图" /></p>
 <h2><a href="#操作说明" name="操作说明" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;操作说明</h2>
 <h3><a href="#开机" name="开机" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;开机</h3>
-<p>同时按下<code>Space(空格)+E</code>，直到 LED 指示灯亮起即可开机。</p>
+<p>同时按下<code>Space(空格)+U</code>，直到 LED 指示灯亮起即可开机。</p>
 <p>插入 USB 的同时键盘会自动开机。</p>
 <h3><a href="#蓝牙连接设备" name="蓝牙连接设备" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;蓝牙连接设备</h3>
 <p>在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。你会见到一个叫做<code>BLE60-Rev.E_XXXXXX</code>或<code>Lot60.E_XXXXXX</code>的设备，使用设备连接，并按设备提示在键盘上输入配对码即可。</p>
@@ -186,7 +186,7 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <li>RAlt: 交换 RAlt 和 RGUI</li>
 <li>LGUI：禁用 GUI 按钮</li>
 <li>`(1 左边那个, Grave): 交换 Esc 和 Grave</li>
-<li>: 交换 \ 和 Backspace</li>
+<li>\: 交换 \ 和 Backspace</li>
 <li>N：切换 NKRO 状态</li>
 <li>0~7：设置默认层为对应数字的层</li>
 </ul>
@@ -226,14 +226,14 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 </blockquote>
 <ol>
 <li>至 WCH 官网下载<a href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">固件更新工具</a><sup class="footnote-ref"><a href="#fn4" id="fnref4" target="_self">[4]</a></sup></li>
-<li>打开固件更新工具，切换至 “8 位 ch55x 系列”，将芯片型号改为 “CH552”<sup class="footnote-ref"><a href="#fn5" id="fnref5" target="_self">[5]</a></sup>，并在底下的 “用户程序文件中” 选择你要更新的 USB 固件</li>
-<li>将键盘与电脑连接的 USB 线断开。按住键盘背面的 K1 按钮<sup class="footnote-ref"><a href="#fn6" id="fnref6" target="_self">[6]</a></sup>，再使用 USB 线连上电脑。听到发现新设备的声音后，即可松开按钮。此时，设备列表中会出现一个可选择的设备并会自动选中。</li>
+<li>打开固件更新工具，切换至 “8 位 ch55x 系列”，将芯片型号改为“CH552”，并在底下的“用户程序文件中” 选择你要更新的 USB 固件</li>
+<li>将键盘与电脑连接的 USB 线断开。按住键盘背面的 K1 按钮<sup class="footnote-ref"><a href="#fn5" id="fnref5" target="_self">[5]</a></sup>，再使用 USB 线连上电脑。听到发现新设备的声音后，即可松开按钮。此时，设备列表中会出现一个可选择的设备并会自动选中。</li>
 <li>点击下载按钮。下载完毕后，将键盘的 USB 断开并重新连接，即可升级完毕。</li>
 </ol>
 <h1><a href="#常见问题" name="常见问题" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;常见问题</h1>
 <h2><a href="#Q&A" name="Q&A" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Q&amp;A</h2>
 <h3><a href="#键盘的功耗与电池容量的选择" name="键盘的功耗与电池容量的选择" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;键盘的功耗与电池容量的选择</h3>
-<p>此键盘的典型工作功耗为 0.4ma<sup class="footnote-ref"><a href="#fn7" id="fnref7" target="_self">[7]</a></sup>，电池容量与使用时长的关系可以按照以下算法来估计：</p>
+<p>此键盘的典型工作功耗为 0.4ma<sup class="footnote-ref"><a href="#fn6" id="fnref6" target="_self">[6]</a></sup>，电池容量与使用时长的关系可以按照以下算法来估计：</p>
 <blockquote>
 <p>t(天) = C(容量, mah) * 2 / n (每日使用时长, h)</p>
 <p>例如，使用 500mah 的电池，每日使用 10 小时的话，键盘约能使用 100 天。</p>
@@ -293,9 +293,11 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <h3><a href="#1.0.3" name="1.0.3" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;1.0.3</h3>
 <p>此版本是出厂版本的固件。</p>
 <ul>
-<li>百度云下载</li>
+<li><a href="https://tools.lotlab.org/dl/rev_e-nrf52-2019_09_30-68552e4.zip">蓝牙升级包</a></li>
+<li><a href="https://tools.lotlab.org/dl/rev_e-ch554-2019_09_30-68552e4.hex">USB 固件</a></li>
+<li><a href="https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_09_30-68552e4.zip">3LED 灯版本蓝牙升级包</a></li>
 </ul>
-<div class='last-update'>此页面最后更新于: 2019-09-24 15:49:57</div>
+<div class='last-update'>此页面最后更新于: 2019-09-30 11:51:56</div>
 <hr class="footnotes-sep" />
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -307,11 +309,9 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 </li>
 <li id="fn4"  class="footnote-item"><p>可以使用<a href="http://www.wch.cn/downloads/WCHISPTool_Setup_exe.html">官方的固件更新工具</a>。若你在使用 Linux，则可以使用三方的<a href="https://github.com/rgwan/librech551">WCHISP</a>来更新。 <a href="#fnref4" class="footnote-backref" target="_self">↩</a></p>
 </li>
-<li id="fn5"  class="footnote-item"><p>部分批次可能使用的是 CH554，若无法识别设备，则可尝试更改为 CH554 进行烧录。 <a href="#fnref5" class="footnote-backref" target="_self">↩</a></p>
+<li id="fn5"  class="footnote-item"><p>K1 按钮位于键盘背面的下方偏右位置，即在下方左 ALT 键的背面附近。若没有焊接此按钮，也可以使用镊子或其他导电的东西短接 K1 的上下两个脚，用来模拟按钮按下。 <a href="#fnref5" class="footnote-backref" target="_self">↩</a></p>
 </li>
-<li id="fn6"  class="footnote-item"><p>K1 按钮位于键盘背面的下方偏右位置，即在下方左 ALT 键的背面附近。若没有焊接此按钮，也可以使用镊子或其他导电的东西短接 K1 的上下两个脚，用来模拟按钮按下。 <a href="#fnref6" class="footnote-backref" target="_self">↩</a></p>
-</li>
-<li id="fn7"  class="footnote-item"><p>典型功耗为 0.4ma: 使用万用表，在蓝牙连接且无任何灯光的情况下测得。蓝牙搜索和灯光的启用会增加额外的耗电量，不同的无线环境下也有可能造成功耗的增加。此功耗不代表所有工况下的工作电流，仅供参考。 <a href="#fnref7" class="footnote-backref" target="_self">↩</a></p>
+<li id="fn6"  class="footnote-item"><p>典型功耗为 0.4ma: 使用万用表，在蓝牙连接且无任何灯光的情况下测得。蓝牙搜索和灯光的启用会增加额外的耗电量，不同的无线环境下也有可能造成功耗的增加。此功耗不代表所有工况下的工作电流，仅供参考。 <a href="#fnref6" class="footnote-backref" target="_self">↩</a></p>
 </li>
 </ol>
 </section>
