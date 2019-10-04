@@ -118,24 +118,25 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <h2><a href="#快速入门" name="快速入门" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;快速入门</h2>
 <ol>
 <li>（如果购买的是散件）按照线路板上的标识，将两个芯片焊接到线路板上，并焊接 USB 口。</li>
-<li>使用 USB 线连接到你的电脑。如果电脑能够成功的识别到名为 “Lot60-BLE” 的设备，说明 USB 芯片工作正常。这时用镊子尝试短路任意一个按键，观察是否有按键输入。若有按键输入，则说明整块键盘工作正常。</li>
-<li>如果你想使用 3 个状态指示灯而不是一个 RGB 状态指示灯，那么请拆除正面的 RGB 指示灯。</li>
+<li>将电池插入电池插口。注意电池的线序，红色线对应 “+” 标记，黑色线对应 “-” 标记。</li>
+<li>使用 USB 线连接到你的电脑。如果电脑能够成功的识别到名为 “Lot60.E” 的设备，说明 USB 芯片工作正常。这时用镊子尝试短路任意一个按键，观察是否有按键输入。若有按键输入，则说明整块键盘工作正常。</li>
+<li>如果你想使用 3 个状态指示灯而不是一个 RGB 状态指示灯，那么请拆除正面的 RGB 指示灯，并更新底下提供的 3 灯版本固件。</li>
 <li>组装你的键盘。注意要先装定位板，再装轴哦~</li>
-<li>将电池连接到键盘背面的电池接口。注意正负极不要装反，否则可能会导致键盘烧毁。</li>
 <li>好了，你的 Lot60-BLE 键盘已经组装完成了。插上 USB 尝试一下吧！</li>
 </ol>
 <h2><a href="#默认配列" name="默认配列" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;默认配列</h2>
 <p><img src="/raw/lot60-ble/keymap.png" alt="默认配列图" /></p>
+<p>图中 Fn1 是休眠，Fn2 是切换设备。</p>
 <h2><a href="#操作说明" name="操作说明" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;操作说明</h2>
 <h3><a href="#开机" name="开机" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;开机</h3>
 <p>同时按下<code>Space(空格)+U</code>，直到 LED 指示灯亮起即可开机。</p>
 <p>插入 USB 的同时键盘会自动开机。</p>
 <h3><a href="#蓝牙连接设备" name="蓝牙连接设备" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;蓝牙连接设备</h3>
-<p>在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。你会见到一个叫做<code>BLE60-Rev.E_XXXXXX</code>或<code>Lot60.E_XXXXXX</code>的设备，使用设备连接，并按设备提示在键盘上输入配对码即可。</p>
+<p>在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。你会见到一个叫做<code>BLE60-Rev.E_XXXXXX</code>或<code>Lot60.E_XXXXXX</code>的设备，使用你的主机设备连接此蓝牙设备，若提示输入配对码，请在键盘上输入配对码即可。</p>
 <h3><a href="#USB_连接设备" name="USB_连接设备" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;USB 连接设备</h3>
 <p>直接将 USB 线缆插入到键盘的 USB 接口，键盘即自动切换至 USB 模式。这时候就可以使用 USB 模式输入了。</p>
 <h3><a href="#USB/蓝牙状态切换" name="USB/蓝牙状态切换" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;USB / 蓝牙状态切换</h3>
-<p>在默认配列下，按下 Fn0+Tab，即可在 USB 和蓝牙两种模式下切换。</p>
+<p>在默认配列下，按下<code>Fn0+Tab</code>，即可在 USB 和蓝牙两种模式下切换。</p>
 <h3><a href="#省电模式" name="省电模式" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;省电模式</h3>
 <p>在没有接入 USB 电源的情况下，键盘处于省电模式。</p>
 <p>在省电模式下，所有的指示灯仅在变化后亮起 5 秒，然后熄灭。键盘在无操作 15 秒后转入慢速扫描模式，无操作 600 秒后自动睡眠。</p>
@@ -158,7 +159,7 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <li><span style="color: #FF00FF">■</span>紫色：休眠</li>
 </ul>
 <h3><a href="#手动休眠" name="手动休眠" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;手动休眠</h3>
-<p>在默认配列下，按下 Fn0+CapsLock，即可让键盘进入休眠状态。</p>
+<p>在默认配列下，按下<code>Fn0+CapsLock</code>，即可让键盘进入休眠状态。</p>
 <p>手动休眠后，需要手工按下<code>Space+U</code>才能再次唤醒。</p>
 <h3><a href="#删除绑定" name="删除绑定" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;删除绑定</h3>
 <p>若想要连接到其他的蓝牙设备，或蓝牙连接不正常，则可尝试删除绑定。</p>
@@ -297,7 +298,7 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <li><a href="https://tools.lotlab.org/dl/rev_e-ch554-2019_09_30-68552e4.hex">USB 固件</a></li>
 <li><a href="https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_09_30-68552e4.zip">3LED 灯版本蓝牙升级包</a></li>
 </ul>
-<div class='last-update'>此页面最后更新于: 2019-09-30 11:51:56</div>
+<div class='last-update'>此页面最后更新于: 2019-10-04 03:52:09</div>
 <hr class="footnotes-sep" />
 <section class="footnotes">
 <ol class="footnotes-list">
