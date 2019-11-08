@@ -78,7 +78,9 @@ theme:
 deploy:
   repo: git@github.com:Lotlab/wiki.git
   branch: gh-pages
-  cname: wiki.lotlab.org    # if you want to deploy site on github you probably want this
+  cname: |
+    wiki.lotlab.org
+    wiki.lotlab.icu
   s3:
     enabled: false
     bucket: your-bucket-name
