@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jim Jiang">
+    <meta name="description" content="Lotlab Wiki Site">
+    <title>
+                LotKB固件编译移植指南 - Lotlab Wiki            </title>
+    <link href="/assets/mui.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/style.css" rel="stylesheet"/>
+    <link href="/assets/octicons/font/octicons.min.css" rel="stylesheet" />
+    <script src="/assets/highlight.min.js"></script>
+    <script src="/assets/mui.min.js"></script>
+    <script src="/assets/jquery-3.1.1.min.js"></script>
+    <base target="_blank">
+</head>
+<body>
+<header id="header" class="mui--z2">
+    <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+
+                            <span class="appbar-brand mui--hidden-xs">教程</span>
+                                                         <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
+                    <a href="../" class="appbar-brand mui--hidden-xs"></a>
+                                <b class="appbar-brand octicon octicon-chevron-right mui--hidden-xs"></b>
+                <span class="appbar-brand mui--hidden-xs">LotKB固件编译移植指南</span>
+                <span class="mui--text-title appbar-brand mui--visible-xs-inline-block">Lotlab Wiki</span>
+                    </div>
+    </div>
+</header>
+<div id="sidedrawer" class="mui--no-user-select">
+    <div id="sidedrawer-brand" class="mui--appbar-line-height">
+        <a href="/" class="mui--text-title" target="_self">Lotlab Wiki</a>
+    </div>
+    <div class="mui-divider"></div>
+    <ul>
+                <li>
+    <strong>教程</strong>
+    <ul>
+                <li>
+            <a href="/page/ble4100/" target="_self">
+                                BLE4100套件使用说明                            </a>
+        </li>
+                <li>
+            <a href="/page/gh60-related/" target="_self">
+                                GH60相关                            </a>
+        </li>
+                <li>
+            <a href="/page/kms-activation/" target="_self">
+                                KMS激活                            </a>
+        </li>
+                <li>
+            <a href="/page/lcd2usb/" target="_self">
+                                LCD2USB使用说明                            </a>
+        </li>
+                <li>
+            <a href="/page/lot60-ble/" target="_self">
+                                Lot60-BLE 键盘使用说明                            </a>
+        </li>
+                <li>
+            <a href="/page/BLE4100/advanced/" target="_self">
+                                                 / BLE4100高级资源                            </a>
+        </li>
+                <li>
+            <a href="/page/bluetooth/build-guide/" target="_self">
+                                                 / LotKB固件编译移植指南                            </a>
+        </li>
+                <li>
+            <a href="/page/bluetooth/upgrade/" target="_self">
+                                                 / 固件更新                            </a>
+        </li>
+            </ul>
+</li>
+<li>
+    <strong>站务</strong>
+    <ul>
+                <li>
+            <a href="/page/contribute/" target="_self">
+                                贡献指南                            </a>
+        </li>
+                <li>
+            <a href="/page/terms/" target="_self">
+                                协议                            </a>
+        </li>
+            </ul>
+</li>
+<li>
+    <strong>未分类</strong>
+    <ul>
+                <li>
+            <a href="/page/helloworld/" target="_self">
+                                你好，世界                            </a>
+        </li>
+            </ul>
+</li>
+                <li>
+        <strong>其他链接</strong>
+    <ul>
+                    <li><a href="https://github.com/Lotlab/wiki">Github</a></li>
+                    <li><a href="/page/terms">网站协议</a></li>
+                    <li><a href="/page/contribute">贡献内容</a></li>
+                    <li><a href="/changelog">更新日志</a></li>
+            </ul>
+    </li>
+    </ul> 
+</div><div id="content-wrapper">
+<!-- Main content goes here -->
+<div class="mui--appbar-height"></div>
+<div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+<br>
+<h1 class="page-title">
+LotKB固件编译移植指南<div class="category mui--pull-right">
+<span class="label label-primary">教程</span>
+</div>
+</h1>
+<div class="row">
+<h2><a href="#编译教程" name="编译教程" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;编译教程</h2>
+<h3><a href="#在线编译工具" name="在线编译工具" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;在线编译工具</h3>
+<p>http://lotkb.glab.online/</p>
+<p>感谢格老师提供的在线编译服务器。</p>
+<p>一些重要的配置：</p>
+<ul>
+<li>UART_RXD：27</li>
+<li>UART_TXD：26</li>
+</ul>
+<blockquote>
+<p>注意此服务器上的代码和 lotlab 的代码有一些微小的差别。</p>
+</blockquote>
+<h3><a href="#环境搭建" name="环境搭建" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;环境搭建</h3>
+<p>此固件在 Windows（Msys2）和 Linux 下编译通过。</p>
+<h4><a href="#Linux下环境的搭建" name="Linux下环境的搭建" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Linux 下环境的搭建</h4>
+<p>使用终端运行以下命令</p>
+<pre><code class="language-bash">sudo apt install git make sdcc # 安装git make和sdcc编译工具
+wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2018q2/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2?revision=bc2c96c0-14b5-4bb4-9f18-bceb4050fee7?product=GNU%20Arm%20Embedded%20Toolchain,64-bit,,Linux,7-2018-q2-update # 下载GCC
+tar xf gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 # 解压gcc
+mv gcc-arm-none-eabi-7-2018-q2-update/ ~/.local/ # 将GCC移动到用户目录
+rm gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 # 删除压缩包
+
+sudo apt install python3 python3-pip
+pip3 install nrfutil # 安装 nrfutil
+</code></pre>
+<h4><a href="#下载SDK" name="下载SDK" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;下载 SDK</h4>
+<p>访问<a href="https://www.nordicsemi.com/Software-and-tools/Software/nRF5-SDK/Download#infotabs">nordic 的网站</a>，下载 SDK15.3，并解压待用。</p>
+<h3><a href="#克隆源码并准备源码" name="克隆源码并准备源码" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;克隆源码并准备源码</h3>
+<pre><code class="language-bash">git clone https://github.com/Lotlab/nrf52-keyboard # 克隆源码
+cd nrf52-keyboard
+
+# Linux 下修改这个
+cp template/Makefile.posix.template template/Makefile.posix
+nano template/Makefile.posix # 将里面的 GNU_INSTALL_ROOT 变量值改为 ~/.local/gcc-arm-none-eabi-7-2018-q2-update/bin/
+
+# Windows 下修改这个
+cp template/Makefile.windows.template template/Makefile.windows
+nano template/Makefile.windows # 将里面的 GNU_INSTALL_ROOT 变量值改为你的GCC安装目录
+
+# 将解压的sdk复制到源码的SDK目录下，形成类似于SDK/components, SDK/config 的目录结构
+</code></pre>
+<h3><a href="#测试编译" name="测试编译" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;测试编译</h3>
+<pre><code class="language-bash">cd keyboard/lkb-core
+make -j
+</code></pre>
+<p>如果一切正常，则会编译出一个能用的固件。编译好的固件放置在对应键盘目录下的_build 文件夹内。</p>
+<h3><a href="#Bootloader的编译" name="Bootloader的编译" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Bootloader 的编译</h3>
+<pre><code class="language-bash">git submodule init -- # 初始化子模块，用于构建microecc库
+cd SDK/external/micro-ecc/nrf52nf_armgcc/armgcc
+make # 编译microecc库
+cd ../../../../../
+
+cd application/bootloader/project/armgcc/
+make SOFTDEVICE=S132 NRF_CHIP=nrf52832 NRF52_DISABLE_FPU=yes -j # nrf52832的编译命令
+make SOFTDEVICE=S112 NRF_CHIP=nrf52810 -j # nrf52810的编译命令
+</code></pre>
+<p>如果一切正常，则 Bootloader 就编译完毕了。你可以在<code>_build</code>目录下找到编译好的 Bootloader 的 hex 文件。</p>
+<h3><a href="#主程序编译" name="主程序编译" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;主程序编译</h3>
+<pre><code class="language-bash">cd keyboard/lkb-core
+make package -j # 生成用于DFU升级的升级包
+make ch554 -j # 生成USB固件
+</code></pre>
+<p>如果一切正常， 就能够编译出一个固件升级包了。你可以在<code>_build</code>目录下找到对应的<code>nrf52_kbd_XXXXXXXX.zip</code>升级包文件和<code>ch554.hex</code>USB 固件文件。参照刷固件相关教程将其刷入键盘即可。</p>
+<h2><a href="#硬件移植教程" name="硬件移植教程" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;硬件移植教程</h2>
+<h3><a href="#准备工作" name="准备工作" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;准备工作</h3>
+<p>首先，你需要准备一份按键阵列表格，用于确定各个按键的位置。然后需要规划好各个 IO 口的用途。</p>
+<blockquote>
+<p>需要注意的是，P21 是 Reset 口，若需要使用硬件 Reset 按钮，则可以使用此口；</p>
+<p>P10 是默认 Bootloader 进入 DFU 模式的引脚，上电时下拉即可强制进入 DFU。如需要修改，可以修改 Bootloader 的配置并重新编译。</p>
+</blockquote>
+<p>然后将 keyboard 内的任意一个文件夹（建议使用 template 或 lkb-core）作为移植模板复制一份，接下来的所有操作都在此文件夹内进行。</p>
+<h3><a href="#移植按键阵列IO和配置" name="移植按键阵列IO和配置" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;移植按键阵列 IO 和配置</h3>
+<p>使用你喜欢的文本编辑器编辑<code>config.h</code>，编辑以下关键配置</p>
+<ul>
+<li>MATRIX_ROWS：按键阵列的行数</li>
+<li>MATRIX_COLS：按键阵列的列数</li>
+<li>row_pin_array[MATRIX_ROWS]：按键行阵列的对应 IO 口</li>
+<li>column_pin_array[MATRIX_COLS]：按键列阵列对应的 IO 口</li>
+<li>#define ROW_IN：如果按键防反冲二极管是由列流向行的，启用这个 FLAG；否则将其禁用</li>
+<li>#define MATRIX_HAS_GHOST：如果没有按键防反冲二极管，则启用这个 FLAG；否则将其禁用</li>
+</ul>
+<h3><a href="#移植按键阵列对应表" name="移植按键阵列对应表" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;移植按键阵列对应表</h3>
+<p>使用文本编辑器打开<code>keymap_common.h</code>，你可以看到有一个名为 KEYMAP 的宏。</p>
+<p>这个宏可以使用 QMK 的 builder 工具生成。如果你想要手写的话可以继续往下面看。</p>
+<p>我们以 GH60 的宏为例，讲解如何编写这个宏。</p>
+<pre><code class="language-C">/* GH60 keymap definition macro
+ * K2C, K31 and  K3C are extra keys for ISO
+ */
+#define KEYMAP( \
+    K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, K0C, K0D, \
+    K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K1A, K1B, K1C, K1D, \
+    K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A, K2B, K2C, K2D, \
+    K30, K31, K32, K33, K34, K35, K36, K37, K38, K39, K3A, K3B, K3C, K3D, \
+    K40, K41, K42,           K45,                K49, K4A, K4B, K4C, K4D  \
+) { \
+    { KC_##K00, KC_##K01, KC_##K02, KC_##K03, KC_##K04, KC_##K05, KC_##K06, KC_##K07, KC_##K08, KC_##K09, KC_##K0A, KC_##K0B, KC_##K0C, KC_##K0D }, \
+    { KC_##K10, KC_##K11, KC_##K12, KC_##K13, KC_##K14, KC_##K15, KC_##K16, KC_##K17, KC_##K18, KC_##K19, KC_##K1A, KC_##K1B, KC_##K1C, KC_##K1D }, \
+    { KC_##K20, KC_##K21, KC_##K22, KC_##K23, KC_##K24, KC_##K25, KC_##K26, KC_##K27, KC_##K28, KC_##K29, KC_##K2A, KC_##K2B, KC_##K2C, KC_##K2D }, \
+    { KC_##K30, KC_##K31, KC_##K32, KC_##K33, KC_##K34, KC_##K35, KC_##K36, KC_##K37, KC_##K38, KC_##K39, KC_##K3A, KC_##K3B, KC_##K3C, KC_##K3D }, \
+    { KC_##K40, KC_##K41, KC_##K42, KC_NO,    KC_NO,    KC_##K45, KC_NO,    KC_NO,    KC_NO,    KC_##K49, KC_##K4A, KC_##K4B, KC_##K4C, KC_##K4D }  \
+}
+</code></pre>
+<p>首先，我们很容易注意到，这个宏分为上下两个部分：上部分是键盘按键形状的，下部分是阵列形状的。这个宏的作用是，将键盘按键的一维数组转换为按键阵列的二维数组，也就是定义每个按键在对应的哪个按键阵列的位置。</p>
+<p>我们先来看 K00 按键。在这是 GH60 的第一个按键，也就是 ESC；这个按键在下部分的第一个数组的第一个位置，说明其是第一行第一列的按键；再看 K49，这是空格右边的 Alt 按键，它在下部分的第五个数组的第 10 个位置，说明了其是第 5 行第 10 列的按键。下面的写着 KC_NO 的按键位置表示这个位置没有放置按键。</p>
+<p>下面这一部分，行数和前面定义的按键阵列的行数相等，每一行的元素的数目，也和前面定义的列数相等。</p>
+<blockquote>
+<p>上面这一部分中，反斜杠表示换行。实际上上面的还是一维数组，只不过为了好看而将其转换为了键盘实际的样式。</p>
+</blockquote>
+<h3><a href="#编辑默认配列" name="编辑默认配列" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;编辑默认配列</h3>
+<p>用文本编辑器打开<code>keymap_plain.c</code>，你会发现有两个部分：一部分是 keymaps，定义了默认的键盘配列；一部分是 fn_actions，定义了默认的键盘 fn 功能。</p>
+<p>这部分的代码也可以使用 QMK 的工具生成。</p>
+<p>对于 keymaps 部分，使用了前面提到的 KEYMAP 的宏，将键盘上的各个按键键值转换为对应按键阵列的键值。我们仅需按照键盘的样式对其编辑即可。</p>
+<h3><a href="#其他配置项目" name="其他配置项目" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;其他配置项目</h3>
+<h4><a href="#常用config配置" name="常用config配置" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;常用 config 配置</h4>
+<p><code>config.h</code>内有一些可以配置的项目，这里写出一些比较常用的：</p>
+<pre><code class="language-C">#define MANUFACTURER &quot;Lotlab&quot; /* 蓝牙显示的硬件制造商名称 */
+#define PRODUCT &quot;LKB-Core&quot; /* USB和蓝牙显示的硬件名称。USB的需要重新烧录固件 */
+#define MACADDR_SEPRATOR '_' /* 蓝牙名称后地址的分隔符。若不设置则不显示蓝牙名称后面的地址 */
+#define BOOTMAGIC_KEY_BOOT KC_U /* 开机Bootmagic按键 */
+#define BOOTMAGIC_KEY_ERASE_BOND KC_E /* 删除所有绑定Bootmagic按键 */
+#define LED_NUM 22 /* 小键盘锁定灯 */
+#define LED_CAPS 23 /* 大小写锁定灯 */
+// #define LED_SCLK 23 /* 滚动锁定灯, 注释掉代表不使用此灯 */
+#define LED_POSITIVE /* LED 使用上拉驱动，即二极管的正极接IO口。注释掉代表下拉驱动，即二极管的正极接电源正极 */
+#define SLEEP_OFF_TIMEOUT 3600 // 键盘闲置多久后转入自动关机 (s)
+#define DYNAMIC_TX_POWER /* 启用自动发射功率调整 */
+#define LED_AUTOOFF_TIME 60000 /* LED自动熄灭时长(ms)，设为0则不自动熄灭 */
+#define PASSKEY_REQUIRED /* 启用蓝牙加密连接，在连接时需要输入配对码 */
+</code></pre>
+<h4><a href="#蓝牙、USB、充电状态显示" name="蓝牙、USB、充电状态显示" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;蓝牙、USB、充电状态显示</h4>
+<p>如果想要启用 USB、蓝牙、充电指示灯，则需要编辑 Makefile，加入一行</p>
+<pre><code class="language-makefile">THREE_LED_STATUS_EVT = yes
+</code></pre>
+<p>并在 config.h 内添加：</p>
+<pre><code class="language-C">#define LED_STATUS_BLE 22 // 蓝牙连接指示灯
+#define LED_STATUS_CHARGING 23 // 充电指示灯
+#define LED_STATUS_USB 24 // USB连接状态指示灯
+</code></pre>
+<h4><a href="#禁用软件开机功能" name="禁用软件开机功能" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;禁用软件开机功能</h4>
+<p>如果需要禁用 Space+U 的软件开机功能，请参考<code>lkb-core/custom.c</code>文件内的<code>hook_bootmagic</code>函数，将默认的检测 Space+U 再开机的代码使用这段代码覆盖掉。</p>
+<h3><a href="#示例：G84-4100" name="示例：G84-4100" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;示例：G84-4100</h3>
+<p>详细的代码请参见 g84-4100 文件夹下的相关文件。</p>
+<p>按键阵列表：</p>
+<table>
+<thead>
+<tr><th></th><th>LINE1</th><th>LINE2</th><th>LINE3</th><th>LINE4</th><th>LINE5</th><th>LINE6</th><th>LINE7</th><th>LINE8</th></tr>
+</thead>
+<tbody>
+<tr><td>H1L</td><td>Esc</td><td>F1</td><td>F2</td><td>F3</td><td>F4</td><td>F5</td><td>F6</td><td>F7</td></tr>
+<tr><td>H2L</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+<tr><td>H3L</td><td>Tab</td><td>Q</td><td>W</td><td>E</td><td>R</td><td>T</td><td>Y</td><td>U</td></tr>
+<tr><td>H4L</td><td>CapsLock</td><td>A</td><td>S</td><td>D</td><td>F</td><td>G</td><td>H</td><td>J</td></tr>
+<tr><td>H5L</td><td>`</td><td>Z</td><td>X</td><td>C</td><td>V</td><td>B</td><td>N</td><td>M</td></tr>
+<tr><td>H1R</td><td>Right</td><td>Pause</td><td>PtrSc</td><td>NumLock</td><td>ScrollLock</td><td>F10</td><td>F9</td><td>F8</td></tr>
+<tr><td>H2R</td><td>Down</td><td>Home</td><td></td><td>Backspace</td><td>=</td><td>-</td><td>0</td><td>9</td></tr>
+<tr><td>H3R</td><td>Up</td><td>PageUp</td><td></td><td>]</td><td>[</td><td>P</td><td>O</td><td>I</td></tr>
+<tr><td>H4R</td><td>Left</td><td>PageDown</td><td>Enter</td><td>\</td><td>&quot;</td><td>;</td><td>L</td><td>K</td></tr>
+<tr><td>H5R</td><td>Space</td><td>End</td><td>Menu</td><td>Ins</td><td>Del</td><td>?</td><td>&gt;</td><td>&lt;</td></tr>
+<tr><td>SPEC1</td><td>Lalt</td><td></td><td></td><td></td><td></td><td>Rshift</td><td></td><td></td></tr>
+<tr><td>SPEC2</td><td>Lshift</td><td></td><td></td><td></td><td></td><td>Ralt</td><td></td><td></td></tr>
+<tr><td>SPEC3</td><td>Ctrl</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>SPEC4</td><td>Fn</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>SPEC5</td><td>LWin</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>SPEC6</td><td>RWin</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th>序号</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
+</thead>
+<tbody>
+<tr><td>名称</td><td>LINE1</td><td>Line2</td><td>Line3</td><td>Line4</td><td>Line5</td><td>Line6</td><td>Line7</td><td>Line8</td><td>Spec4</td></tr>
+<tr><td>IO</td><td>P10</td><td>P9</td><td>P8</td><td>P7</td><td>P6</td><td>P5</td><td>P4</td><td>P3</td><td>P11</td></tr>
+<tr><td>序号</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+<tr><td>名称</td><td>Spec3</td><td>Spec2</td><td>Spec1</td><td>H1L</td><td>H2L</td><td>H3L</td><td>H4L</td><td>Spec5</td><td>Spec6</td></tr>
+<tr><td>IO</td><td>P12</td><td>P13</td><td>P14</td><td>P15</td><td>P16</td><td>P17</td><td>P18</td><td>P19</td><td>P20</td></tr>
+<tr><td>序号</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+<tr><td>名称</td><td>H5L</td><td>H5R</td><td>H4R</td><td>H3R</td><td>H2R</td><td>LED1</td><td>LED2</td><td>LED3</td><td>H1R</td></tr>
+<tr><td>IO</td><td>P30</td><td>P29</td><td>P28</td><td>P27</td><td>P26</td><td>P25</td><td>P24</td><td>P23</td><td>P22</td></tr>
+</tbody>
+</table>
+<div class='last-update'>此页面最后更新于: 2019-11-16 16:14:53</div>
+</div>
+<div class="space-bottom"></div>
+</div>
+<div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
+<div class="row mui-panel">
+<div id="vcomments" class="cloud-tie-wrapper"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+new Valine({
+	el: '#vcomments',
+	appId: 'LxTBCCGY8s9s0U2QVIaudxk1-MdYXbMMI',
+	appKey: 'PdPA1xgzmFdUQqugmfzYamF9',
+	placeholder: '写下你的评论吧',
+	visitor: true})
+</script>
+</div>
+</div>
+</div>
+<footer id="footer">
+    <div class="mui-container-fluid">
+        Lotlab Wiki 正在使用 <a href="https://github.com/phoenixlzx/MinoriWiki" target="_blank">MinoriWiki</a>
+    </div>
+</footer>
+
+<script>
+hljs.initHighlightingOnLoad();
+jQuery(function($) {
+    var $bodyEl = $('body'),
+        $sidedrawerEl = $('#sidedrawer');
+
+
+    function showSidedrawer() {
+        // show overlay
+        var options = {
+            onclose: function() {
+                $sidedrawerEl
+                    .removeClass('active')
+                    .appendTo(document.body);
+            }
+        };
+
+        var $overlayEl = $(mui.overlay('on', options));
+
+        // show element
+        $sidedrawerEl.appendTo($overlayEl);
+        setTimeout(function() {
+            $sidedrawerEl.addClass('active');
+        }, 20);
+    }
+
+
+    function hideSidedrawer() {
+        $bodyEl.toggleClass('hide-sidedrawer');
+    }
+
+
+    $('.js-show-sidedrawer').on('click', showSidedrawer);
+    $('.js-hide-sidedrawer').on('click', hideSidedrawer);
+  
+    var $titleEls = $('strong', $sidedrawerEl);
+
+    $titleEls
+        .next()
+        .hide();
+
+    $titleEls.on('click', function() {
+        $(this).next().slideToggle(200);
+    });
+    
+    //add mui style
+    $("table").addClass("mui-table mui-table--bordered");
+});
+</script>
+
+</body>
+</html>
