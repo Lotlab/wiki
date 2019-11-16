@@ -34,8 +34,8 @@
     <div class="mui-divider"></div>
     <ul>
                 <li>
-        <strong>其他链接</strong>
-    <ul>
+    		<strong>其他链接</strong>
+	    <ul>
                     <li><a href="https://github.com/Lotlab/wiki">Github</a></li>
                     <li><a href="/page/terms">网站协议</a></li>
                     <li><a href="/page/contribute">贡献内容</a></li>
@@ -79,15 +79,15 @@ Lot60-BLE 键盘使用说明</a>
 </li>
 <li>
 <a href="/page/BLE4100/advanced/" target="_self">
- / BLE4100高级资源</a>
+BLE4100高级资源</a>
 </li>
 <li>
 <a href="/page/bluetooth/build-guide/" target="_self">
- / LotKB固件编译移植指南</a>
+LotKB固件编译移植指南</a>
 </li>
 <li>
 <a href="/page/bluetooth/upgrade/" target="_self">
- / 固件更新</a>
+固件更新</a>
 </li>
 </ul>
 </div>
@@ -165,7 +165,7 @@ jQuery(function($) {
     $('.js-show-sidedrawer').on('click', showSidedrawer);
     $('.js-hide-sidedrawer').on('click', hideSidedrawer);
   
-    var $titleEls = $('strong', $sidedrawerEl);
+    var $titleEls = $('strong.fold', $sidedrawerEl);
 
     $titleEls
         .next()

@@ -37,67 +37,67 @@
     <div class="mui-divider"></div>
     <ul>
                 <li>
-    <strong>教程</strong>
+    <strong class="fold">教程</strong>
     <ul>
                 <li>
             <a href="/page/ble4100/" target="_self">
-                                BLE4100套件使用说明                            </a>
+                BLE4100套件使用说明            </a>
         </li>
                 <li>
             <a href="/page/gh60-related/" target="_self">
-                                GH60相关                            </a>
+                GH60相关            </a>
         </li>
                 <li>
             <a href="/page/kms-activation/" target="_self">
-                                KMS激活                            </a>
+                KMS激活            </a>
         </li>
                 <li>
             <a href="/page/lcd2usb/" target="_self">
-                                LCD2USB使用说明                            </a>
+                LCD2USB使用说明            </a>
         </li>
                 <li>
             <a href="/page/lot60-ble/" target="_self">
-                                Lot60-BLE 键盘使用说明                            </a>
+                Lot60-BLE 键盘使用说明            </a>
         </li>
                 <li>
             <a href="/page/BLE4100/advanced/" target="_self">
-                                                 / BLE4100高级资源                            </a>
+                BLE4100高级资源            </a>
         </li>
                 <li>
             <a href="/page/bluetooth/build-guide/" target="_self">
-                                                 / LotKB固件编译移植指南                            </a>
+                LotKB固件编译移植指南            </a>
         </li>
                 <li>
             <a href="/page/bluetooth/upgrade/" target="_self">
-                                                 / 固件更新                            </a>
+                固件更新            </a>
         </li>
             </ul>
 </li>
 <li>
-    <strong>站务</strong>
+    <strong class="fold">站务</strong>
     <ul>
                 <li>
             <a href="/page/contribute/" target="_self">
-                                贡献指南                            </a>
+                贡献指南            </a>
         </li>
                 <li>
             <a href="/page/terms/" target="_self">
-                                协议                            </a>
+                协议            </a>
         </li>
             </ul>
 </li>
 <li>
-    <strong>未分类</strong>
+    <strong class="fold">未分类</strong>
     <ul>
                 <li>
             <a href="/page/helloworld/" target="_self">
-                                你好，世界                            </a>
+                你好，世界            </a>
         </li>
             </ul>
 </li>
                 <li>
-        <strong>其他链接</strong>
-    <ul>
+    		<strong>其他链接</strong>
+	    <ul>
                     <li><a href="https://github.com/Lotlab/wiki">Github</a></li>
                     <li><a href="/page/terms">网站协议</a></li>
                     <li><a href="/page/contribute">贡献内容</a></li>
@@ -146,7 +146,7 @@ CSCRIPT OSPP.VBS /DSTATUS
 <li>WNMTR-4C88C-JK8YV-HQ7T2-76DF9 = Enterprise LSTB 企业版</li>
 <li>2F77B-TNFGY-69QQF-B8YKP-D69TJ = Enterprise LSTB N 企业版</li>
 </ul>
-<div class='last-update'>此页面最后更新于: 2019-11-16 16:14:53</div>
+<div class='last-update'>此页面最后更新于: 2019-11-16 16:42:06</div>
 </div>
 <div class="space-bottom"></div>
 </div>
@@ -206,7 +206,7 @@ jQuery(function($) {
     $('.js-show-sidedrawer').on('click', showSidedrawer);
     $('.js-hide-sidedrawer').on('click', hideSidedrawer);
   
-    var $titleEls = $('strong', $sidedrawerEl);
+    var $titleEls = $('strong.fold', $sidedrawerEl);
 
     $titleEls
         .next()

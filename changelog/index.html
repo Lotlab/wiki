@@ -34,8 +34,8 @@
     <div class="mui-divider"></div>
     <ul>
                 <li>
-        <strong>其他链接</strong>
-    <ul>
+    		<strong>其他链接</strong>
+	    <ul>
                     <li><a href="https://github.com/Lotlab/wiki">Github</a></li>
                     <li><a href="/page/terms">网站协议</a></li>
                     <li><a href="/page/contribute">贡献内容</a></li>
@@ -49,6 +49,13 @@
 <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
 <br>
 <h2>近期变更</h2>
+<div class="row">
+<div class="mui-col-md-12">
+<b>更新主题</b>
+<br/>
+<small><code>f0a7089</code> by Jiangming1399 on Sun Nov 17 00:40:57 2019 +0800</small>
+</div>
+</div>
 <div class="row">
 <div class="mui-col-md-12">
 <b>添加固件编译教程（暂时）</b>
@@ -182,13 +189,6 @@
 <small><code>3820148</code> by Jiangming1399 on Sun Sep 1 23:31:20 2019 +0800</small>
 </div>
 </div>
-<div class="row">
-<div class="mui-col-md-12">
-<b>去除死链并更新配置文件</b>
-<br/>
-<small><code>51768ef</code> by Jiangming1399 on Wed Aug 28 13:16:33 2019 +0800</small>
-</div>
-</div>
 </div>
 </div>
 <footer id="footer">
@@ -232,7 +232,7 @@ jQuery(function($) {
     $('.js-show-sidedrawer').on('click', showSidedrawer);
     $('.js-hide-sidedrawer').on('click', hideSidedrawer);
   
-    var $titleEls = $('strong', $sidedrawerEl);
+    var $titleEls = $('strong.fold', $sidedrawerEl);
 
     $titleEls
         .next()
