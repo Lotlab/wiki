@@ -64,6 +64,7 @@ theme:
         - github: 
           name: Github
           link: https://github.com/Lotlab/wiki
+          external: true
         - term:
           name: 网站协议
           link: /page/terms
@@ -78,9 +79,7 @@ theme:
 deploy:
   repo: git@github.com:Lotlab/wiki.git
   branch: gh-pages
-  cname: |
-    wiki.lotlab.org
-    wiki.lotlab.icu
+  cname: wiki.lotlab.org
   s3:
     enabled: false
     bucket: your-bucket-name

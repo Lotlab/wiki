@@ -1,4 +1,4 @@
-title: 固件更新
+title: 蓝牙键盘固件更新教程
 category: 教程
 time: 1573917937290
 
