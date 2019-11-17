@@ -65,12 +65,10 @@ theme:
           name: Github
           link: https://github.com/Lotlab/wiki
           external: true
-        - term:
-          name: 网站协议
-          link: /page/terms
-        - contribute:
-          name: 贡献内容
-          link: /page/contribute
+        - shop:
+          name: LotShop
+          link: http://shop.lotlab.org
+          external: true
         - changelog:
           name: 更新日志
           link: /changelog
