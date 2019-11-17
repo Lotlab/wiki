@@ -13,7 +13,6 @@
     <link href="/assets/octicons/font/octicons.min.css" rel="stylesheet" />
     <script src="/assets/highlight.min.js"></script>
     <script src="/assets/mui.min.js"></script>
-    <script src="/assets/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 <header id="header" class="mui--z2">
@@ -140,22 +139,13 @@ BLE4100高级资源<div class="category mui--pull-right">
 <p><img src="/raw/BLE4100/silk.png" alt="丝印层" /></p>
 <h1><a href="#线路图" name="线路图" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;线路图</h1>
 <p><a href="/raw/BLE4100/ble4100-nrf.pdf">ble4100-nrf.pdf</a></p>
-<div class='last-update'>此页面最后更新于: 2019-11-17 08:20:39</div>
+<div class='last-update'>此页面最后更新于: 2019-11-17 11:42:43</div>
 </div>
 <div class="space-bottom"></div>
 </div>
 <div class="mui-container-fluid mui-col-sm-10 mui-col-sm-offset-1">
 <div class="row mui-panel">
 <div id="vcomments" class="cloud-tie-wrapper"></div>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-new Valine({
-	el: '#vcomments',
-	appId: 'LxTBCCGY8s9s0U2QVIaudxk1-MdYXbMMI',
-	appKey: 'PdPA1xgzmFdUQqugmfzYamF9',
-	placeholder: '写下你的评论吧',
-	visitor: true})
-</script>
 </div>
 </div>
 </div>
@@ -166,53 +156,61 @@ new Valine({
 </footer>
 
 <script>
-hljs.initHighlightingOnLoad();
-jQuery(function($) {
-    var $bodyEl = $('body'),
-        $sidedrawerEl = $('#sidedrawer');
+    hljs.initHighlightingOnLoad();
 
+    let tables = document.getElementsByTagName("table");
+    for(let i=0;i<tables.length;i++) {
+        tables[i].classList.add("mui-table","mui-table--bordered");
+    }
 
-    function showSidedrawer() {
-        // show overlay
+    var sidedrawer = document.getElementById("sidedrawer");
+
+    document.getElementsByClassName("js-show-sidedrawer")[0].onclick = showSideDrawer;
+    document.getElementsByClassName("js-hide-sidedrawer")[0].onclick = hideSideDrawer;
+
+    let foldEls = document.getElementsByClassName("fold");
+    for (let i = 0; i < foldEls.length; i++) {
+        let sb = foldEls[i].nextElementSibling;
+        if (sb != undefined) {
+            sb.classList.add("mui--hide");
+            foldEls[i].onclick = foldElementHandler;
+        }
+    }
+
+    function showSideDrawer() {
         var options = {
             onclose: function() {
+                sidedrawer.classList.remove("active");
+                document.body.append(sidedrawer);
                 $sidedrawerEl
                     .removeClass('active')
                     .appendTo(document.body);
             }
         };
-
-        var $overlayEl = $(mui.overlay('on', options));
-
-        // show element
-        $sidedrawerEl.appendTo($overlayEl);
+        let overlayEl = mui.overlay('on', options);
+        overlayEl.append(sidedrawer);
         setTimeout(function() {
-            $sidedrawerEl.addClass('active');
+            sidedrawer.classList.add("active");
         }, 20);
     }
 
-
-    function hideSidedrawer() {
-        $bodyEl.toggleClass('hide-sidedrawer');
+    function hideSideDrawer() {
+        document.body.classList.toggle("hide-sidedrawer");
     }
 
+    function foldElementHandler(ev) {
+        ev.target.nextElementSibling.classList.toggle("mui--hide");
+    }
+</script>
 
-    $('.js-show-sidedrawer').on('click', showSidedrawer);
-    $('.js-hide-sidedrawer').on('click', hideSidedrawer);
-  
-    var $titleEls = $('strong.fold', $sidedrawerEl);
-
-    $titleEls
-        .next()
-        .hide();
-
-    $titleEls.on('click', function() {
-        $(this).next().slideToggle(200);
-    });
-    
-    //add mui style
-    $("table").addClass("mui-table mui-table--bordered");
-});
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+new Valine({
+	el: '#vcomments',
+	appId: 'LxTBCCGY8s9s0U2QVIaudxk1-MdYXbMMI',
+	appKey: 'PdPA1xgzmFdUQqugmfzYamF9',
+	placeholder: '写下你的评论吧',
+	visitor: true})
 </script>
 
 </body>
