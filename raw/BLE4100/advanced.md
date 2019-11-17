@@ -1,5 +1,5 @@
 title: BLE4100高级资源
-category: 教程
+category: 蓝牙键盘
 time: 1488070953783
 
 ---

@@ -1,5 +1,5 @@
 title: LotKB固件编译移植指南
-category: 教程
+category: 蓝牙键盘
 time: 1573706708445
 ---
 ## 编译教程

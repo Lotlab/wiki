@@ -1,5 +1,5 @@
 title: Lot60-BLE 键盘使用说明
-category: 教程
+category: 蓝牙键盘
 time: 1567123076035
 ---
 # 概述
