@@ -53,3 +53,7 @@ LKB-Core发货前就已经刷好了测试固件，收到后，使用USB Type-C�
 | P4   | LCtrl    | LGUI | Lalt | KC_NO | KC_NO | Space | KC_NO | KC_NO | KC_NO | Fn0  | Lalt | Menu  | LCtrl | Left      | Down       | Right    |
 
 测试固件睡眠后按任意键自动唤醒，仅供测试。
+
+## 其他资源
+
+- Kicad的[封装](/raw/lkb-core/LKB_Core.kicad_mod)
