@@ -300,6 +300,10 @@ blockquote blockquote {
 	font-size: 50%
 }
 
+.category span+span {
+	margin-left: 1em;
+}
+
 .page-title {
 	margin-bottom: 20px;
 }
