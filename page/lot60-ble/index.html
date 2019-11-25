@@ -112,7 +112,10 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 </span>
 </div>
 </h1>
-<div class="row">
+<div class="mui-panel mui--hidden-md mui--hidden-xs mui--hidden-sm" id="toc">
+<h4>目录</h4>
+</div>
+<div class="row" id="article">
 <h1><a href="#概述" name="概述" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;概述</h1>
 <p>Lot60-BLE 是一款低功耗蓝牙双模键盘。其固件底层使用了 TMK 作为键盘功能核心，几乎完全实现了 TMK 功能<sup class="footnote-ref"><a href="#fn1" id="fnref1" target="_self">[1]</a></sup>。其采用了与 GH60 完全一致的按键阵列，使其配列文件与 GH60 几乎完全兼容<sup class="footnote-ref"><a href="#fn2" id="fnref2" target="_self">[2]</a></sup>。</p>
 <h2><a href="#LED_一览" name="LED_一览" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;LED 一览</h2>
@@ -177,7 +180,7 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <p>此键盘支持 NKRO（全键无冲）模式，但默认不启用全键无冲。全键无冲仅在 USB 模式下才可使用。</p>
 <p>在键盘开机时按下<code>Space+N</code>（即在休眠后，按下 Space+U+N 开机），即可切换全键无冲的状态。</p>
 <h3><a href="#其他功能键（BootMagic）" name="其他功能键（BootMagic）" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;其他功能键（BootMagic）</h3>
-<p>以下是所有的开机时功能键的列表，你可以在开机时同时按下 Space + 下面的键来实现对应的功能。</p>
+<p>以下是所有的开机时功能键的列表，你可以在开机时同时按下 Space + 下面的键来实现对应的功能。(即，在休眠后同时按下 Space+U + 下面的键开机，或按住 Space + 下面的键再插入 USB 开机。)</p>
 <p>需要注意的是，下面的按键全部都指的是当前配列的第 0 层按键。如果你更改了配列，那么这些按键的位置可能会发生变化。</p>
 <ul>
 <li>E: 擦除蓝牙绑定</li>
@@ -306,7 +309,7 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <li><a href="https://tools.lotlab.org/dl/rev_e-ch554-2019_09_30-68552e4.hex">USB 固件</a></li>
 <li><a href="https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_09_30-68552e4.zip">3LED 灯版本蓝牙升级包</a></li>
 </ul>
-<div class='last-update'>此页面最后更新于: 2019-11-25 05:15:42</div>
+<div class='last-update'>此页面最后更新于: 2019-11-25 15:00:58</div>
 <hr class="footnotes-sep" />
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -329,6 +332,59 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 </div>
 </div>
 </div>
+<script>
+function generateTOC() {
+let article = document.getElementById("article");
+let nodeList = [];
+let parse = function parseLinkNode(layer, nd) {
+let link = nd.firstChild;
+if (link.nodeName.toLowerCase() == "a") {
+let href = link.getAttribute("href");
+let name = link.getAttribute("name");
+return { layer, href, name };
+}
+};
+article.childNodes.forEach(function (nd) {
+let name = nd.nodeName.toLowerCase();
+switch (name) {
+case "h1":
+nodeList.push(parse(1, nd));
+break;
+case "h2":
+nodeList.push(parse(2, nd));
+break;
+case "h3":
+nodeList.push(parse(3, nd));
+break;
+case "h4":
+nodeList.push(parse(4, nd));
+break;
+default: break;
+}
+});
+console.log(nodeList);var list = document.getElementById("toc");
+var listIndex = 0;
+var currentNode = list;nodeList.forEach(function (elememt) {
+while (elememt.layer > listIndex) {
+let cld = document.createElement("ul");
+currentNode.appendChild(cld);
+currentNode = cld;
+listIndex++;
+}
+while (elememt.layer < listIndex) {
+currentNode = currentNode.parentNode;
+listIndex--;
+}
+let li = document.createElement("li");
+let a = document.createElement("a");
+a.innerText = elememt.name;
+a.href = elememt.href;
+li.appendChild(a);
+currentNode.appendChild(li);
+});
+}
+generateTOC();
+</script>
 <footer id="footer">
     <div class="mui-container-fluid">
         Lotlab Wiki 正在使用 <a href="https://github.com/phoenixlzx/MinoriWiki" target="_blank">MinoriWiki</a>

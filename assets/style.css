@@ -204,6 +204,26 @@ buttons {
 }
 
 /**
+ * TOC
+ */
+#toc {
+  float: right;
+  margin: 1em;
+  min-width: 300px;
+}
+
+#toc ul {
+  padding-left: 2em;
+  margin-bottom: 0px;
+}
+
+#toc h4 {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 0;
+}
+
+/**
  * Main 
  */
 html {

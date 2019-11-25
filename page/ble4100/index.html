@@ -112,7 +112,10 @@ BLE4100套件使用说明<div class="category mui--pull-right">
 </span>
 </div>
 </h1>
-<div class="row">
+<div class="mui-panel mui--hidden-md mui--hidden-xs mui--hidden-sm" id="toc">
+<h4>目录</h4>
+</div>
+<div class="row" id="article">
 <h1><a href="#使用手册" name="使用手册" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;使用手册</h1>
 <h2><a href="#快速入门" name="快速入门" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;快速入门</h2>
 <ol>
@@ -261,7 +264,7 @@ BLE4100套件使用说明<div class="category mui--pull-right">
 <p>使用 nrfutil<sup class="footnote-ref"><a href="#fn3" id="fnref3" target="_self">[3]</a></sup>生成升级包（0.5.2 版本）</p>
 <pre><code class="language-bash">nrfutil dfu genpkg --application nrf51422_xxac_s110.hex upgrade.zip
 </code></pre>
-<div class='last-update'>此页面最后更新于: 2019-11-25 05:15:42</div>
+<div class='last-update'>此页面最后更新于: 2019-11-25 15:00:58</div>
 <hr class="footnotes-sep" />
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -282,6 +285,59 @@ BLE4100套件使用说明<div class="category mui--pull-right">
 </div>
 </div>
 </div>
+<script>
+function generateTOC() {
+let article = document.getElementById("article");
+let nodeList = [];
+let parse = function parseLinkNode(layer, nd) {
+let link = nd.firstChild;
+if (link.nodeName.toLowerCase() == "a") {
+let href = link.getAttribute("href");
+let name = link.getAttribute("name");
+return { layer, href, name };
+}
+};
+article.childNodes.forEach(function (nd) {
+let name = nd.nodeName.toLowerCase();
+switch (name) {
+case "h1":
+nodeList.push(parse(1, nd));
+break;
+case "h2":
+nodeList.push(parse(2, nd));
+break;
+case "h3":
+nodeList.push(parse(3, nd));
+break;
+case "h4":
+nodeList.push(parse(4, nd));
+break;
+default: break;
+}
+});
+console.log(nodeList);var list = document.getElementById("toc");
+var listIndex = 0;
+var currentNode = list;nodeList.forEach(function (elememt) {
+while (elememt.layer > listIndex) {
+let cld = document.createElement("ul");
+currentNode.appendChild(cld);
+currentNode = cld;
+listIndex++;
+}
+while (elememt.layer < listIndex) {
+currentNode = currentNode.parentNode;
+listIndex--;
+}
+let li = document.createElement("li");
+let a = document.createElement("a");
+a.innerText = elememt.name;
+a.href = elememt.href;
+li.appendChild(a);
+currentNode.appendChild(li);
+});
+}
+generateTOC();
+</script>
 <footer id="footer">
     <div class="mui-container-fluid">
         Lotlab Wiki 正在使用 <a href="https://github.com/phoenixlzx/MinoriWiki" target="_blank">MinoriWiki</a>
