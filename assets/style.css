@@ -209,18 +209,33 @@ buttons {
 #toc {
   float: right;
   margin: 1em;
-  min-width: 300px;
+  min-width: 50px;
+  max-width: 400px;
 }
 
 #toc ul {
-  padding-left: 2em;
-  margin-bottom: 0px;
+  padding: 0;
+  margin: 0 0 0 2em;
+  list-style-type: decimal;
 }
 
-#toc h4 {
+#toc .toc-heading {
   font-size: 16px;
+  margin: 0.5em;
   text-align: center;
-  margin-top: 0;
+}
+
+#toc .toc-heading h4 {
+  font-weight: 700;
+  display: inline;
+}
+
+#toc-hide::before {
+  content: "[";
+}
+
+#toc-hide::after {
+  content: "]";
 }
 
 /**

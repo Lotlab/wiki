@@ -113,7 +113,10 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 </div>
 </h1>
 <div class="mui-panel mui--hidden-md mui--hidden-xs mui--hidden-sm" id="toc">
+<div class="toc-heading">
 <h4>目录</h4>
+<a id="toc-hide" href="#">隐藏</a>
+</div>
 </div>
 <div class="row" id="article">
 <h1><a href="#概述" name="概述" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;概述</h1>
@@ -309,7 +312,7 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <li><a href="https://tools.lotlab.org/dl/rev_e-ch554-2019_09_30-68552e4.hex">USB 固件</a></li>
 <li><a href="https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_09_30-68552e4.zip">3LED 灯版本蓝牙升级包</a></li>
 </ul>
-<div class='last-update'>此页面最后更新于: 2019-11-25 15:00:58</div>
+<div class='last-update'>此页面最后更新于: 2019-11-28 11:22:50</div>
 <hr class="footnotes-sep" />
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -333,59 +336,69 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 </div>
 </div>
 <script>
-function generateTOC() {
-let article = document.getElementById("article");
-let nodeList = [];
-let parse = function parseLinkNode(layer, nd) {
-let link = nd.firstChild;
-if (link.nodeName.toLowerCase() == "a") {
-let href = link.getAttribute("href");
-let name = link.getAttribute("name");
-return { layer, href, name };
-}
-};
-article.childNodes.forEach(function (nd) {
-let name = nd.nodeName.toLowerCase();
-switch (name) {
-case "h1":
-nodeList.push(parse(1, nd));
-break;
-case "h2":
-nodeList.push(parse(2, nd));
-break;
-case "h3":
-nodeList.push(parse(3, nd));
-break;
-case "h4":
-nodeList.push(parse(4, nd));
-break;
-default: break;
-}
-});
-console.log(nodeList);var list = document.getElementById("toc");
-var listIndex = 0;
-var currentNode = list;nodeList.forEach(function (elememt) {
-while (elememt.layer > listIndex) {
-let cld = document.createElement("ul");
-currentNode.appendChild(cld);
-currentNode = cld;
-listIndex++;
-}
-while (elememt.layer < listIndex) {
-currentNode = currentNode.parentNode;
-listIndex--;
-}
-let li = document.createElement("li");
-let a = document.createElement("a");
-a.innerText = elememt.name;
-a.href = elememt.href;
-li.appendChild(a);
-currentNode.appendChild(li);
-});
-}
-generateTOC();
-</script>
-<footer id="footer">
+    function generateTOC() {
+        let article = document.getElementById("article");
+        let tocNode = fillTOC(parseDoc(article));
+        document.getElementById("toc").appendChild(tocNode);
+        document.getElementById("toc-hide").onclick = function(){
+            tocNode.classList.toggle("mui--hide");
+            return false;
+        }
+    }
+
+    function parseDoc(article) {
+        let titleList = [];
+        let parse = function parseLinkNode(layer, nd) {
+            let link = nd.firstChild;
+            if (link.nodeName.toLowerCase() == "a") {
+                let href = link.getAttribute("href");
+                let name = nd.childNodes[1].data.trim();
+                return { layer, href, name };
+            }
+        };
+        article.childNodes.forEach(function (nd) {
+            let regExp = /h(\d)/gi;
+            let result = regExp.exec(nd.nodeName.toLowerCase())
+            if (result != null) {
+                titleList.push(parse(result[1], nd));
+            }
+        });
+        return titleList;
+    }
+
+    function fillTOC(titleList) {
+        var list = document.createElement("div");
+        var listIndex = 0;
+        var currentNodeSpace = list;
+        var lastNode = list;
+
+        titleList.forEach(function (elememt) {
+            // create inner layer
+            while (elememt.layer > listIndex) {
+                let cld = document.createElement("ul");
+                if (lastNode == null)  lastNode = currentNodeSpace;
+                lastNode.appendChild(cld);
+                currentNodeSpace = cld;
+                lastNode = null;
+                listIndex++;
+            }
+            // jump out
+            while (elememt.layer < listIndex) {
+                currentNodeSpace = currentNodeSpace.parentNode.parentNode;
+                listIndex--;
+            }
+            lastNode = document.createElement("li");
+            // create list element
+            let a = document.createElement("a");
+            a.innerText = elememt.name;
+            a.href = elememt.href;
+            lastNode.appendChild(a);
+            currentNodeSpace.appendChild(lastNode);
+        });
+        return list;
+    }
+    generateTOC();
+</script><footer id="footer">
     <div class="mui-container-fluid">
         Lotlab Wiki 正在使用 <a href="https://github.com/phoenixlzx/MinoriWiki" target="_blank">MinoriWiki</a>
     </div>
