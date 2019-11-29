@@ -262,6 +262,9 @@ img {
 
 a.anchor {
     display: inline-block;
+    /* Offset to avoid appbar cover the anchor text. */
+    padding-top: 70px;
+    margin-top: -70px;
 }
 
 a.anchor:link {
