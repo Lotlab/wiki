@@ -124,14 +124,14 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <h2><a href="#LED_一览" name="LED_一览" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;LED 一览</h2>
 <p>Lot60-BLE 包含了 1 个 CapsLock LED，和一个 RGB LED 状态指示灯（或 3 个单色 LED 状态指示灯）。</p>
 <p>RGB 状态指示灯位于 Esc 按键处，使用贴片的 LED 灯，故需要使用 RGB 轴。</p>
-<p>如果不想使用 RGB 轴，可以放弃这个 LED 灯，转而使用位于按键 1, 2, 3 处的 LED 指示灯（参见：[如何改为 3 LED 指示灯](# 如何改为 3 LED 指示灯)）。</p>
+<p>如果不想使用 RGB 轴，可以放弃这个 LED 灯，转而使用位于按键 1, 2, 3 处的 LED 指示灯（参见：<a href="#%E5%A6%82%E4%BD%95%E6%94%B9%E4%B8%BA3_LED%E6%8C%87%E7%A4%BA%E7%81%AF">如何改为 3LED 指示灯</a>）。</p>
 <h1><a href="#使用手册" name="使用手册" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;使用手册</h1>
 <h2><a href="#快速入门" name="快速入门" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;快速入门</h2>
 <ol>
 <li>（如果购买的是散件）按照线路板上的标识，将两个芯片焊接到线路板上，并焊接 USB 口。</li>
 <li>将电池插入电池插口。注意电池的线序，红色线对应 “+” 标记，黑色线对应 “-” 标记。</li>
-<li>使用 USB 线连接到你的电脑。如果电脑能够成功的识别到名为 “Lot60.E” 的设备，说明 USB 芯片工作正常。这时用镊子尝试短路任意一个按键，观察是否有按键输入。若有按键输入，则说明整块键盘工作正常。</li>
-<li>如果你想使用 3 个状态指示灯而不是一个 RGB 状态指示灯，那么请拆除正面的 RGB 指示灯，并更新底下提供的 3 灯版本固件。</li>
+<li>使用 USB 线连接到你的电脑。如果电脑能够成功的识别到名字类似 “Lot60.X” 的设备，说明 USB 芯片工作正常。这时用镊子尝试短路任意一个按键，观察是否有按键输入。若有按键输入，则说明整块键盘工作正常。</li>
+<li>如果你想使用 3 个状态指示灯而不是一个 RGB 状态指示灯，那么请参考：<a href="#%E5%A6%82%E4%BD%95%E6%94%B9%E4%B8%BA3_LED%E6%8C%87%E7%A4%BA%E7%81%AF">如何改为 3LED 指示灯</a>。</li>
 <li>组装你的键盘。注意要先装定位板，再装轴哦~</li>
 <li>好了，你的 Lot60-BLE 键盘已经组装完成了。插上 USB 尝试一下吧！</li>
 </ol>
@@ -143,7 +143,7 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <p>同时按下<code>Space(空格)+U</code>，直到 LED 指示灯亮起即可开机。</p>
 <p>插入 USB 的同时键盘会自动开机。</p>
 <h3><a href="#蓝牙连接设备" name="蓝牙连接设备" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;蓝牙连接设备</h3>
-<p>在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。你会见到一个叫做<code>Lot60.E_XXXXXX</code>的设备，使用你的主机设备连接此蓝牙设备，若提示输入配对码，请在键盘上输入配对码即可。</p>
+<p>在键盘开机的状态下，使用你要连接设备的蓝牙搜索功能搜索蓝牙设备。你会见到一个叫做<code>Lot60.X_XXXXXX</code>的设备，使用你的主机设备连接此蓝牙设备，若提示输入配对码，请在键盘上输入配对码即可。</p>
 <h3><a href="#USB_连接设备" name="USB_连接设备" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;USB 连接设备</h3>
 <p>直接将 USB 线缆插入到键盘的 USB 接口，键盘即自动切换至 USB 模式。这时候就可以使用 USB 模式输入了。</p>
 <h3><a href="#USB/蓝牙状态切换" name="USB/蓝牙状态切换" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;USB / 蓝牙状态切换</h3>
@@ -243,6 +243,11 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <li>方法 2：按下键盘背面的 RESET 按钮，键盘即进入休眠状态。</li>
 <li>方法 3：拔下键盘的 USB 线和电池，再重新插上。</li>
 </ul>
+<h3><a href="#如何查看键盘的硬件版本" name="如何查看键盘的硬件版本" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;如何查看键盘的硬件版本</h3>
+<ul>
+<li>方法 1：查看设备名称，名称为 Lot60.X，X 即为你的硬件版本。</li>
+<li>方法 2：键盘 PCB 背面空格下方，写着 “Lot60-BLE REV.X”，X 即为你的硬件版本。</li>
+</ul>
 <h3><a href="#如何进入DFU模式" name="如何进入DFU模式" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;如何进入 DFU 模式</h3>
 <ul>
 <li>方法 1：
@@ -305,14 +310,26 @@ Lot60-BLE 键盘使用说明<div class="category mui--pull-right">
 <h3><a href="#有时候出现卡键的问题" name="有时候出现卡键的问题" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;有时候出现卡键的问题</h3>
 <p>这是蓝牙信号不好的原因。请查看上面的蓝牙信号的改善方法来改善蓝牙信号。</p>
 <h1><a href="#固件发布" name="固件发布" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;固件发布</h1>
-<h3><a href="#1.0.3" name="1.0.3" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;1.0.3</h3>
-<p>此版本是出厂版本的固件。</p>
+<p>请参考<a href="/page/bluetooth/upgrade/">通用固件更新教程</a>更新你的键盘固件。</p>
+<h3><a href="#1.0.3.1" name="1.0.3.1" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;1.0.3.1</h3>
+<p>此版本更新于 2019 年 12 月 2 日，是 Rev.F 出厂版本的固件。</p>
+<p>此版本改善了误触按键导致键盘开机的问题。</p>
+<p>请对应硬件版本更新软件。可以参考 <a href="#%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E9%94%AE%E7%9B%98%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%89%88%E6%9C%AC">如何查看键盘的硬件版本</a> 部分来确定此键盘的硬件版本。</p>
 <ul>
-<li><a href="https://tools.lotlab.org/dl/rev_e-nrf52-2019_09_30-68552e4.zip">蓝牙升级包</a></li>
-<li><a href="https://tools.lotlab.org/dl/rev_e-ch554-2019_09_30-68552e4.hex">USB 固件</a></li>
-<li><a href="https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_09_30-68552e4.zip">3LED 灯版本蓝牙升级包</a></li>
+<li><a href="https://tools.lotlab.org/dl/rev_e-nrf52-2019_12_02-db6e8ae.zip">Rev.E 蓝牙升级包</a></li>
+<li><a href="https://tools.lotlab.org/dl/rev_f-nrf52-2019_12_02-db6e8ae.zip">Rev.F 蓝牙升级包</a></li>
+<li><a href="https://tools.lotlab.org/dl/rev_f-ch554-2019_12_02-db6e8ae.hex">Rev.F 出厂 USB 固件</a></li>
+<li><a href="https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_12_02-db6e8ae.zip">Rev.E 3LED 灯版本蓝牙升级包</a></li>
+<li><a href="https://tools.lotlab.org/dl/rev_f_3led-nrf52-2019_12_02-db6e8ae.zip">Rev.F 3LED 灯版本蓝牙升级包</a></li>
 </ul>
-<div class='last-update'>此页面最后更新于: 2019-11-29 11:30:44</div>
+<h3><a href="#1.0.3" name="1.0.3" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;1.0.3</h3>
+<p>此版本是 Rev.E 出厂版本的固件。</p>
+<ul>
+<li><a href="https://tools.lotlab.org/dl/rev_e-nrf52-2019_09_30-68552e4.zip">Rev.E 蓝牙升级包</a></li>
+<li><a href="https://tools.lotlab.org/dl/rev_e-ch554-2019_09_30-68552e4.hex">Rev.E 出厂 USB 固件</a></li>
+<li><a href="https://tools.lotlab.org/dl/rev_e_3led-nrf52-2019_09_30-68552e4.zip">Rev.E 3LED 灯版本蓝牙升级包</a></li>
+</ul>
+<div class='last-update'>此页面最后更新于: 2019-12-02 14:29:49</div>
 <hr class="footnotes-sep" />
 <section class="footnotes">
 <ol class="footnotes-list">
