@@ -21,8 +21,8 @@ http://lotkb.glab.online/
 使用终端运行以下命令
 
 ```bash
-sudo apt install git make sdcc # 安装git make和sdcc编译工具
-wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2018q2/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2?revision=bc2c96c0-14b5-4bb4-9f18-bceb4050fee7?product=GNU%20Arm%20Embedded%20Toolchain,64-bit,,Linux,7-2018-q2-update # 下载GCC
+sudo apt install git make sdcc # 安装git make和sdcc编译工具。注意Ubuntu 18.04及之前的SDCC版本较旧，无法成功编译
+wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2018q2/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 # 下载GCC
 tar xf gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 # 解压gcc
 mv gcc-arm-none-eabi-7-2018-q2-update/ ~/.local/ # 将GCC移动到用户目录
 rm gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 # 删除压缩包
@@ -33,7 +33,11 @@ pip3 install nrfutil # 安装 nrfutil
 
 #### 下载SDK
 
-访问[nordic的网站](https://www.nordicsemi.com/Software-and-tools/Software/nRF5-SDK/Download#infotabs)，下载SDK15.3，并解压待用。
+下载Nordic nRF SDK 15.3
+``` BASH
+wget http://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v15.x.x/nRF5_SDK_15.3.0_59ac345.zip
+unzip -q nRF5_SDK_15.3.0_59ac345.zip
+```
 
 ### 克隆源码并准备源码
 
@@ -49,13 +53,13 @@ nano template/Makefile.posix # 将里面的 GNU_INSTALL_ROOT 变量值改为 ~/.
 cp template/Makefile.windows.template template/Makefile.windows
 nano template/Makefile.windows # 将里面的 GNU_INSTALL_ROOT 变量值改为你的GCC安装目录
 
-# 将解压的sdk复制到源码的SDK目录下，形成类似于SDK/components, SDK/config 的目录结构
+# 将解压的nrf sdk复制到源码的SDK目录下，形成类似于SDK/components, SDK/config 的目录结构
 ```
 
 ### 测试编译
 
 ```bash
-cd keyboard/lkb-core
+cd keyboard/template
 make -j
 ```
 
