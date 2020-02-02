@@ -139,8 +139,9 @@ mv gcc-arm-none-eabi-7-2018-q2-update/ ~/.local/ # 将GCC移动到用户目录
 rm gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 # 删除压缩包
 
 sudo apt install python3 python3-pip
-pip3 install nrfutil # 安装 nrfutil
+pip3 install nrfutil # 安装 nrfutil。如果遇到错误可以尝试使用pip2安装
 </code></pre>
+<p>若对此章节的命令有疑问，也可以参考源码目录下的<code>.travis.yml</code>文件搭建环境。</p>
 <h4><a href="#下载SDK" name="下载SDK" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;下载 SDK</h4>
 <p>下载 Nordic nRF SDK 15.3</p>
 <pre><code class="language-BASH">wget http://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v15.x.x/nRF5_SDK_15.3.0_59ac345.zip
@@ -285,22 +286,11 @@ make ch554 -j # 生成USB固件
 <tr><td>SPEC6</td><td>RWin</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody>
 </table>
-<table>
-<thead>
-<tr><th>序号</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
-</thead>
-<tbody>
-<tr><td>名称</td><td>LINE1</td><td>Line2</td><td>Line3</td><td>Line4</td><td>Line5</td><td>Line6</td><td>Line7</td><td>Line8</td><td>Spec4</td></tr>
-<tr><td>IO</td><td>P10</td><td>P9</td><td>P8</td><td>P7</td><td>P6</td><td>P5</td><td>P4</td><td>P3</td><td>P11</td></tr>
-<tr><td>序号</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
-<tr><td>名称</td><td>Spec3</td><td>Spec2</td><td>Spec1</td><td>H1L</td><td>H2L</td><td>H3L</td><td>H4L</td><td>Spec5</td><td>Spec6</td></tr>
-<tr><td>IO</td><td>P12</td><td>P13</td><td>P14</td><td>P15</td><td>P16</td><td>P17</td><td>P18</td><td>P19</td><td>P20</td></tr>
-<tr><td>序号</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
-<tr><td>名称</td><td>H5L</td><td>H5R</td><td>H4R</td><td>H3R</td><td>H2R</td><td>LED1</td><td>LED2</td><td>LED3</td><td>H1R</td></tr>
-<tr><td>IO</td><td>P30</td><td>P29</td><td>P28</td><td>P27</td><td>P26</td><td>P25</td><td>P24</td><td>P23</td><td>P22</td></tr>
-</tbody>
-</table>
-<div class='last-update'>此页面最后更新于: 2019-12-31 01:10:10</div>
+<p>| 序号 | 1     | 2     | 3     | 4     | 5     | 6     | 7     | 8     | 9     | 10    | 11    | 12    | 13    | 14    | 15    | 16    | 17    | 18    | 19    | 20    | 21    | 22    | 23    | 24    | 25    | 26    | 27    | 28    |
+| ---- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| 名称 | Line1 | Line2 | Line3 | Line4 | Line5 | Line6 | Line7 | Line8 | Spec4 | Spec3 | Spec2 | Spec1 | H1L   | H2L   | H3L   | H4L   | Spec5 | Spec6 | H5L   | H5R   | H4R   | H3R   | LED1  | LED2  | LED3  | H2R   | H1R   | 3V3   |
+| IO   | P9    | P8    | P7    | P6    | P5    | P4    | P3    | P11   | P12   | P13   | P14   | P15   | P16   | P17   | P18   | P19   | NC    | NC    | P20   | P30   | P29   | P28   | P25   | P24   | P23   | P22   | P21   | 3V3   |</p>
+<div class='last-update'>此页面最后更新于: 2020-02-02 09:05:15</div>
 </div>
 <div class="space-bottom"></div>
 </div>

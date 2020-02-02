@@ -28,8 +28,10 @@ mv gcc-arm-none-eabi-7-2018-q2-update/ ~/.local/ # 将GCC移动到用户目录
 rm gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 # 删除压缩包
 
 sudo apt install python3 python3-pip
-pip3 install nrfutil # 安装 nrfutil
+pip3 install nrfutil # 安装 nrfutil。如果遇到错误可以尝试使用pip2安装
 ```
+
+若对此章节的命令有疑问，也可以参考源码目录下的`.travis.yml`文件搭建环境。
 
 #### 下载SDK
 
@@ -223,14 +225,7 @@ THREE_LED_STATUS_EVT = yes
 | SPEC5 | LWin     |          |       |           |            |        |       |       |
 | SPEC6 | RWin     |          |       |           |            |        |       |       |
 
-| 序号 | 1     | 2     | 3     | 4     | 5     | 6     | 7     | 8     | 9     |
-| ---- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| 名称 | LINE1 | Line2 | Line3 | Line4 | Line5 | Line6 | Line7 | Line8 | Spec4 |
-| IO   | P10   | P9    | P8    | P7    | P6    | P5    | P4    | P3    | P11   |
-| 序号 | 10    | 11    | 12    | 13    | 14    | 15    | 16    | 17    | 18    |
-| 名称 | Spec3 | Spec2 | Spec1 | H1L   | H2L   | H3L   | H4L   | Spec5 | Spec6 |
-| IO   | P12   | P13   | P14   | P15   | P16   | P17   | P18   | P19   | P20   |
-| 序号 | 19    | 20    | 21    | 22    | 23    | 24    | 25    | 26    | 27    |
-| 名称 | H5L   | H5R   | H4R   | H3R   | H2R   | LED1  | LED2  | LED3  | H1R   |
-| IO   | P30   | P29   | P28   | P27   | P26   | P25   | P24   | P23   | P22   |
-
+| 序号 | 1     | 2     | 3     | 4     | 5     | 6     | 7     | 8     | 9     | 10    | 11    | 12    | 13    | 14    | 15    | 16    | 17    | 18    | 19    | 20    | 21    | 22    | 23    | 24    | 25    | 26    | 27    | 28    |
+| ---- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| 名称 | Line1 | Line2 | Line3 | Line4 | Line5 | Line6 | Line7 | Line8 | Spec4 | Spec3 | Spec2 | Spec1 | H1L   | H2L   | H3L   | H4L   | Spec5 | Spec6 | H5L   | H5R   | H4R   | H3R   | LED1  | LED2  | LED3  | H2R   | H1R   | 3V3   |
+| IO   | P9    | P8    | P7    | P6    | P5    | P4    | P3    | P11   | P12   | P13   | P14   | P15   | P16   | P17   | P18   | P19   | NC    | NC    | P20   | P30   | P29   | P28   | P25   | P24   | P23   | P22   | P21   | 3V3   |
