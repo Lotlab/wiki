@@ -127,6 +127,18 @@ RGB 状态指示灯位于Esc按键处，使用贴片的LED灯，故需要使用R
 
 ### 更改配列
 
+#### 方法A：配置网站配置法
+
+访问 [Lotlab 键盘配置工具](https://keyboard.lotlab.org) ，配置你的配列即可。
+
+注意在线更新、宏、鼠标键等功能暂时不支持，暂时只能使用“下载EEP”功能将EEP文件下载并保存，并使用配列更新工具更新配列。
+
+将键盘使用USB连接到电脑。打开 [配列下载工具(KeymapDownloader.exe)](https://github.com/Lotlab/nrf52-keyboard/releases) ，选择你的键盘和配列，点击下载，即可将新的配列下载到键盘中。
+
+#### 方法B：传统的 TKG 配置方法
+
+我们可以使用 GH60 中最常用的配置方法进行配置。
+
 在这里，我假设你已经熟悉如何使用 [Keyboard layout editor(KLE)](https://www.keyboard-layout-editor.com/) 和 [TMK Keymap Generator(TKG)](https://tools.lotlab.org/tkg/) 来创建适用于键盘的配列了。如果你从未使用过这两者，建议参考百度上面的GH60配列的相关教程作为参考。
 
 因这个键盘含有额外的两项功能键（即切换设备和睡眠），故通常的TKG无法满足要求。请使用上面给出的链接中的TKG，里面包含了这块自定义键盘的额外两颗功能按键。
