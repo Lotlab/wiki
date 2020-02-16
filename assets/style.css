@@ -326,8 +326,16 @@ blockquote blockquote {
     border-radius: .25em
 }
 
+.label+.label {
+  margin-left: 1em;
+}
+
 .label-primary {
-    background-color: #2196f3
+  background-color: #2196f3
+}
+
+.label-secondary {
+  background-color: #78909C
 }
 
 .space-bottom {
@@ -336,10 +344,6 @@ blockquote blockquote {
 
 .category {
 	font-size: 50%
-}
-
-.category span+span {
-	margin-left: 1em;
 }
 
 .page-title {
