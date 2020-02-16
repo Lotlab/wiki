@@ -72,6 +72,8 @@ theme:
         - changelog:
           name: 更新日志
           link: /changelog
+  page_history: "https://github.com/Lotlab/wiki/commits/master/notes"
+  page_raw: "https://github.com/Lotlab/wiki/blob/master/notes"
 
 # Deployment
 deploy:
