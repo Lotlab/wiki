@@ -79,7 +79,7 @@ theme:
 deploy:
   repo: git@github.com:Lotlab/wiki.git
   branch: gh-pages
-  cname: wiki.lotlab.org
+  cname: wiki2.lotlab.org
   s3:
     enabled: false
     bucket: your-bucket-name
